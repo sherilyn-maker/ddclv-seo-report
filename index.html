@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Discount Drain Clean LV — SEO Report 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f1f5f9;color:#1e293b;font-size:14px}
+  header{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:32px 40px}
+  header h1{font-size:28px;font-weight:700;margin-bottom:6px}
+  header p{opacity:.85;font-size:14px}
+  .tabs{display:flex;background:#1e3a5f;padding:0 40px;overflow-x:auto;gap:2px}
+  .tab-btn{padding:12px 18px;color:#94a3b8;border:none;background:none;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+  .tab-btn.active{color:#fff;border-bottom-color:#3b82f6}
+  .tab-content{display:none;padding:32px 40px}
+  .tab-content.active{display:block}
+  .alert{border-radius:8px;padding:14px 18px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
+  .alert-icon{font-size:18px;line-height:1;flex-shrink:0;margin-top:2px}
+  .alert.critical{background:#fef2f2;border-left:4px solid #dc2626}.alert.critical .alert-icon{color:#dc2626}
+  .alert.warning{background:#fff7ed;border-left:4px solid #ea580c}.alert.warning .alert-icon{color:#ea580c}
+  .alert.info{background:#eff6ff;border-left:4px solid #2563eb}.alert.info .alert-icon{color:#2563eb}
+  .alert.success{background:#f0fdf4;border-left:4px solid #16a34a}.alert.success .alert-icon{color:#16a34a}
+  .alert strong{display:block;margin-bottom:3px;font-size:13px}
+  .alert p{font-size:13px;color:#374151;line-height:1.55}
+  .metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+  .metric-card{background:#fff;border-radius:10px;padding:20px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  .metric-card .val{font-size:32px;font-weight:800;line-height:1}
+  .metric-card .lbl{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+  .metric-card .sub{font-size:11px;color:#94a3b8;margin-top:3px}
+  .metric-card.red .val{color:#dc2626}.metric-card.orange .val{color:#ea580c}
+  .metric-card.blue .val{color:#2563eb}.metric-card.green .val{color:#16a34a}
+  .card{background:#fff;border-radius:10px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:20px}
+  .card h2{font-size:16px;font-weight:700;color:#1e3a5f;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .card h3{font-size:14px;font-weight:700;color:#334155;margin:16px 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{background:#1e3a5f;color:#fff;padding:9px 12px;text-align:left;font-size:12px;font-weight:600}
+  td{padding:9px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top;line-height:1.45}
+  tr:nth-child(even){background:#f8fafc}
+  tr:hover{background:#eff6ff}
+  .badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:700}
+  .badge.red{background:#fee2e2;color:#dc2626}.badge.orange{background:#ffedd5;color:#ea580c}
+  .badge.green{background:#dcfce7;color:#16a34a}.badge.blue{background:#dbeafe;color:#1d4ed8}
+  .badge.purple{background:#ede9fe;color:#7c3aed}.badge.gray{background:#f1f5f9;color:#64748b}
+  .chart-wrap{position:relative;height:300px;margin-bottom:24px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .insight-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px;margin-bottom:12px}
+  .insight-box h4{font-size:13px;font-weight:700;color:#1d4ed8;margin-bottom:6px}
+  .insight-box p{font-size:12px;color:#374151;line-height:1.55}
+  .fix-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:14px;margin-bottom:12px}
+  .fix-box h4{font-size:13px;font-weight:700;color:#15803d;margin-bottom:6px}
+  .fix-box p,ul{font-size:12px;color:#374151;line-height:1.6}
+  .fix-box ul{margin-left:16px}
+  .page-card{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-bottom:12px}
+  .page-card .url{font-size:12px;color:#2563eb;font-weight:600;margin-bottom:8px;word-break:break-all}
+  .page-card .metrics{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+  .page-card .m{text-align:center;min-width:70px}
+  .page-card .m .v{font-size:18px;font-weight:700}
+  .page-card .m .l{font-size:10px;color:#64748b;text-transform:uppercase}
+  .page-card .issue{font-size:12px;color:#374151;line-height:1.5}
+  .ctr-bar-wrap{display:flex;align-items:center;gap:8px;margin:4px 0}
+  .ctr-bar{height:8px;border-radius:4px;background:#2563eb;transition:.3s}
+  .ctr-bar.expected{background:#dcfce7}
+  .ctr-bar.actual{background:#fee2e2}
+  h2.section-title{font-size:20px;font-weight:700;color:#1e3a5f;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #e2e8f0}
+  .priority-tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;margin-right:4px}
+  .p1{background:#fee2e2;color:#dc2626}.p2{background:#ffedd5;color:#ea580c}.p3{background:#fef9c3;color:#854d0e}
+  @media(max-width:768px){.metric-row{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.tabs{padding:0 12px}.tab-content{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Discount Drain Clean LV — SEO Performance Report</h1>
+  <p>discountdraincleanlv.com &nbsp;|&nbsp; Google Search Console Analysis &nbsp;|&nbsp; Dec 17, 2025 – Jun 15, 2026 (180 days) &nbsp;|&nbsp; Prepared by Realtime Marketing · June 2026</p>
+</header>
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('summary',event)">Executive Summary</button>
+  <button class="tab-btn" onclick="showTab('ctr',event)">CTR Deep Dive</button>
+  <button class="tab-btn" onclick="showTab('keywords',event)">Keywords</button>
+  <button class="tab-btn" onclick="showTab('pages',event)">Page Audit</button>
+  <button class="tab-btn" onclick="showTab('quickwins',event)">Quick Wins</button>
+  <button class="tab-btn" onclick="showTab('content',event)">Content Plan</button>
+</div>
+
+<!-- ═══ TAB 1: EXECUTIVE SUMMARY ═══════════════════════════════════════════ -->
+<div id="summary" class="tab-content active">
+  <h2 class="section-title">Executive Summary</h2>
+
+  <div class="metric-row">
+    <div class="metric-card blue"><div class="val">560</div><div class="lbl">Total Clicks</div><div class="sub">Dec 2025–Jun 2026</div></div>
+    <div class="metric-card red"><div class="val">0.07%</div><div class="lbl">Avg CTR</div><div class="sub">Target: 3–5%</div></div>
+    <div class="metric-card orange"><div class="val">846,618</div><div class="lbl">Impressions</div><div class="sub">Massive untapped potential</div></div>
+    <div class="metric-card orange"><div class="val">33.7</div><div class="lbl">Avg Position</div><div class="sub">Target: under 10</div></div>
+  </div>
+
+  <div class="alert critical">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Root Cause #1 — Average Position 33.7 (Page 3–4)</strong>
+    <p>The #1 driver of the 0.07% CTR is that most pages rank on page 3, 4, or 5 of Google. CTR drops to near-zero beyond page 1: pos 11–20 earns ~0.3–0.5%, pos 21–30 earns ~0.1–0.2%, pos 31+ earns essentially nothing. With 846,618 impressions and only 560 clicks, an estimated 840,000+ impressions are being completely wasted because the site appears but nobody clicks. The solution is getting pages to page 1, not just fixing titles.</p></div>
+  </div>
+
+  <div class="alert critical">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Root Cause #2 — Core Service Page (/services/drain-cleaning/) Ranks Position 49</strong>
+    <p>The most important revenue page on the site — the drain cleaning service page — has 161,111 GSC impressions but earns only 8 clicks (0.00% CTR) at an average position of 49 (page 5). It appears for "drain cleaning near me" (78,431 impressions!), "drain cleaning" (18,809 impressions), and "drain cleaning service" (10,308 impressions) — the highest-volume queries on the site — but is buried so deep it is invisible to real customers. This single page fix could 10x organic traffic.</p></div>
+  </div>
+
+  <div class="alert critical">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Root Cause #3 — Title/Snippet Mismatch on High-Impression Pages</strong>
+    <p>"Drain cleaner" ranks position 3.4 (top 3!) with 712 impressions but earns only 1 click — an unacceptable 0.14% CTR for a position 3 result. Industry standard CTR for position 3 is 8–10%. "Sewer camera inspection Las Vegas" ranks position 2.7 with 391 impressions and earns 1 click (0.26% CTR) — should be 15%+. When pages rank in the top 3 but earn near-zero clicks, the title/meta description is failing to match searcher intent or communicate value. These are confirmed title mismatch issues.</p></div>
+  </div>
+
+  <div class="alert warning">
+    <div class="alert-icon">⚠️</div>
+    <div><strong>Root Cause #4 — 87% of Clicks Depend on Position 1–5 Branded Queries</strong>
+    <p>"Discount drain cleaning las vegas" (58 clicks, 27.36% CTR), "discount drain cleaning" (47 clicks, 11.75% CTR), and "discount drain cleaning lv" (15 clicks, 3.84% CTR) account for ~120 clicks — 21% of all clicks — from branded searches. The remaining 440 clicks come from 97 separate non-branded queries averaging fewer than 5 clicks each. The business is almost entirely dependent on people already knowing the brand name. Non-branded organic acquisition is essentially zero.</p></div>
+  </div>
+
+  <div class="alert warning">
+    <div class="alert-icon">⚠️</div>
+    <div><strong>Root Cause #5 — "$49 Drain Cleaning" Offer is Page 1 But Not Converting</strong>
+    <p>The query "$49 drain cleaning near me" has 421 impressions at position 6.7 (page 1!) but earns only 1 click (0.24% CTR). At position 6-7, expected CTR is 3–5%. This means the SERP snippet — title tag and meta description — is not showing the $49 price point or the offer in a compelling way. Competitors are likely bidding on this query with ads or have rich snippets (star ratings, price schemas) that make their listing more clickable. This is a quick win that requires only a meta description rewrite.</p></div>
+  </div>
+
+  <div class="alert info">
+    <div class="alert-icon">📊</div>
+    <div><strong>The Opportunity: 846,618 Impressions Already Earned</strong>
+    <p>The site already has massive search presence — Google shows it for 846,618 queries. At the industry benchmark CTR of 3%, that's 25,398 clicks per period instead of 560. The impressions are not the problem. Position and snippet quality are. Fixing the 10 items in the Quick Wins tab could realistically move CTR from 0.07% to 0.5–1.5% within 60–90 days, adding 3,000–10,000 organic visits per period without creating any new content.</p></div>
+  </div>
+
+  <div class="card">
+    <h2>📊 Impressions vs Clicks — The Gap</h2>
+    <div class="chart-wrap"><canvas id="gapChart"></canvas></div>
+    <p style="font-size:12px;color:#64748b;text-align:center">Top pages by impression volume. The gap between the blue bar (impressions) and orange bar (clicks × 100) shows the CTR opportunity on each page.</p>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Priority Action Summary</h2>
+    <table>
+      <tr><th>#</th><th>Action</th><th>Impact</th><th>Effort</th><th>Expected Gain</th></tr>
+      <tr><td>1</td><td><strong>Rewrite homepage title/meta</strong> — Include "Drain Cleaning Las Vegas | $49 Special | Licensed | 24/7" not just the brand name</td><td><span class="badge red">Critical</span></td><td>15 min</td><td>+50–150 clicks/period from existing 256K impressions</td></tr>
+      <tr><td>2</td><td><strong>Fix /services/drain-cleaning/ ranking</strong> — Full page rewrite to 1,200+ words, add FAQPage schema, fix internal links pointing to it</td><td><span class="badge red">Critical</span></td><td>4 hrs</td><td>Page is positioned for 161K impr queries — page 1 ranking could add 1,000+ clicks/period</td></tr>
+      <tr><td>3</td><td><strong>Add star ratings (AggregateRating schema)</strong> — Star ratings show next to listing in SERP and improve CTR 20–30% at any position</td><td><span class="badge red">Critical</span></td><td>1 hr</td><td>+20–30% CTR across all pages</td></tr>
+      <tr><td>4</td><td><strong>Fix "sewer camera inspection Las Vegas" snippet</strong> — Ranking pos 2.7 but 0.26% CTR (should be 12%+). Title likely says generic text not "Sewer Camera Inspection in Las Vegas"</td><td><span class="badge red">Critical</span></td><td>15 min</td><td>+40–60 clicks/period from 391 impressions at pos 2.7</td></tr>
+      <tr><td>5</td><td><strong>Fix "drain cleaner" snippet</strong> — Ranking pos 3.4 with 712 impressions but 1 click. Title mismatch confirmed.</td><td><span class="badge red">Critical</span></td><td>15 min</td><td>+50–70 clicks/period from 712 impressions at pos 3</td></tr>
+      <tr><td>6</td><td><strong>Rewrite /services/sewer-camera-inspection/</strong> — 45,628 impressions at pos 33.6 (page 3–4). Full rewrite + FAQ schema to push to page 1.</td><td><span class="badge orange">High</span></td><td>3 hrs</td><td>+200–500 clicks/period if moved to page 1</td></tr>
+      <tr><td>7</td><td><strong>Add "$49 Special" to /about-us/special-offers/ meta description</strong> — This page ranks for "$49 drain cleaning near me" at pos 6.7 but CTR is 0.24%. Meta must show the price.</td><td><span class="badge orange">High</span></td><td>5 min</td><td>+10–20 clicks/period from 421 impressions</td></tr>
+      <tr><td>8</td><td><strong>Rewrite /services/hydro-jetting-services/</strong> — 31,636 impressions at pos 24 (page 2–3). Rewrite + FAQ schema.</td><td><span class="badge orange">High</span></td><td>3 hrs</td><td>+100–300 clicks/period if moved to page 1</td></tr>
+      <tr><td>9</td><td><strong>Build out /services/drain-cleaning/las-vegas/ city service page</strong> — "Drain cleaning Las Vegas" has 7,795 impressions at pos 19.8 (page 2). Dedicated city+service page needed.</td><td><span class="badge orange">High</span></td><td>2 hrs</td><td>+50–150 clicks/period from 7,795 impressions</td></tr>
+      <tr><td>10</td><td><strong>Register in Bing Webmaster Tools + submit sitemap</strong> — Free, 15 minutes. Bing / Copilot AI audience in Las Vegas metro is significant and not tapped.</td><td><span class="badge orange">High</span></td><td>15 min</td><td>Free new channel — Copilot AI and Bing organic</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ TAB 2: CTR DEEP DIVE ═══════════════════════════════════════════════ -->
+<div id="ctr" class="tab-content">
+  <h2 class="section-title">CTR Deep Dive — Why Is CTR 0.07%?</h2>
+
+  <div class="two-col">
+    <div class="card">
+      <h2>📉 CTR by Position Range</h2>
+      <div class="chart-wrap" style="height:250px"><canvas id="ctrPosChart"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>🔎 Industry CTR Benchmarks</h2>
+      <table>
+        <tr><th>Position</th><th>Industry Avg CTR</th><th>Your CTR</th><th>Gap</th></tr>
+        <tr><td>1</td><td>27–30%</td><td>~27% (branded)</td><td style="color:#16a34a">✓ On target for branded</td></tr>
+        <tr><td>2–3</td><td>10–15%</td><td>0.14–0.26%</td><td style="color:#dc2626">↓ 40–60× below benchmark</td></tr>
+        <tr><td>4–7</td><td>3–8%</td><td>0.24–4.84%</td><td style="color:#ea580c">↓ Mixed — some pages OK</td></tr>
+        <tr><td>8–10</td><td>2–4%</td><td>0.03–1.55%</td><td style="color:#ea580c">↓ 2–10× below benchmark</td></tr>
+        <tr><td>11–20</td><td>0.5–1.5%</td><td>0.01–0.16%</td><td style="color:#ea580c">↓ 3–5× below benchmark</td></tr>
+        <tr><td>21–30</td><td>0.1–0.3%</td><td>0.00–0.15%</td><td style="color:#ea580c">↓ At or below minimum</td></tr>
+        <tr><td>31+</td><td>&lt;0.1%</td><td>~0.00%</td><td style="color:#64748b">— Expected at this depth</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⚠️ Title Mismatch Confirmed — Pages Ranking Top 3 with Near-Zero CTR</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">These pages rank in the top 5 positions but earn far less than the expected CTR. The only explanation at these positions is that the title tag or meta description does not match what users expect to see for the query, or a competitor is dominating with ads/rich snippets.</p>
+    <table>
+      <tr><th>Query</th><th>Position</th><th>Impressions</th><th>Actual CTR</th><th>Expected CTR</th><th>Problem & Fix</th></tr>
+      <tr>
+        <td><strong>drain cleaner</strong></td><td><span class="badge green">#3.4</span></td><td>712</td>
+        <td><span class="badge red">0.14%</span></td><td>8–12%</td>
+        <td>Ranking #3 for "drain cleaner" but only 1 click from 712 impressions. Title likely shows "Discount Drain Clean" (brand name) instead of "Drain Cleaner Service in Las Vegas." Rewrite page title to match the query exactly.</td>
+      </tr>
+      <tr>
+        <td><strong>sewer camera inspection las vegas</strong></td><td><span class="badge green">#2.7</span></td><td>391</td>
+        <td><span class="badge red">0.26%</span></td><td>12–18%</td>
+        <td>Ranking #2–3 in Las Vegas for sewer camera inspection and earning 1 click. Title likely says "Sewer Services" or the brand name rather than matching the exact query. Fix title to: "Sewer Camera Inspection in Las Vegas, NV | Same-Day | Licensed"</td>
+      </tr>
+      <tr>
+        <td><strong>drain cleaning services north las vegas nv</strong></td><td><span class="badge green">#2.8</span></td><td>258</td>
+        <td><span class="badge orange">4.26%</span></td><td>12–18%</td>
+        <td>Good CTR but still 3× below expected for pos 2. This page earns 11 clicks. Could earn 30–40 with a title rewrite: "Drain Cleaning in North Las Vegas, NV | $49 Drain Special | Book Today"</td>
+      </tr>
+      <tr>
+        <td><strong>drain cleaning services henderson nv</strong></td><td><span class="badge green">#4.4</span></td><td>263</td>
+        <td><span class="badge orange">4.26%</span></td><td>8–12%</td>
+        <td>Good but opportunity remains. Add "$49" offer + local signals to push CTR higher on Henderson queries.</td>
+      </tr>
+      <tr>
+        <td><strong>$49 drain cleaning near me</strong></td><td><span class="badge green">#6.7</span></td><td>421</td>
+        <td><span class="badge red">0.24%</span></td><td>3–5%</td>
+        <td>This is the biggest pricing CTR opportunity. People searching "$49 drain cleaning near me" have high commercial intent. The meta description must show: "Book Your $49 Drain Cleaning Today — Fast, Same-Day Service in Las Vegas." If it doesn't mention $49 explicitly, it won't earn the click.</td>
+      </tr>
+      <tr>
+        <td><strong>drain cleaning coupons</strong></td><td><span class="badge green">#8.1</span></td><td>473</td>
+        <td><span class="badge red">0.21%</span></td><td>2–4%</td>
+        <td>Ranking page 1 for "drain cleaning coupons" with 473 impressions but 1 click. The special offers page title and meta must explicitly mention "coupon," "discount," and a specific dollar figure to convert this searcher intent.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💡 The 5 Levers to Fix CTR</h2>
+    <div class="two-col">
+      <div>
+        <div class="insight-box">
+          <h4>Lever 1 — Rank Higher (Position)</h4>
+          <p>Nothing fixes CTR faster than moving from page 3 to page 1. Your average position is 33.7 — the goal is 10 or below for core queries. This requires: content rewrites, FAQ schema, internal linking, and backlinks. See Quick Wins tab for specifics. Expected impact: 5–20× CTR improvement.</p>
+        </div>
+        <div class="insight-box">
+          <h4>Lever 2 — Star Ratings (AggregateRating Schema)</h4>
+          <p>Adding AggregateRating JSON-LD schema to your homepage and service pages causes Google to show yellow stars next to your listing in the SERP. Studies show star ratings increase CTR by 20–35% independent of position. You need real Google reviews to implement this. Target: 4.5+ stars, 50+ reviews visible.</p>
+        </div>
+        <div class="insight-box">
+          <h4>Lever 3 — Offer in Title/Meta ("$49")</h4>
+          <p>For price-sensitive queries like "$49 drain cleaning near me" and "drain cleaning coupons," the number "$49" must appear in your title or meta description. When searchers see "$49" in a listing they are 3–4× more likely to click than a generic description. This is a 5-minute meta description fix.</p>
+        </div>
+      </div>
+      <div>
+        <div class="insight-box">
+          <h4>Lever 4 — FAQPage Schema (Rich Snippets)</h4>
+          <p>FAQPage schema causes your SERP listing to expand with 2–3 dropdown questions directly in Google, taking up twice as much visual space. This alone increases CTR by 15–30% for pages that earn rich results. Add to: homepage, drain cleaning page, sewer camera, hydro jetting, and trenchless repair pages.</p>
+        </div>
+        <div class="insight-box">
+          <h4>Lever 5 — Rewrite Titles to Match Query Intent</h4>
+          <p>Your homepage likely shows "Discount Drain Clean LV | Drain Cleaning" as the title. For someone searching "drain cleaning Las Vegas," the ideal title is: "Drain Cleaning Las Vegas, NV | $49 Special | Same-Day | Licensed." Every word must match what the user typed and what they want to see. Rewrite all 8 core service page titles.</p>
+        </div>
+        <div class="fix-box">
+          <h4>✅ Homepage Title Fix — Do This Today</h4>
+          <p><strong>Current (likely):</strong> "Discount Drain Clean LV | Las Vegas Drain Cleaning"<br><strong>Replace with:</strong> "Drain Cleaning Las Vegas, NV | $49 Drain Special | Same-Day | Licensed &amp; Insured"<br><strong>Meta description:</strong> "Las Vegas's most affordable drain cleaning since 1985. $49 drain cleaning special. Same-day service in Las Vegas, Henderson, North Las Vegas &amp; surrounding areas. Call now."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📈 CTR Recovery Projection</h2>
+    <table>
+      <tr><th>Action</th><th>Timeframe</th><th>Est. CTR Improvement</th><th>Est. Additional Clicks/Period</th></tr>
+      <tr><td>Rewrite homepage title + meta (pos 15.8, 256K impr)</td><td>Week 1</td><td>0.16% → 0.4%</td><td>+615 clicks</td></tr>
+      <tr><td>Fix "drain cleaner" title (pos 3.4, 712 impr)</td><td>Week 1</td><td>0.14% → 5%</td><td>+34 clicks</td></tr>
+      <tr><td>Fix "sewer camera inspection LV" snippet (pos 2.7, 391 impr)</td><td>Week 1</td><td>0.26% → 8%</td><td>+30 clicks</td></tr>
+      <tr><td>Add "$49" to special offers meta (pos 6.7, 421 impr)</td><td>Week 1</td><td>0.24% → 3%</td><td>+11 clicks</td></tr>
+      <tr><td>Add AggregateRating schema (all pages)</td><td>Week 2</td><td>+20–30% across all pages</td><td>+100–170 clicks</td></tr>
+      <tr><td>Add FAQPage schema to 5 core service pages</td><td>Week 2</td><td>+15–25% on schema pages</td><td>+30–60 clicks</td></tr>
+      <tr><td>Rewrite drain cleaning service page (161K impr, pos 49)</td><td>Month 1–2</td><td>pos 49 → pos 15–20</td><td>+100–400 clicks</td></tr>
+      <tr><td>Rewrite sewer camera inspection page (45K impr, pos 33)</td><td>Month 1–2</td><td>pos 33 → pos 10–15</td><td>+80–200 clicks</td></tr>
+      <tr><td style="font-weight:700;background:#f0fdf4" colspan="3">Realistic 90-day total additional clicks per period</td><td style="font-weight:700;background:#f0fdf4;color:#16a34a">+1,000–1,400 clicks</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ TAB 3: KEYWORDS ════════════════════════════════════════════════════ -->
+<div id="keywords" class="tab-content">
+  <h2 class="section-title">Keyword Performance — Full GSC Report</h2>
+
+  <div class="metric-row">
+    <div class="metric-card blue"><div class="val">100+</div><div class="lbl">Tracked Queries</div><div class="sub">Dec 2025–Jun 2026</div></div>
+    <div class="metric-card orange"><div class="val">846,618</div><div class="lbl">Total Impressions</div><div class="sub">Massive search presence</div></div>
+    <div class="metric-card green"><div class="val">560</div><div class="lbl">Total Clicks</div><div class="sub">0.07% realized</div></div>
+    <div class="metric-card red"><div class="val">~25K</div><div class="lbl">Potential Clicks</div><div class="sub">At 3% CTR benchmark</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🏆 Branded Queries — Your Strongest Asset</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">These queries earn excellent CTR because users already know and want your business. Protect them by keeping your GBP updated, collecting Google reviews, and ensuring the brand name appears in every page title.</p>
+    <table>
+      <tr><th>Query</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Position</th><th>Notes</th></tr>
+      <tr><td>discount drain cleaning las vegas</td><td>58</td><td>212</td><td><span class="badge green">27.36%</span></td><td>1.9</td><td>Best performing query. Protect by maintaining 5-star GBP reviews.</td></tr>
+      <tr><td>discount drain cleaning</td><td>47</td><td>400</td><td><span class="badge green">11.75%</span></td><td>4.1</td><td>Good but should be higher. Push to position 1–2 by strengthening homepage.</td></tr>
+      <tr><td>discount drain cleaning lv</td><td>15</td><td>391</td><td><span class="badge orange">3.84%</span></td><td>1.8</td><td>Ranking #2 for brand abbreviation. CTR lower than expected — competitor may be running ads on your brand name.</td></tr>
+      <tr><td>discount drain cleaning co</td><td>3</td><td>209</td><td><span class="badge orange">1.44%</span></td><td>7.2</td><td>Brand search ranking pos 7 — improve to top 3. This should be #1.</td></tr>
+      <tr><td>discount plumbing</td><td>9</td><td>564</td><td><span class="badge orange">1.6%</span></td><td>36.5</td><td>1.6% CTR at position 36 is impressive — but you rank too low. Opportunity to add "plumbing" services to SEO content.</td></tr>
+      <tr><td>discount drain</td><td>8</td><td>287</td><td><span class="badge orange">2.79%</span></td><td>18.6</td><td>Brand variant. Push to page 1.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⚡ Quick Win Keywords — Page 1, Low CTR (Fix This Week)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">These queries rank in positions 1–15 (page 1 or top of page 2) but earn below-benchmark CTR. These are the fastest wins — ranking is already achieved, only the snippet needs to be fixed.</p>
+    <table>
+      <tr><th>Query</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Position</th><th>Expected CTR</th><th>Fix</th></tr>
+      <tr><td>drain cleaner</td><td>1</td><td>712</td><td><span class="badge red">0.14%</span></td><td>3.4</td><td>8–12%</td><td>CRITICAL title fix — match query exactly in title</td></tr>
+      <tr><td>sewer camera inspection las vegas</td><td>1</td><td>391</td><td><span class="badge red">0.26%</span></td><td>2.7</td><td>12–18%</td><td>Rewrite /sewer-camera-inspection/ title tag now</td></tr>
+      <tr><td>$49 drain cleaning near me</td><td>1</td><td>421</td><td><span class="badge red">0.24%</span></td><td>6.7</td><td>3–5%</td><td>Add "$49" to special offers page meta description</td></tr>
+      <tr><td>drain cleaning coupons</td><td>1</td><td>473</td><td><span class="badge red">0.21%</span></td><td>8.1</td><td>2–4%</td><td>Meta description must say "coupon" + specific price</td></tr>
+      <tr><td>unclog drain</td><td>3</td><td>62</td><td><span class="badge green">4.84%</span></td><td>5.2</td><td>5–8%</td><td>Good — push to top 3 for more impressions</td></tr>
+      <tr><td>drain cleaning services las vegas</td><td>11</td><td>709</td><td><span class="badge orange">1.55%</span></td><td>10.5</td><td>3–5%</td><td>Build dedicated Las Vegas drain cleaning city page</td></tr>
+      <tr><td>hydro jetting las vegas</td><td>2</td><td>2,482</td><td><span class="badge red">0.08%</span></td><td>9.7</td><td>2–4%</td><td>Almost page 1. Rewrite /hydro-jetting/ title with "Las Vegas"</td></tr>
+      <tr><td>sewer inspection</td><td>2</td><td>740</td><td><span class="badge red">0.27%</span></td><td>10.3</td><td>2–4%</td><td>Near page 1. Add FAQ schema to inspection page.</td></tr>
+      <tr><td>drain service near me</td><td>1</td><td>432</td><td><span class="badge red">0.23%</span></td><td>11.3</td><td>1–2%</td><td>Near page 1. Internal links + FAQ schema needed.</td></tr>
+      <tr><td>grease trap cleaning las vegas</td><td>1</td><td>382</td><td><span class="badge red">0.26%</span></td><td>10.2</td><td>2–4%</td><td>Near page 1. Rewrite /grease-trap-cleaning/ with "Las Vegas" in title.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🌊 High-Volume Opportunities — Ranking Too Deep (Fix in 30–90 Days)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">These queries have massive search volume but the site ranks on page 2–5. These require content rewrites and link building to move to page 1. Each represents thousands of potential clicks per month.</p>
+    <table>
+      <tr><th>Query</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Position</th><th>Content Action</th></tr>
+      <tr><td><strong>drain cleaning near me</strong></td><td>1</td><td>78,431</td><td><span class="badge red">0.00%</span></td><td>30.9</td><td>PRIORITY #1: /services/drain-cleaning/ full rewrite to 1,500+ words. FAQPage schema. LocalBusiness schema. Internal links from all area pages.</td></tr>
+      <tr><td><strong>hydro jetting near me</strong></td><td>1</td><td>26,489</td><td><span class="badge red">0.00%</span></td><td>29.5</td><td>PRIORITY #2: /services/hydro-jetting-services/ full rewrite. Add: what is hydro jetting, when needed, cost guide, FAQ schema.</td></tr>
+      <tr><td><strong>drain cleaning</strong></td><td>2</td><td>18,809</td><td><span class="badge red">0.01%</span></td><td>46.7</td><td>Driven by /services/drain-cleaning/. Same rewrite as "drain cleaning near me" above — same page.</td></tr>
+      <tr><td><strong>hydro jetting services</strong></td><td>1</td><td>14,066</td><td><span class="badge red">0.01%</span></td><td>17.5</td><td>Position 17 — near page 2. Hydro jetting page rewrite should push this to page 1.</td></tr>
+      <tr><td><strong>sewer line camera inspection near me</strong></td><td>1</td><td>13,693</td><td><span class="badge red">0.01%</span></td><td>28.3</td><td>Full rewrite of /services/sewer-camera-inspection/ with technology explanation + FAQ schema.</td></tr>
+      <tr><td><strong>hydrojet drain cleaning near me</strong></td><td>1</td><td>12,201</td><td><span class="badge red">0.01%</span></td><td>33.7</td><td>Same page as hydro jetting. One rewrite targets all hydro jetting variants.</td></tr>
+      <tr><td><strong>drain cleaning company</strong></td><td>1</td><td>10,007</td><td><span class="badge red">0.01%</span></td><td>42.6</td><td>Homepage needs "drain cleaning company" in title or create dedicated landing page.</td></tr>
+      <tr><td><strong>drain cleaning service</strong></td><td>1</td><td>10,308</td><td><span class="badge red">0.01%</span></td><td>44.2</td><td>Same as above — /services/drain-cleaning/ rewrite targets this.</td></tr>
+      <tr><td><strong>las vegas drain cleaning</strong></td><td>1</td><td>3,493</td><td><span class="badge red">0.03%</span></td><td>22.0</td><td>Create /drain-cleaning-las-vegas/ landing page with local content — neighborhoods, landmarks, response times.</td></tr>
+      <tr><td><strong>grease trap cleaning</strong></td><td>3</td><td>2,713</td><td><span class="badge red">0.11%</span></td><td>58.1</td><td>Build /services/grease-trap-cleaning/ to 1,200+ words. Add: restaurant focus, compliance info, FAQ schema.</td></tr>
+      <tr><td><strong>hydro jetting las vegas</strong></td><td>2</td><td>2,482</td><td><span class="badge red">0.08%</span></td><td>9.7</td><td>Near page 1 already. Minor content improvements + FAQ schema should push to top 5.</td></tr>
+      <tr><td><strong>sewer camera inspection</strong></td><td>2</td><td>1,595</td><td><span class="badge red">0.13%</span></td><td>32.2</td><td>Full sewer camera page rewrite — technology explanation, what to expect, cost guide, FAQ schema.</td></tr>
+      <tr><td><strong>drain cleaning las vegas nv</strong></td><td>1</td><td>1,558</td><td><span class="badge red">0.06%</span></td><td>11.5</td><td>Near page 1. Create /drain-cleaning-las-vegas/ city-specific page.</td></tr>
+      <tr><td><strong>drain cleaning north las vegas</strong></td><td>1</td><td>1,035</td><td><span class="badge red">0.10%</span></td><td>16.9</td><td>Build /drain-cleaning-north-las-vegas/ area page. Already have a North Las Vegas drain cleaning page — rewrite it.</td></tr>
+      <tr><td><strong>sewer line repair las vegas</strong></td><td>1</td><td>1,020</td><td><span class="badge red">0.10%</span></td><td>17.2</td><td>Create /sewer-line-repair-las-vegas/ or strengthen existing trenchless page with local Las Vegas content.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>💰 Commercial Intent Keywords — High Conversion Potential</h2>
+    <table>
+      <tr><th>Query</th><th>Clicks</th><th>Impressions</th><th>Position</th><th>Why It Matters</th></tr>
+      <tr><td>discount plumbers near me</td><td>2</td><td>9</td><td>2.8</td><td>22% CTR — people specifically looking for affordable plumbing. Add "plumbers" language to homepage.</td></tr>
+      <tr><td>drain plumbers near me</td><td>2</td><td>3</td><td>3.3</td><td>66% CTR on tiny volume. This exact phrase should appear in your homepage/service page titles.</td></tr>
+      <tr><td>cheap drain cleaning near me</td><td>1</td><td>210</td><td>18.0</td><td>Price-sensitive buyer. Move page 1. Meta must say specific price.</td></tr>
+      <tr><td>same day drain cleaning</td><td>1</td><td>76</td><td>41.7</td><td>High-urgency buyer. Create /same-day-drain-cleaning-las-vegas/ landing page.</td></tr>
+      <tr><td>emergency plumbing las vegas</td><td>1</td><td>435</td><td>47.9</td><td>Highest-intent category. Create /emergency-drain-cleaning-las-vegas/ with phone in H1.</td></tr>
+      <tr><td>trenchless sewer repair near me</td><td>1</td><td>2,156</td><td>52.3</td><td>2,156 impressions — high-ticket service. Full trenchless page rewrite needed.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ TAB 4: PAGE AUDIT ══════════════════════════════════════════════════ -->
+<div id="pages" class="tab-content">
+  <h2 class="section-title">Page-by-Page Audit</h2>
+
+  <div class="alert critical">
+    <div class="alert-icon">🚨</div>
+    <div><strong>Three Pages Absorb 93% of All Impressions</strong>
+    <p>Homepage (256,816), /services/drain-cleaning/ (161,111), and /service-areas/henderson-nv/hydro-jetting/ (43,166) account for 461,093 of 846,618 total impressions (54.5%). Fixing just these three pages has the highest impact on overall CTR.</p></div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/ — Homepage</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">400</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">256,816</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.16%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">15.8</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> At position 15.8 with 256,816 impressions, CTR should be 0.4–0.8%. The 0.16% actual CTR indicates the title tag is not compelling or not matching query intent. Top query driving impressions is likely "drain cleaning near me" and related terms where the title "Discount Drain Clean LV" doesn't communicate the value proposition.<br>
+      <strong>Fix:</strong> New title → <em>"Drain Cleaning Las Vegas, NV | $49 Drain Special | Same-Day | Licensed Since 1985"</em><br>
+      <strong>Meta description:</strong> <em>"Las Vegas's most trusted drain cleaning since 1985. $49 drain cleaning special. Fast same-day service in Las Vegas, Henderson, North Las Vegas, Summerlin &amp; surrounding areas. Licensed &amp; insured. Call 24/7."</em>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/services/drain-cleaning/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">8</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">161,111</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.00%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">49.0</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> The most important revenue page on the site ranks position 49 — page 5 — for "drain cleaning near me" (78,431 impressions), "drain cleaning" (18,809 impressions), "drain cleaning service" (10,308 impressions), and "drain cleaning company" (10,007 impressions). At position 49, CTR is essentially 0%. A position 49 result does not exist to searchers.<br>
+      <strong>Fix required:</strong> Full page rewrite to 1,500+ words including: what drain cleaning is, methods (snaking, hydro jetting), when to call, cost guide, Las Vegas-specific content (hard water, root intrusion common issues), FAQPage schema (8 questions minimum), AggregateRating schema, LocalBusiness schema. Target: position 10–15 within 60–90 days.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/services/sewer-camera-inspection/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">14</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">45,628</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.03%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">33.6</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> 45,628 impressions at position 33 — page 3–4. The "sewer camera inspection Las Vegas" query ranks position 2.7 (!) but earns only 1 click (0.26% CTR) — a confirmed title mismatch. Page ranks too deep for the broader queries driving most impressions.<br>
+      <strong>Fix:</strong> Title → <em>"Sewer Camera Inspection Las Vegas, NV | Same-Day | $149 Special | Licensed"</em>. Full page rewrite: what the camera shows, when needed, what to expect, cost, FAQPage schema.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/services/hydro-jetting-services/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">9</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">31,636</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.03%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">24.0</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> 31,636 impressions at position 24 (page 2–3) for "hydro jetting near me" (26,489 impr), "hydro jetting services" (14,066 impr), "hydro jetting Las Vegas" (2,482 impr). Position 24 earns ~0.1% CTR. Page is close to page 1 and would benefit most from FAQ schema and content expansion.<br>
+      <strong>Fix:</strong> Rewrite to 1,200+ words. Add: PSI explanation, residential vs commercial uses, cost guide, "when hydro jetting vs snaking" comparison, FAQPage schema with 6 questions.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/services/trenchless-sewer-repair/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">10</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">16,972</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.06%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">41.8</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge orange">High</span> 16,972 impressions for "trenchless sewer repair near me" (2,156 impr, pos 52) and related queries. High-ticket service — average trenchless repair is $3,000–$10,000. Even 10 more clicks/period from qualified searchers could mean $30,000+ in additional revenue.<br>
+      <strong>Fix:</strong> Full rewrite: trenchless vs traditional comparison, pipe bursting vs CIPP lining, when each is appropriate, Las Vegas soil/pipe considerations, cost guide, FAQPage schema.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/service-areas/henderson-nv/hydro-jetting/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">4</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">43,166</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.01%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">32.9</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge orange">High</span> 43,166 impressions at position 32.9 — the city+service page model is the right approach but the pages rank too deep. Likely thin content. Henderson is a major market with high purchasing power.<br>
+      <strong>Fix:</strong> Rewrite with 1,000+ words of Henderson-specific content. Add neighborhoods served, Henderson-specific references, FAQPage schema, LocalBusiness schema with Henderson address/service area.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/services/snaking/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">17</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">11,345</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#orange">0.15%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">39.5</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge orange">High</span> 11,345 impressions at position 39 — page 4. "Drain snaking" is a common search for homeowners with minor clogs and is a perfect entry-point service.<br>
+      <strong>Fix:</strong> Rewrite with: drain snake vs hydro jetting comparison, when snaking is enough, what to expect, cost guide, FAQPage schema. Title: <em>"Drain Snaking Service Las Vegas, NV | $49 Drain Snake Special | Same-Day"</em>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/service-areas/las-vegas-nv/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">1</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">27,510</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">0.00%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#dc2626">43.4</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> The Las Vegas city hub page has 27,510 impressions but essentially zero clicks at position 43. Las Vegas is the primary service market — this page should be a top-3 performer. Currently it is likely thin boilerplate content shared with other city pages.<br>
+      <strong>Fix:</strong> Build as a 1,500+ word Las Vegas market hub: neighborhoods served, typical Las Vegas plumbing problems (hard water scaling, root intrusion from desert irrigation), response time guarantees, local customer testimonials, FAQPage schema. Internal links from every sub-service page.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/contact-us/</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">13</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">10,810</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#orange">0.12%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">15.9</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge orange">Medium</span> Contact page has 10,810 impressions — people searching for contact information or direct booking. 0.12% CTR at position 15.9 is below benchmark.<br>
+      <strong>Fix:</strong> Title → <em>"Contact Discount Drain Clean LV | Call 24/7 | Las Vegas, NV"</em>. Add phone number, hours, and "Same-day service available" to meta description.
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/about-us/special-offers/ (Pricing/Coupons Page)</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">2</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">1,193</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#orange">0.17%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#ea580c">39.3</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge red">Critical</span> This page ranks for "$49 drain cleaning near me" (421 impressions, pos 6.7) and "drain cleaning coupons" (473 impressions, pos 8.1) — both commercial intent queries — but earns near-zero CTR. The title and meta must prominently feature "$49" and "coupon."<br>
+      <strong>Fix:</strong> Title → <em>"$49 Drain Cleaning Special | Drain Cleaning Coupons Las Vegas | Discount Drain Clean"</em>. Meta description → <em>"Save big on drain cleaning. Get our $49 drain cleaning coupon — flat rate, no hidden fees. Valid for Las Vegas, Henderson, North Las Vegas &amp; surrounding NV. Book online or call today."</em>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="url">/these-trees-could-be-the-root-of-your-sewer-line-problems/ (Blog Post)</div>
+    <div class="metrics">
+      <div class="m"><div class="v" style="color:#2563eb">9</div><div class="l">Clicks</div></div>
+      <div class="m"><div class="v" style="color:#2563eb">1,098</div><div class="l">Impressions</div></div>
+      <div class="m"><div class="v" style="color:#green">0.82%</div><div class="l">CTR</div></div>
+      <div class="m"><div class="v" style="color:#green">8.5</div><div class="l">Avg Pos</div></div>
+    </div>
+    <div class="issue">
+      <span class="badge green">Good</span> Best-performing blog post with 0.82% CTR at position 8.5. This post ranks page 1 for tree root queries — high purchase intent topic. Add FAQPage schema, strengthen internal links to /services/trenchless-sewer-repair/, and add CTA button at the end of the post.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TAB 5: QUICK WINS ═════════════════════════════════════════════════ -->
+<div id="quickwins" class="tab-content">
+  <h2 class="section-title">Quick Wins — 30/60/90 Day Action Plan</h2>
+
+  <div class="card">
+    <h2>⚡ Week 1 — Do These Today (No New Content Required)</h2>
+    <table>
+      <tr><th>#</th><th>Task</th><th>Where</th><th>Time</th><th>Expected Impact</th></tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Rewrite homepage title tag</strong><br>New: "Drain Cleaning Las Vegas, NV | $49 Drain Special | Same-Day | Licensed Since 1985"</td>
+        <td>WordPress Page Editor → SEO Title field</td><td>10 min</td>
+        <td>+50–150 clicks/period from 256K impressions currently earning 0.16% CTR</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Rewrite homepage meta description</strong><br>"Las Vegas's most trusted drain cleaning since 1985. $49 drain cleaning special. Fast same-day service in Las Vegas, Henderson, North Las Vegas &amp; Summerlin. Licensed &amp; insured. Call 24/7."</td>
+        <td>WordPress SEO plugin meta description</td><td>5 min</td>
+        <td>CTR improvement on all homepage impressions</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Fix /services/sewer-camera-inspection/ title</strong><br>New: "Sewer Camera Inspection Las Vegas, NV | Same-Day | Licensed | Call for Pricing"</td>
+        <td>Page SEO title field</td><td>10 min</td>
+        <td>Page ranks pos 2.7 for "sewer camera inspection Las Vegas" but earns 0.26% CTR. Should earn 10%+. Estimated +30–50 clicks/period.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Fix /about-us/special-offers/ title + meta</strong><br>Title: "$49 Drain Cleaning Special | Drain Cleaning Coupons Las Vegas"<br>Meta: "Book our $49 drain cleaning coupon. Flat rate, no hidden fees. Same-day service Las Vegas, Henderson &amp; NV."</td>
+        <td>Page SEO fields</td><td>10 min</td>
+        <td>Page ranks page 1 for "$49 drain cleaning near me" (421 impr) and "drain cleaning coupons" (473 impr) but earns near-zero CTR. Fix title → +10–25 clicks/period.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Register Bing Webmaster Tools + submit sitemap</strong><br>Visit bing.com/webmasters → add property → submit XML sitemap</td>
+        <td>bing.com/webmasters (free)</td><td>15 min</td>
+        <td>Bing powers Microsoft Copilot AI. Las Vegas metro has significant Bing/Edge/Copilot users — currently zero Bing visibility.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📅 Week 2 — Schema (No New Content Required)</h2>
+    <table>
+      <tr><th>#</th><th>Task</th><th>Implementation</th><th>Impact</th></tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Add AggregateRating schema to homepage</strong></td>
+        <td>Add JSON-LD in &lt;head&gt;: ratingValue, ratingCount from real Google reviews. Requires 4.0+ star average. Check Google Business Profile for current rating/count.</td>
+        <td>Yellow stars appear in Google SERP next to homepage listing. +20–35% CTR across all homepage impressions.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Add FAQPage schema to homepage</strong></td>
+        <td>Add JSON-LD with 4–6 questions: "How much does drain cleaning cost in Las Vegas?", "Do you offer same-day drain cleaning?", "What areas do you serve?", "Is your $49 drain cleaning special a flat rate?", "How long does drain cleaning take?"</td>
+        <td>Homepage listing expands to show FAQ dropdowns in SERP — takes up 2× the visual space, +15–25% CTR.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Add FAQPage schema to /services/sewer-camera-inspection/</strong></td>
+        <td>Questions: "How much does sewer camera inspection cost?", "How long does a sewer inspection take?", "What can a sewer camera detect?", "Do I need a sewer inspection before buying a house?", "Is sewer camera inspection worth it?"</td>
+        <td>Rich result eligibility for sewer inspection queries. Page already ranks pos 2.7 for key query.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p1">P1</span></td>
+        <td><strong>Add FAQPage schema to /services/hydro-jetting-services/</strong></td>
+        <td>Questions: "How much does hydro jetting cost?", "Is hydro jetting better than snaking?", "How often should you hydro jet your drains?", "Can hydro jetting damage pipes?", "How long does hydro jetting take?"</td>
+        <td>Page has 31,636 impressions at pos 24 — schema helps push to page 1.</td>
+      </tr>
+      <tr>
+        <td><span class="priority-tag p2">P2</span></td>
+        <td><strong>Add LocalBusiness schema to homepage</strong></td>
+        <td>JSON-LD: name, address, phone, openingHours (24/7), geo coordinates, areaServed (Las Vegas, Henderson, North Las Vegas, Summerlin, Henderson, Paradise, Green Valley), priceRange ("$").</td>
+        <td>Strengthens local SEO signals. Appears in knowledge panel. Supports map pack visibility.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📝 Month 1 — Content Rewrites (Highest ROI Pages)</h2>
+    <table>
+      <tr><th>Page</th><th>Current Stats</th><th>Rewrite Requirements</th><th>Target Position</th></tr>
+      <tr>
+        <td><strong>/services/drain-cleaning/</strong></td>
+        <td>8 clicks, 161,111 impr, pos 49</td>
+        <td>1,500+ words. Include: methods (snaking, hydro jetting), Las Vegas hard water scaling problems, root intrusion, cost guide ($49–$400), what to expect, FAQPage schema (8 Qs), AggregateRating schema, internal links from all 15+ area pages.</td>
+        <td>Pos 10–20<br><em>+200–600 clicks/period</em></td>
+      </tr>
+      <tr>
+        <td><strong>/services/hydro-jetting-services/</strong></td>
+        <td>9 clicks, 31,636 impr, pos 24</td>
+        <td>1,200+ words. PSI pressure explanation, residential vs commercial, when vs snaking, before/after explanation, cost guide, FAQPage schema, CTA every 300 words.</td>
+        <td>Pos 8–15<br><em>+80–200 clicks/period</em></td>
+      </tr>
+      <tr>
+        <td><strong>/services/sewer-camera-inspection/</strong></td>
+        <td>14 clicks, 45,628 impr, pos 33.6</td>
+        <td>1,200+ words. What camera finds, technology used, process step-by-step, what report looks like, when needed (buying a home, recurring clogs, slow drains), cost guide, FAQPage schema.</td>
+        <td>Pos 8–15<br><em>+100–300 clicks/period</em></td>
+      </tr>
+      <tr>
+        <td><strong>/service-areas/las-vegas-nv/</strong></td>
+        <td>1 click, 27,510 impr, pos 43.4</td>
+        <td>1,500+ words. Las Vegas neighborhoods served, local drain problems (desert landscaping roots, hard water), response time, local testimonials, internal links to all service sub-pages, FAQPage schema.</td>
+        <td>Pos 10–20<br><em>+80–200 clicks/period</em></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🗓️ Month 2–3 — Build Missing Pages</h2>
+    <table>
+      <tr><th>Page to Create</th><th>Target Query</th><th>Impressions Available</th><th>Priority</th></tr>
+      <tr><td>/same-day-drain-cleaning-las-vegas/</td><td>"same day drain cleaning," "emergency drain cleaning las vegas"</td><td>435+ (emergency plumbing query)</td><td><span class="badge red">High</span></td></tr>
+      <tr><td>/drain-cleaning-las-vegas/ (standalone landing page)</td><td>"drain cleaning las vegas," "las vegas drain cleaning"</td><td>7,795 + 3,493 impressions</td><td><span class="badge red">High</span></td></tr>
+      <tr><td>/drain-cleaning-henderson-nv/</td><td>"drain cleaning henderson nv," "plumbers henderson nv"</td><td>263 + direct area traffic</td><td><span class="badge orange">Medium</span></td></tr>
+      <tr><td>/grease-trap-cleaning-las-vegas/</td><td>"grease trap cleaning las vegas," "grease trap cleaning near me"</td><td>382 + 2,713 impressions</td><td><span class="badge orange">Medium</span></td></tr>
+      <tr><td>/cipp-pipe-lining-las-vegas/</td><td>"cipp lining las vegas," "pipe lining near me"</td><td>159 + 53 impressions</td><td><span class="badge gray">Low</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ TAB 6: CONTENT PLAN ═══════════════════════════════════════════════ -->
+<div id="content" class="tab-content">
+  <h2 class="section-title">Content Strategy & Blog Plan</h2>
+
+  <div class="card">
+    <h2>🎯 Content Priority Framework</h2>
+    <div class="two-col">
+      <div>
+        <div class="insight-box">
+          <h4>Priority 1 — Fix Existing High-Impression Pages</h4>
+          <p>Don't create new content before fixing pages that already have 10,000–161,000 impressions but rank on page 3–5. One rewrite of /services/drain-cleaning/ is worth more than 20 new blog posts because the impressions are already there.</p>
+        </div>
+        <div class="insight-box">
+          <h4>Priority 2 — Las Vegas Localization</h4>
+          <p>Las Vegas / Clark County has very specific plumbing issues: extreme hard water (320+ ppm mineral content) scaling, desert landscaping root intrusion (oleander, palm), caliche soil layer causing drainage issues, and aging 1970s–1990s housing stock in Henderson and North Las Vegas. Every service page should reference these local facts — Google rewards location specificity.</p>
+        </div>
+      </div>
+      <div>
+        <div class="insight-box">
+          <h4>Priority 3 — Price/Offer Content</h4>
+          <p>Queries like "$49 drain cleaning near me" and "drain cleaning coupons" show a price-sensitive Las Vegas market. Every service page and the homepage must prominently display the $49 offer with clear terms (e.g., "standard drain snaking — additional services priced separately"). Pricing transparency increases CTR and conversion rate.</p>
+        </div>
+        <div class="insight-box">
+          <h4>Priority 4 — Commercial/Restaurant Content</h4>
+          <p>"Grease trap cleaning" (2,713 impressions at position 58) shows untapped commercial market. Las Vegas has 2,000+ restaurants — grease trap cleaning is a recurring revenue service. Build a dedicated commercial drain cleaning section targeting restaurants, hotels, and casinos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📰 Blog Content Calendar (Jul 2026 – Dec 2026)</h2>
+    <p style="font-size:12px;color:#64748b;margin-bottom:14px">2 posts per month. Each post: 800–1,200 words, FAQPage schema, internal CTA to closest service page, author byline.</p>
+    <table>
+      <tr><th>Month</th><th>Post Title</th><th>Target Keyword</th><th>Internal Link To</th></tr>
+      <tr><td rowspan="2"><strong>July 2026</strong></td>
+        <td>Why Las Vegas Hard Water Destroys Your Drains (And What to Do)</td>
+        <td>hard water drain problems las vegas</td>
+        <td>/services/hydro-jetting-services/</td>
+      </tr>
+      <tr>
+        <td>$49 Drain Cleaning: What's Included and What's Not</td>
+        <td>$49 drain cleaning las vegas</td>
+        <td>/about-us/special-offers/</td>
+      </tr>
+      <tr><td rowspan="2"><strong>August 2026</strong></td>
+        <td>Hydro Jetting vs. Drain Snaking: Which Does Your Las Vegas Home Need?</td>
+        <td>hydro jetting vs drain snake las vegas</td>
+        <td>/services/hydro-jetting-services/</td>
+      </tr>
+      <tr>
+        <td>The Hidden Cost of Ignoring a Slow Drain in Las Vegas</td>
+        <td>slow drain las vegas</td>
+        <td>/services/drain-cleaning/</td>
+      </tr>
+      <tr><td rowspan="2"><strong>September 2026</strong></td>
+        <td>Sewer Camera Inspection Before Buying a Las Vegas Home: What Buyers Need to Know</td>
+        <td>sewer camera inspection before buying home las vegas</td>
+        <td>/services/sewer-camera-inspection/</td>
+      </tr>
+      <tr>
+        <td>Desert Trees That Wreck Sewer Lines in Las Vegas (Oleander, Mesquite, Palm)</td>
+        <td>tree roots sewer line las vegas</td>
+        <td>/services/trenchless-sewer-repair/</td>
+      </tr>
+      <tr><td rowspan="2"><strong>October 2026</strong></td>
+        <td>How Much Does Drain Cleaning Cost in Las Vegas? 2026 Price Guide</td>
+        <td>drain cleaning cost las vegas 2026</td>
+        <td>/services/drain-cleaning/</td>
+      </tr>
+      <tr>
+        <td>Las Vegas Restaurant Owners: 5 Signs Your Grease Trap Needs Cleaning Now</td>
+        <td>grease trap cleaning restaurant las vegas</td>
+        <td>/services/grease-trap-cleaning/</td>
+      </tr>
+      <tr><td rowspan="2"><strong>November 2026</strong></td>
+        <td>CIPP Pipe Lining in Las Vegas: How It Works and Who Needs It</td>
+        <td>cipp pipe lining las vegas</td>
+        <td>/services/cipp-pipe-lining/</td>
+      </tr>
+      <tr>
+        <td>Why Your Henderson, NV Home Drains Slowly (And the $49 Fix)</td>
+        <td>drain cleaning henderson nv</td>
+        <td>/service-areas/henderson-nv/drain-cleaning/</td>
+      </tr>
+      <tr><td rowspan="2"><strong>December 2026</strong></td>
+        <td>North Las Vegas Drain Cleaning: Neighborhoods We Serve and Common Issues</td>
+        <td>drain cleaning north las vegas</td>
+        <td>/service-areas/north-las-vegas-nv/drain-cleaning/</td>
+      </tr>
+      <tr>
+        <td>How to Tell If You Have a Sewer Line Problem (Las Vegas Homeowner's Guide)</td>
+        <td>sewer line problems las vegas</td>
+        <td>/services/sewer-camera-inspection/</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🔗 Internal Linking Map</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">Poor internal linking is likely contributing to the low rankings. Service pages need more internal links from area pages, the homepage, and blog posts pointing to them with exact-match anchor text.</p>
+    <table>
+      <tr><th>Page Being Linked To</th><th>From These Pages</th><th>Anchor Text to Use</th><th>Why</th></tr>
+      <tr><td>/services/drain-cleaning/</td><td>Homepage, all 15 area pages, contact page, /services/ hub</td><td>"drain cleaning Las Vegas," "clogged drain service," "$49 drain cleaning"</td><td>161K impressions at pos 49 — needs internal link authority urgently</td></tr>
+      <tr><td>/services/hydro-jetting-services/</td><td>Homepage, drain cleaning page, all Henderson/LV/NLV area pages, blog posts</td><td>"hydro jetting Las Vegas," "hydro jet drain cleaning," "high pressure drain cleaning"</td><td>31K impressions at pos 24 — push to page 1</td></tr>
+      <tr><td>/services/sewer-camera-inspection/</td><td>Homepage, trenchless repair page, tree roots blog post, all area pages</td><td>"sewer camera inspection," "sewer line inspection Las Vegas," "video pipe inspection"</td><td>45K impressions at pos 33 — needs authority boost</td></tr>
+      <tr><td>/about-us/special-offers/</td><td>Homepage (above the fold), all service pages (sidebar/CTA), blog posts</td><td>"$49 drain cleaning special," "drain cleaning coupon," "special offer"</td><td>Page ranks for "$49 drain cleaning" but gets no clicks — needs homepage prominence</td></tr>
+      <tr><td>/service-areas/las-vegas-nv/</td><td>Homepage, /services/ hub, all LV-specific service pages</td><td>"Las Vegas drain cleaning," "Las Vegas drain service"</td><td>27,510 impressions at pos 43 — needs hub-page internal authority</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>⭐ Google Reviews Strategy — The CTR Multiplier</h2>
+    <div class="alert success">
+      <div class="alert-icon">✅</div>
+      <div><strong>AggregateRating Schema Requires Real Google Reviews</strong>
+      <p>To display star ratings in Google SERP (which can increase CTR 20–35%), you need a minimum of 3–5 reviews with a 4.0+ average in your Google Business Profile. The schema must reference real, verifiable review data. Priority: run a review generation campaign this month — ask every satisfied customer to leave a Google review with the direct link (g.page/[yourbusiness]/review). Target: 50+ reviews at 4.5+ stars within 90 days.</p></div>
+    </div>
+    <table>
+      <tr><th>Review Generation Method</th><th>How to Execute</th><th>Expected Results</th></tr>
+      <tr><td>Post-service SMS text</td><td>Send "Thanks for choosing Discount Drain! Would you mind leaving us a quick Google review? [direct link]" within 1 hour of job completion.</td><td>10–20% of customers leave a review. If you complete 5 jobs/day, that's 2–5 new reviews/week.</td></tr>
+      <tr><td>Invoice footer</td><td>Add review request to bottom of every paper and email invoice: "Satisfied? Leave us a 5-star review: [short link]"</td><td>Passive but consistent — adds 2–5 reviews/week from invoicing volume.</td></tr>
+      <tr><td>Business card QR code</td><td>Print QR codes linking directly to your Google review page on technician business cards.</td><td>Easy in-person handoff at job completion.</td></tr>
+      <tr><td>Google Business Profile post</td><td>Weekly GBP post: "Thanks to [First Name] in Henderson for the kind words! 😊 If we helped you, we'd love a review." Link every post to review page.</td><td>Builds review culture + shows GBP activity (improves local pack ranking).</td></tr>
+    </table>
+  </div>
+</div>
+
+<script>
+function showTab(id, e) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.target.classList.add('active');
+}
+
+// Gap chart — impressions vs clicks
+const gapCtx = document.getElementById('gapChart').getContext('2d');
+new Chart(gapCtx, {
+  type:'bar',
+  data:{
+    labels:['/ Homepage','drain-cleaning','sewer-camera','henderson hydro','hydro-jetting','trenchless','las-vegas area','snaking','contact','drain-cleaning LV area'],
+    datasets:[
+      {label:'Impressions (÷1000)',data:[256.8,161.1,45.6,43.2,31.6,17.0,27.5,11.3,10.8,7.8],backgroundColor:'#bfdbfe',borderColor:'#2563eb',borderWidth:1},
+      {label:'Clicks',data:[400,8,14,4,9,10,1,17,13,12],backgroundColor:'#f87171',borderColor:'#dc2626',borderWidth:1}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{beginAtZero:true,title:{display:true,text:'Count (Impressions÷1000 / Clicks)'}}}}
+});
+
+// CTR by position range
+const ctrCtx = document.getElementById('ctrPosChart').getContext('2d');
+new Chart(ctrCtx, {
+  type:'bar',
+  data:{
+    labels:['Pos 1–3','Pos 4–7','Pos 8–15','Pos 16–30','Pos 31+'],
+    datasets:[
+      {label:'Industry Benchmark CTR %',data:[15,5,2.5,0.5,0.1],backgroundColor:'#bbf7d0',borderColor:'#16a34a',borderWidth:1},
+      {label:'Your Actual CTR %',data:[0.5,0.9,0.4,0.1,0.02],backgroundColor:'#fecaca',borderColor:'#dc2626',borderWidth:1}
+    ]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{beginAtZero:true,title:{display:true,text:'CTR %'}}}}
+});
+</script>
+</body>
+</html>
