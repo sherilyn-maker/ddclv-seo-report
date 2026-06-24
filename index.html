@@ -86,14 +86,13 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <button class="tab-btn" onclick="showTab('plumber',event)">Plumber vs Drain Keywords</button>
   <button class="tab-btn" onclick="showTab('ctr',event)">Why CTR is Poor</button>
   <button class="tab-btn" onclick="showTab('metatags',event)">Meta Tags — Exact Copy</button>
-  <button class="tab-btn" onclick="showTab('schema',event)">Schema &amp; On-Page Fixes</button>
   <button class="tab-btn" onclick="showTab('keywords',event)">All Keywords</button>
   <button class="tab-btn" onclick="showTab('pages',event)">Page Audit</button>
-  <button class="tab-btn" onclick="showTab('quickwins',event)">Action Plan</button>
   <button class="tab-btn" onclick="showTab('siteaudit',event)">Site Audit (51 Pages)</button>
   <button class="tab-btn" onclick="showTab('hotjar',event)">Hotjar Recordings</button>
   <button class="tab-btn" onclick="showTab('aisearch',event)">AI Search Performance</button>
   <button class="tab-btn" onclick="showTab('callrail',event)">CallRail — Call Analytics</button>
+  <button class="tab-btn" onclick="showTab('gbp',event)">GBP Performance</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -627,178 +626,6 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     TAB 5: SCHEMA & ON-PAGE FIXES
-════════════════════════════════════════════════════════════ -->
-<div id="schema" class="tab-content">
-  <h2 class="section-title">Schema &amp; On-Page Fixes to Improve CTR</h2>
-
-  <div class="alert info">
-    <div class="alert-icon">💡</div>
-    <div><strong>Schema = Visual Upgrades in Google Search Results</strong>
-    <p>Schema markup (JSON-LD) tells Google to show richer information next to your listing — star ratings, FAQ dropdowns, price ranges. These make your listing physically larger and more trustworthy than plain competitor listings at the same position. Add these to your WordPress pages using the Yoast SEO Schema tab or a custom HTML block in the page footer. The code goes between &lt;script type="application/ld+json"&gt; tags.</p></div>
-  </div>
-
-  <div class="card">
-    <h2>⭐ Fix #1 — AggregateRating Schema (Star Ratings in SERP)</h2>
-    <p style="font-size:13px;color:#374151;margin-bottom:10px">Add to homepage. Causes gold stars to appear next to your title in Google. Increases CTR 20–35% at any position. Requires real Google reviews (check your Google Business Profile for rating + count).</p>
-    <div class="schema-block">{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Discount Drain Clean LV",
-  "url": "https://discountdraincleanlv.com",
-  "telephone": "YOUR-PHONE-NUMBER",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "YOUR STREET ADDRESS",
-    "addressLocality": "Las Vegas",
-    "addressRegion": "NV",
-    "postalCode": "YOUR ZIP",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    "Las Vegas, NV", "Henderson, NV", "North Las Vegas, NV",
-    "Summerlin, NV", "Paradise, NV", "Green Valley, NV"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",       ← REPLACE with your actual Google rating
-    "reviewCount": "127",       ← REPLACE with your actual review count
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "priceRange": "$",
-  "openingHours": "Mo-Su 00:00-23:59"
-}</div>
-    <p style="font-size:12px;color:#94a3b8;margin-top:8px">⚠️ Replace ratingValue and reviewCount with your ACTUAL Google Business Profile numbers. Do not fabricate ratings — Google verifies against your GBP.</p>
-  </div>
-
-  <div class="card">
-    <h2>❓ Fix #2 — FAQPage Schema (Expand Your SERP Listing with FAQ Dropdowns)</h2>
-    <p style="font-size:13px;color:#374151;margin-bottom:10px">Add to /services/drain-cleaning/ first (161K impressions). Then add to hydro-jetting, sewer-camera-inspection, and trenchless pages. Each page gets its own FAQPage block with 4–6 relevant questions.</p>
-
-    <h3>For /services/drain-cleaning/</h3>
-    <div class="schema-block">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does drain cleaning cost in Las Vegas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Drain cleaning in Las Vegas starts at $49 for a standard drain snaking. Hydro jetting services range from $149–$400 depending on the drain size and severity. We offer flat-rate pricing with no hidden fees or overtime charges."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I know if I need drain cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Common signs include slow-draining sinks or tubs, gurgling sounds from drains, water backing up in multiple fixtures at once, or persistent drain odors. If you notice any of these, call Discount Drain Clean LV for same-day service in Las Vegas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer same-day drain cleaning in Las Vegas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We offer same-day drain cleaning throughout Las Vegas, Henderson, North Las Vegas, and surrounding areas. Call us to check availability — we aim to arrive within 2–4 hours for most residential calls."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between drain snaking and hydro jetting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Drain snaking uses a mechanical cable to break up or pull out clogs and is ideal for simple blockages. Hydro jetting uses high-pressure water to completely scour the inside of the pipe and is better for grease buildup, tree roots, or recurring clogs. Our technicians will recommend the right method based on your situation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are you licensed and insured for drain cleaning in Nevada?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Discount Drain Clean LV is fully licensed and insured to perform drain cleaning, hydro jetting, and sewer services in Las Vegas, Nevada and surrounding Clark County communities."
-      }
-    }
-  ]
-}</div>
-
-    <h3 style="margin-top:16px">For /services/sewer-camera-inspection/</h3>
-    <div class="schema-block">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How much does a sewer camera inspection cost in Las Vegas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sewer camera inspections in Las Vegas typically range from $149–$300 depending on the pipe length and access. Contact Discount Drain Clean LV for current pricing and same-day availability."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does a sewer camera inspection show?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A sewer camera inspection reveals cracks, root intrusion, grease buildup, pipe bellies, offset joints, and collapsed sections. We provide HD video footage of your sewer line so you can see exactly what's causing the problem."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Should I get a sewer inspection before buying a home in Las Vegas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. A pre-purchase sewer inspection is highly recommended in Las Vegas, where many homes have aging clay or cast-iron pipes susceptible to root intrusion from desert irrigation systems. A sewer inspection can reveal problems that standard home inspections miss."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does a sewer camera inspection take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most sewer camera inspections take 30–60 minutes for a standard residential property. We provide same-day appointments and a full written report with video footage."
-      }
-    }
-  ]
-}</div>
-  </div>
-
-  <div class="card">
-    <h2>📄 Fix #3 — On-Page Content Requirements for /services/drain-cleaning/</h2>
-    <p style="font-size:13px;color:#64748b;margin-bottom:12px">Schema and title fixes alone won't move a page from position 49 to page 1. The page content must also be comprehensive. Here's exactly what to add:</p>
-    <table>
-      <tr><th>Section to Add</th><th>Content Required</th><th>Why It Ranks</th></tr>
-      <tr><td><strong>H1 — Opening</strong></td><td>"Drain Cleaning in Las Vegas, NV — $49 Special | Discount Drain Clean LV" — Phone number clickable link below H1</td><td>H1 must match title tag keyword. Phone link = conversion signal to Google.</td></tr>
-      <tr><td><strong>Intro paragraph (150 words)</strong></td><td>Mention: Las Vegas, drain cleaning, $49, same-day, licensed. Direct answer to "how much does drain cleaning cost in Las Vegas" in first 100 words.</td><td>AI Overview citations pull from first 150 words. Direct answers get featured snippets.</td></tr>
-      <tr><td><strong>Services section</strong></td><td>List: drain snaking, hydro jetting, main line cleaning, kitchen drain, bathroom drain, floor drain — each with 50–75 word description</td><td>Targets long-tail variations of drain cleaning queries.</td></tr>
-      <tr><td><strong>Las Vegas-specific section</strong></td><td>Paragraph on Las Vegas hard water mineral buildup, desert landscaping root intrusion (oleander, palm), caliche soil drainage issues — local content competitors copy-paste doesn't have</td><td>Geo-specific content ranks better for local searches. Unique content = better rankings.</td></tr>
-      <tr><td><strong>Cost guide / pricing table</strong></td><td>Table: Standard snaking $49 | Kitchen grease $89–$149 | Main line $149–$299 | Hydro jetting $149–$400</td><td>Pricing tables earn featured snippets for "drain cleaning cost las vegas" queries.</td></tr>
-      <tr><td><strong>FAQ section</strong></td><td>5 questions from the FAQPage schema above, written as visible on-page text + backed by schema</td><td>On-page FAQ + schema = double coverage for rich results.</td></tr>
-      <tr><td><strong>Service areas</strong></td><td>Bulleted list of all areas served with internal links to each city's drain cleaning page</td><td>Internal linking + geo coverage improves rankings for city-specific queries.</td></tr>
-      <tr><td><strong>CTA sections</strong></td><td>Book now / call button every 300 words, not just at the bottom</td><td>Engagement signals (time on page, scroll depth, click-to-call) influence rankings.</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>🔗 Fix #4 — Internal Linking (Do This Before Any Content Rewrites)</h2>
-    <p style="font-size:13px;color:#374151;margin-bottom:12px">Internal links pass authority between pages. The drain cleaning service page has 161K impressions but low authority because nothing links to it with the right anchor text. Fix this in 30 minutes before touching any content.</p>
-    <table>
-      <tr><th>From Page</th><th>Add Link To</th><th>Anchor Text</th></tr>
-      <tr><td>Homepage (/ )</td><td>/services/drain-cleaning/</td><td>"drain cleaning service" or "$49 drain cleaning"</td></tr>
-      <tr><td>All 15+ area pages</td><td>/services/drain-cleaning/</td><td>"drain cleaning in [city]"</td></tr>
-      <tr><td>/services/ hub page</td><td>/services/drain-cleaning/</td><td>"drain cleaning"</td></tr>
-      <tr><td>/about-us/special-offers/</td><td>/services/drain-cleaning/</td><td>"book your $49 drain cleaning"</td></tr>
-      <tr><td>Homepage</td><td>/services/hydro-jetting-services/</td><td>"hydro jetting Las Vegas"</td></tr>
-      <tr><td>Drain cleaning page</td><td>/services/hydro-jetting-services/</td><td>"hydro jetting" (in comparison section)</td></tr>
-      <tr><td>Tree roots blog post</td><td>/services/trenchless-sewer-repair/</td><td>"trenchless sewer repair"</td></tr>
-      <tr><td>All blog posts</td><td>Most relevant service page</td><td>Keyword that matches the service</td></tr>
-    </table>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
      TAB 6: ALL KEYWORDS
 ════════════════════════════════════════════════════════════ -->
 <div id="keywords" class="tab-content">
@@ -954,91 +781,6 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
         <td>📹 <strong>2 exits recorded here</strong> · Users navigating to /financing/ and leaving — possible dead-end page</td>
         <td><span class="priority-tag p2">P2</span> <strong>Hotjar only.</strong> Watch recordings of users who visited /financing/. Check if the financing form loads on mobile, if there's a clear next step, and if any form errors occur on Android Chrome.</td>
       </tr>
-    </table>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     TAB 8: ACTION PLAN
-════════════════════════════════════════════════════════════ -->
-<div id="quickwins" class="tab-content">
-  <h2 class="section-title">30/60/90 Day Action Plan</h2>
-
-  <div class="card" style="border-left:4px solid #dc2626">
-    <h2>🔥 Week 0 — Conversion Emergency (12-Month Hotjar: 0.4% Conversion Rate)</h2>
-    <p style="font-size:13px;color:#64748b;margin-bottom:12px"><strong style="color:#dc2626">12-month Hotjar data (500 sessions) confirms only 2 confirmed form conversions — 0.4% conversion rate. Industry benchmark is 3–8%.</strong> Fixing SEO without fixing conversion means sending more traffic into a funnel that currently produces 2 leads per year. Do these first — they take less than a day and affect every visitor immediately. Zero SEO or ad spend increases until these are done.</p>
-    <table>
-      <tr><th>Task</th><th>Where</th><th>Time</th><th>Why Now</th></tr>
-      <tr><td><strong>1. Redesign /about-us/special-offers/ for conversion</strong> — add 3-field form (name, phone, zip), move phone number above fold, add "Limited same-day slots" urgency, fire GA4 click-to-call event</td><td>WordPress page editor</td><td>2 hrs</td><td>12-month Hotjar: 31 exits vs 14 direct landings — entire site funnels to this page and it converts at 0%. It is the primary conversion bottleneck. Both confirmed conversions came from a different path (Google → service-area page), not this page. Fix it now.</td></tr>
-      <tr><td><strong>2. Add sticky mobile click-to-call button</strong> to /expert-plumbing-services-you-can-trust/ and /stop-clogs-before-they-get-worse/</td><td>WordPress page editor → floating phone button widget or custom HTML</td><td>1 hr</td><td>12-month Hotjar: 127 sessions + 89 sessions = 216 sessions, 0 confirmed conversions. 52–66% same-page exit despite 139–187s avg dwell. Users read, find no tappable CTA, and leave.</td></tr>
-      <tr><td><strong>3. Add "$49 Book Now" CTA mid-page</strong> on both Facebook landing pages — not just at the bottom</td><td>Insert CTA block halfway down each landing page</td><td>30 min</td><td>12-month Hotjar: avg dwell 2–3 min — users scroll past the top CTA. A mid-page CTA at the scroll-stop point is required. Without it, engaged users have nowhere to act.</td></tr>
-      <tr><td><strong>4. Watch 10 Hotjar recordings on Android Chrome mobile</strong> — filter to: Device = Phone + Browser = Chrome + OS = Android</td><td>Hotjar dashboard → Recordings → Filters</td><td>1 hr</td><td>12-month Hotjar: 73.6% mobile, 56.4% Android. Any broken form, tap target, or CTA on this combination affects the majority of all 500 recorded sessions. Fix what the recordings reveal.</td></tr>
-      <tr><td><strong>5. Add both Facebook landing pages to XML sitemap</strong> — /expert-plumbing-services-you-can-trust/ and /stop-clogs-before-they-get-worse/</td><td>Yoast SEO → Sitemap settings</td><td>15 min</td><td>12-month Hotjar: 216 sessions to these 2 pages over 12 months — neither is indexed by Google. Zero organic equity from the site's two most-visited pages. Free fix with large long-term upside.</td></tr>
-      <tr><td><strong>6. Add title tag, meta description, canonical + LocalBusiness schema</strong> to both Facebook landing pages</td><td>Yoast SEO panel on each page</td><td>30 min</td><td>Once in the sitemap, Google will crawl them. They need proper SEO tags to rank organically. Currently invisible to search.</td></tr>
-      <tr><td><strong>7. Check Facebook in-app browser sessions</strong> — filter Hotjar to Browser = Facebook. Confirm forms submit correctly.</td><td>Hotjar dashboard → Recordings → Filters</td><td>30 min</td><td>12-month Hotjar: 27 Facebook + 6 Instagram in-app browser sessions (6.6% of all traffic). Neither confirmed conversion came from in-app browser sessions. These may be converting at 0% due to silent form failures.</td></tr>
-      <tr><td><strong>8. Consider pausing or reducing Facebook ad spend</strong> until conversion fixes are deployed</td><td>Facebook Ads Manager</td><td>10 min</td><td>12-month Hotjar: 179 Facebook-referred sessions over 12 months = 0 confirmed form conversions. Every dollar spent on Facebook ads currently drives traffic that the site cannot convert. Pause until steps 1–3 above are live and tested.</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>⚡ Week 1 — Title &amp; Meta Fixes (No New Content, Maximum Speed)</h2>
-    <p style="font-size:13px;color:#64748b;margin-bottom:12px">Do all of these in one WordPress session. Total time: ~1 hour. Expected result: CTR improvement within 1–2 weeks as Google re-crawls the updated meta tags.</p>
-    <table>
-      <tr><th>Task</th><th>Where</th><th>Time</th><th>Expected Impact</th></tr>
-      <tr><td><strong>1. Rewrite homepage title + meta</strong> — see Meta Tags tab for exact copy</td><td>WP Editor → SEO title + meta fields</td><td>10 min</td><td>+50–150 clicks/period from 256K impressions</td></tr>
-      <tr><td><strong>2. Fix /services/sewer-camera-inspection/ title</strong> — confirmed pos 2.7 with 0.26% CTR</td><td>Page SEO title</td><td>5 min</td><td>+30–50 clicks/period (biggest per-minute ROI)</td></tr>
-      <tr><td><strong>3. Fix /about-us/special-offers/ title + meta</strong> — ranks page 1 for "$49" query with 0.24% CTR</td><td>Page SEO title + meta</td><td>5 min</td><td>+10–20 clicks/period</td></tr>
-      <tr><td><strong>4. Fix /services/hydro-jetting-services/ title</strong> — add "Las Vegas" to title</td><td>Page SEO title</td><td>5 min</td><td>Positions page for city-specific hydro jetting queries</td></tr>
-      <tr><td><strong>5. Fix /services/drain-cleaning/ title</strong> — currently earning 0.00% at pos 49</td><td>Page SEO title + meta</td><td>5 min</td><td>Title fix alone won't fix pos 49 — but ensures correct display when ranking improves</td></tr>
-      <tr><td><strong>6. Fix /services/grease-trap-cleaning/ title</strong> — add "Las Vegas" + "Commercial Kitchen"</td><td>Page SEO title</td><td>5 min</td><td>CTR improvement on 10,293 impressions</td></tr>
-      <tr><td><strong>7. Fix /service-areas/las-vegas-nv/ title + meta</strong></td><td>Page SEO title + meta</td><td>5 min</td><td>City hub page with 27K impressions at pos 43</td></tr>
-      <tr><td><strong>8. Fix /services/snaking/ title</strong> — add "$49 Special"</td><td>Page SEO title</td><td>5 min</td><td>Connects snaking page to pricing queries</td></tr>
-      <tr><td><strong>9. Register Bing Webmaster Tools</strong> — bing.com/webmasters → submit sitemap</td><td>External (free)</td><td>15 min</td><td>Bing / Copilot AI organic channel currently at zero</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>📅 Week 2 — Schema Implementation</h2>
-    <table>
-      <tr><th>Task</th><th>Page</th><th>Time</th><th>Impact</th></tr>
-      <tr><td>Add AggregateRating + LocalBusiness schema</td><td>Homepage — see Schema tab for exact JSON-LD</td><td>30 min</td><td>Star ratings in SERP — +20–35% CTR across all homepage impressions</td></tr>
-      <tr><td>Add FAQPage schema</td><td>/services/drain-cleaning/ — see Schema tab</td><td>20 min</td><td>SERP listing expands with FAQ dropdowns — +15–25% CTR</td></tr>
-      <tr><td>Add FAQPage schema</td><td>/services/sewer-camera-inspection/</td><td>20 min</td><td>Already at pos 2.7 for one query — schema pushes CTR further</td></tr>
-      <tr><td>Add FAQPage schema</td><td>/services/hydro-jetting-services/</td><td>20 min</td><td>31K impressions — schema helps push near-page-1 position over</td></tr>
-      <tr><td>Add internal links to /services/drain-cleaning/</td><td>Homepage, all 15 area pages</td><td>45 min</td><td>Passes authority to the most impression-heavy page — helps push from pos 49 toward page 1</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>📝 Month 1 — Content Rewrites (Highest ROI)</h2>
-    <table>
-      <tr><th>Page</th><th>Words Required</th><th>Key Sections to Add</th><th>Est. Position Gain</th></tr>
-      <tr><td>/services/drain-cleaning/</td><td>1,500+</td><td>Methods comparison, LV hard water section, pricing table, FAQPage, service area list, CTA every 300 words</td><td>pos 49 → pos 15–20<br><em>+200–500 clicks/period</em></td></tr>
-      <tr><td>/services/hydro-jetting-services/</td><td>1,200+</td><td>PSI explanation, residential vs commercial, when vs snaking, cost guide, FAQPage</td><td>pos 24 → pos 8–15<br><em>+100–250 clicks/period</em></td></tr>
-      <tr><td>/services/sewer-camera-inspection/</td><td>1,200+</td><td>Technology used, what camera finds, process step-by-step, pre-purchase section, cost guide, FAQPage</td><td>pos 33 → pos 10–15<br><em>+80–200 clicks/period</em></td></tr>
-      <tr><td>/service-areas/las-vegas-nv/</td><td>1,500+</td><td>Las Vegas neighborhoods, local plumbing problems (hard water, roots), response time, testimonials, FAQPage</td><td>pos 43 → pos 15–25<br><em>+80–200 clicks/period</em></td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>🆕 Month 2–3 — New Pages to Create</h2>
-    <table>
-      <tr><th>Create</th><th>Target Query</th><th>GSC Impressions Available</th><th>Priority</th></tr>
-      <tr><td>/emergency-drain-cleaning-las-vegas/</td><td>"24 hour drain cleaning service" + "emergency plumbing las vegas"</td><td>3,882 + 3,400 + 435 = 7,717</td><td><span class="badge red">High</span></td></tr>
-      <tr><td>/drain-cleaning-las-vegas/</td><td>"drain cleaning las vegas," "las vegas drain cleaning"</td><td>7,795 + 3,493 = 11,288</td><td><span class="badge red">High</span></td></tr>
-      <tr><td>/drain-cleaning-henderson-nv/</td><td>"drain cleaning henderson," "plumbers henderson nv"</td><td>263+ direct searches</td><td><span class="badge orange">Medium</span></td></tr>
-      <tr><td>/grease-trap-cleaning-las-vegas/</td><td>"grease trap cleaning las vegas," "grease trap cleaning near me"</td><td>382 + 577 = 959</td><td><span class="badge orange">Medium</span></td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>⭐ Reviews Campaign — Start Immediately (CTR Multiplier)</h2>
-    <p style="font-size:13px;color:#374151;margin-bottom:12px">AggregateRating schema (star ratings in SERP) requires real, verifiable Google reviews. Run this campaign in parallel with all other fixes. Target: 50+ reviews at 4.5+ stars within 90 days to implement schema.</p>
-    <table>
-      <tr><th>Method</th><th>How</th><th>Expected Volume</th></tr>
-      <tr><td>Post-service SMS</td><td>Text "Thanks! Leave us a Google review → [direct link]" within 1 hr of job completion</td><td>2–5 reviews/week from SMS responses</td></tr>
-      <tr><td>Invoice footer</td><td>Add review request + QR code to every paper and email invoice</td><td>Passive 2–4 reviews/week</td></tr>
-      <tr><td>Technician business card</td><td>QR code on card → Google review direct link. Hand to customer at job completion.</td><td>Easiest in-person conversion</td></tr>
     </table>
   </div>
 </div>
@@ -2157,6 +1899,165 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
         <td>Investigate in CallRail whether tracking numbers are shared across other client accounts or if there's a number-porting issue. Out-of-area calls inflate the total and skew the city breakdown. If the Reno calls are legitimate (ChatGPT cited the business to a Reno searcher), that's expected — but Oregon and Missouri calls are not.</td>
         <td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td>
       </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 13: GBP PERFORMANCE
+════════════════════════════════════════════════════════════ -->
+<div id="gbp" class="tab-content">
+  <h2 class="section-title">Google Business Profile Performance</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:20px">Source: GBP Insights export · discountdraincleanlv.com · Jan 2024 – Jun 2026 (30 months) · Las Vegas location</p>
+
+  <!-- KPI CARDS -->
+  <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="metric-card green"><div class="val">291</div><div class="lbl">GBP Calls (12-mo)</div><div class="sub">54.8% of all phone leads</div></div>
+    <div class="metric-card blue"><div class="val">34,741</div><div class="lbl">Profile Views (12-mo)</div><div class="sub">Monthly avg: ~2,895</div></div>
+    <div class="metric-card blue"><div class="val">9,561</div><div class="lbl">Search Impressions (12-mo)</div><div class="sub">Searches where GBP appeared</div></div>
+    <div class="metric-card orange"><div class="val">551</div><div class="lbl">Website Clicks (12-mo)</div><div class="sub">GBP → site traffic</div></div>
+    <div class="metric-card red"><div class="val">1.6%</div><div class="lbl">Impr → Call Rate</div><div class="sub">Calls ÷ Impressions</div></div>
+  </div>
+
+  <!-- CRITICAL ALERT -->
+  <div class="alert success"><div class="alert-icon">✅</div><div>
+    <strong>GBP Is the #1 Revenue Driver — 54.8% of All Phone Leads Come From This Profile</strong>
+    <p>CallRail confirms 291 calls attributed to Google My Business over 12 months — more than Google Organic (141), Direct (50), and all paid social channels combined. Every dollar invested in GBP optimization (reviews, posts, photos, categories) has a direct and measurable impact on the most important lead channel the business has. GBP performance has been growing since 2024 with profile views more than doubling from ~1,600/month to ~3,000+/month in 2025.</p>
+  </div></div>
+
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>February 2026: GBP Calls Dropped to 28 — While CallRail Showed 142 Total Calls</strong>
+    <p>GBP data shows only 28 calls in February 2026, but CallRail recorded 142 calls that month (the highest month of the year). The gap (142 − 28 = 114 calls) suggests the February spike was driven by a non-GBP source — likely a specific campaign, promotion, or organic search surge that isn't reflected in the GBP call button metric. Investigate: was there a Google LSA campaign, a Facebook promotion, or a pricing offer active Feb 9–12?</p>
+  </div></div>
+
+  <!-- FULL MONTHLY TABLE -->
+  <div class="card">
+    <h2>Monthly GBP Performance — Jan 2024 to Jun 2026</h2>
+    <table>
+      <tr><th>Month</th><th>Website Clicks</th><th>GBP Calls</th><th>Directions</th><th>Profile Views</th><th>Search Impressions</th><th>CallRail Calls</th><th>Trend</th></tr>
+      <tr><td>Jan 2024</td><td>57</td><td>38</td><td>—</td><td>1,611</td><td>475</td><td>—</td><td></td></tr>
+      <tr><td>Feb 2024</td><td>36</td><td>34</td><td>—</td><td>1,827</td><td>644</td><td>—</td><td></td></tr>
+      <tr><td>Mar 2024</td><td>51</td><td>27</td><td>—</td><td>1,719</td><td>544</td><td>—</td><td></td></tr>
+      <tr><td>Apr 2024</td><td>47</td><td>27</td><td>—</td><td>1,667</td><td>304</td><td>—</td><td></td></tr>
+      <tr><td>May 2024</td><td>28</td><td>23</td><td>—</td><td>1,601</td><td>422</td><td>—</td><td></td></tr>
+      <tr><td>Jun 2024</td><td>33</td><td>21</td><td>—</td><td>1,958</td><td>470</td><td>—</td><td></td></tr>
+      <tr style="background:#fef9c3"><td><strong>Jul 2024</strong></td><td>34</td><td><strong>79</strong></td><td>—</td><td>2,496</td><td>1,055</td><td>—</td><td><span class="badge orange">Calls spike</span></td></tr>
+      <tr><td>Aug 2024</td><td>35</td><td>47</td><td>—</td><td>2,160</td><td>804</td><td>—</td><td>↓</td></tr>
+      <tr><td>Sep 2024</td><td>39</td><td>36</td><td>—</td><td>1,726</td><td>320</td><td>—</td><td>↓</td></tr>
+      <tr><td>Oct 2024</td><td>40</td><td>33</td><td>—</td><td>1,962</td><td>683</td><td>—</td><td></td></tr>
+      <tr><td>Nov 2024</td><td>36</td><td>38</td><td>—</td><td>1,801</td><td>558</td><td>—</td><td></td></tr>
+      <tr><td>Dec 2024</td><td>35</td><td>35</td><td>—</td><td>1,711</td><td>302</td><td>—</td><td></td></tr>
+      <tr style="background:#f0fdf4"><td>Jan 2025</td><td>47</td><td>24</td><td>—</td><td>1,996</td><td>476</td><td>—</td><td>↑ Views</td></tr>
+      <tr><td>Feb 2025</td><td>26</td><td>49</td><td>—</td><td>2,136</td><td>837</td><td>—</td><td>↑ Calls</td></tr>
+      <tr style="background:#f0fdf4"><td>Mar 2025</td><td>49</td><td>47</td><td>—</td><td>3,063</td><td>1,508</td><td>—</td><td><span class="badge green">Views peak</span></td></tr>
+      <tr><td>Apr 2025</td><td>28</td><td>58</td><td>—</td><td>2,651</td><td>1,078</td><td>—</td><td>↑ Calls</td></tr>
+      <tr style="background:#f0fdf4"><td>May 2025</td><td>64</td><td>46</td><td>—</td><td>2,732</td><td>1,008</td><td>—</td><td><span class="badge green">Clicks peak</span></td></tr>
+      <tr><td>Jun 2025</td><td>42</td><td>43</td><td>—</td><td>2,292</td><td>914</td><td>—</td><td></td></tr>
+      <tr><td>Jul 2025</td><td>41</td><td>35</td><td>—</td><td>1,670</td><td>467</td><td>—</td><td>↓ Summer dip</td></tr>
+      <tr><td>Aug 2025</td><td>46</td><td>33</td><td>—</td><td>2,954</td><td>674</td><td>—</td><td>↑ Views recover</td></tr>
+      <tr><td>Sep 2025</td><td>59</td><td>35</td><td>—</td><td>3,051</td><td>765</td><td>—</td><td>↑ Clicks high</td></tr>
+      <tr><td>Oct 2025</td><td>40</td><td>47</td><td>—</td><td>3,246</td><td>845</td><td>—</td><td><span class="badge green">Views peak 2025</span></td></tr>
+      <tr style="background:#f0fdf4"><td>Nov 2025</td><td>39</td><td>52</td><td>—</td><td>3,241</td><td>1,029</td><td>—</td><td>↑ Calls rising</td></tr>
+      <tr><td>Dec 2025</td><td>37</td><td>42</td><td>—</td><td>3,057</td><td>1,069</td><td>—</td><td></td></tr>
+      <tr><td>Jan 2026</td><td>53</td><td>30</td><td>60</td><td>2,199</td><td>588</td><td>43</td><td>Directions now tracked</td></tr>
+      <tr style="background:#fef2f2"><td><strong>Feb 2026</strong></td><td>55</td><td><strong>28</strong></td><td>34</td><td>1,613</td><td>399</td><td><strong>113</strong></td><td><span class="badge red">GBP calls low vs CallRail spike</span></td></tr>
+      <tr><td>Mar 2026</td><td>51</td><td>55</td><td>62</td><td>2,351</td><td>884</td><td>65</td><td>↑</td></tr>
+      <tr><td>Apr 2026</td><td>38</td><td>37</td><td>31</td><td>2,055</td><td>478</td><td>64</td><td></td></tr>
+      <tr><td>May 2026</td><td>51</td><td>20</td><td>55</td><td>1,576</td><td>333</td><td>31</td><td>↓ Calls declining</td></tr>
+      <tr><td>Jun 2026 (partial)</td><td>18</td><td>10</td><td>22</td><td>653</td><td>—</td><td>—</td><td>Partial month</td></tr>
+    </table>
+  </div>
+
+  <!-- TWO COL: TREND ANALYSIS + GBP vs CALLRAIL -->
+  <div class="two-col">
+    <div class="card">
+      <h2>📈 Year-over-Year Growth (Jan–Jun Comparison)</h2>
+      <table>
+        <tr><th>Metric</th><th>Jan–Jun 2024</th><th>Jan–Jun 2025</th><th>Jan–Jun 2026</th><th>2yr Change</th></tr>
+        <tr><td>Website Clicks</td><td>252</td><td>256</td><td>266</td><td><span class="badge green">+5.6%</span></td></tr>
+        <tr><td>GBP Calls</td><td>170</td><td>267</td><td>180</td><td><span class="badge orange">+5.9% vs 2024</span></td></tr>
+        <tr><td>Profile Views</td><td>10,382</td><td>14,870</td><td>10,451</td><td><span class="badge blue">+0.7% vs 2024</span></td></tr>
+        <tr><td>Search Impressions</td><td>2,858</td><td>4,813</td><td>2,682</td><td><span class="badge red">−6.2% vs 2024</span></td></tr>
+      </table>
+      <p style="font-size:12px;color:#64748b;margin-top:8px">2025 was the strongest year across all GBP metrics. 2026 (partial) is trending lower than 2025 in impressions and calls — worth monitoring. The peak months in 2025 (Mar–Jun: 3,000+ views, 43–58 calls/month) set a strong benchmark to recover and exceed.</p>
+    </div>
+    <div class="card">
+      <h2>🔍 GBP Calls vs CallRail Calls (Feb–May 2026)</h2>
+      <table>
+        <tr><th>Month</th><th>GBP Calls</th><th>CallRail Total</th><th>Difference</th><th>Interpretation</th></tr>
+        <tr style="background:#fef2f2"><td>Feb 2026</td><td>28</td><td>113</td><td>+85</td><td>⚠️ 85 calls came from non-GBP sources — spike was organic/campaign-driven</td></tr>
+        <tr><td>Mar 2026</td><td>55</td><td>65</td><td>+10</td><td>Normal gap — ~15% from organic/direct</td></tr>
+        <tr><td>Apr 2026</td><td>37</td><td>64</td><td>+27</td><td>Moderate gap — 42% from non-GBP</td></tr>
+        <tr><td>May 2026</td><td>20</td><td>31</td><td>+11</td><td>Normal gap — GBP declining this month</td></tr>
+      </table>
+      <p style="font-size:12px;color:#64748b;margin-top:8px">Typical GBP call share is ~55–85% of total calls. February's extreme gap (GBP = 25% of total) is anomalous and confirms the Feb spike had a separate cause.</p>
+    </div>
+  </div>
+
+  <!-- SEASONAL PATTERNS -->
+  <div class="card">
+    <h2>📅 Seasonal Patterns — When GBP Performs Best</h2>
+    <table>
+      <tr><th>Season</th><th>Months</th><th>Avg Monthly Calls</th><th>Avg Profile Views</th><th>Pattern</th></tr>
+      <tr style="background:#f0fdf4"><td><strong>Spring Peak</strong></td><td>Mar–May</td><td>44</td><td>2,815</td><td><span class="badge green">Highest call volume — spring clogs + outdoor drain issues</span></td></tr>
+      <tr><td>Summer Moderate</td><td>Jun–Aug</td><td>38</td><td>2,209</td><td>Solid but below spring — vacation season affects bookings</td></tr>
+      <tr style="background:#f0fdf4"><td><strong>Fall Rise</strong></td><td>Sep–Nov</td><td>43</td><td>2,756</td><td><span class="badge green">Second peak — pre-holiday maintenance calls</span></td></tr>
+      <tr><td>Winter Baseline</td><td>Dec–Feb</td><td>36</td><td>2,161</td><td>Lowest — holiday season reduces commercial + residential calls</td></tr>
+    </table>
+    <p style="font-size:12px;color:#64748b;margin-top:8px">GBP posts, promotions, and review campaigns should be intensified in February–April to maximise the spring peak, and again in August–September ahead of the fall rise.</p>
+  </div>
+
+  <!-- KEY OBSERVATIONS -->
+  <div class="card">
+    <h2>🔑 Key Observations</h2>
+    <table>
+      <tr><th>#</th><th>Finding</th><th>Data Point</th><th>Recommendation</th></tr>
+      <tr>
+        <td>1</td>
+        <td><strong>July 2024 call spike: 79 GBP calls</strong> — highest single-month GBP call volume in the entire dataset</td>
+        <td>79 calls in Jul 2024 vs 21–38 in surrounding months. No matching spike in profile views (2,496 — elevated but not extreme).</td>
+        <td>Audit what was active in July 2024: GBP posts, promotions, Google LSA, or seasonal factors. This is a second spike event (alongside Feb 2026) that, if identified, could be replicated.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>Profile views grew 2× from 2024 to 2025</strong> — GBP ranking improving in Maps</td>
+        <td>2024 avg: ~1,800 views/month. 2025 avg: ~2,700 views/month. Oct–Nov 2025 peaked at 3,241–3,246 views.</td>
+        <td>Views growth suggests GBP ranking in the local pack improved in 2025. Continue what drove this: review count, post frequency, category accuracy, Q&amp;A completeness. Do not let any of these lapse.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>May 2026: GBP calls dropped to 20</strong> — lowest since May 2024</td>
+        <td>20 calls in May 2026 vs 46 in May 2025. Profile views also declined: 1,576 vs 2,732 in May 2025.</td>
+        <td>Investigate potential GBP ranking drop in May 2026. Check: (1) any negative reviews added, (2) category changes, (3) competitor GBP optimization activity, (4) algorithm update in Maps. A 57% year-over-year drop in calls warrants immediate investigation.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>Directions clicks now tracked from Jan 2026</strong> — new intent signal</td>
+        <td>Jan: 60, Feb: 34, Mar: 62, Apr: 31, May: 55 direction clicks per month. These are users opening Maps to navigate to the business — very high purchase intent.</td>
+        <td>Direction clicks indicate users who likely visited the physical location or called after navigating. 60 directions in Jan + 62 in Mar is strong. Ensure the address, hours, and parking info on GBP are perfectly accurate — direction-clickers are near the booking decision.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Website clicks from GBP consistently 25–65/month</strong> — GBP is a meaningful web traffic source</td>
+        <td>May 2025 peak: 64 website clicks from GBP. Most months: 36–59. This traffic is highly intent-qualified — they viewed the GBP profile and then clicked through to the site.</td>
+        <td>GBP website clickers are the highest-intent web visitors. Ensure the website landing page they hit (homepage) has a prominent phone number above the fold and a clear CTA. Hotjar filtering to Referrer = Google My Business would show exactly how these users behave on-site.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- GBP OPTIMIZATION CHECKLIST -->
+  <div class="card">
+    <h2>✅ GBP Optimization Checklist — What to Do Now</h2>
+    <table>
+      <tr><th>Action</th><th>Why</th><th>Priority</th></tr>
+      <tr><td><strong>Launch review campaign</strong> — target 50+ reviews at 4.5+ stars within 90 days. Post-service SMS + invoice QR code.</td><td>Review count is the #1 GBP ranking factor. More reviews → higher local pack position → more views → more calls. CallRail shows GBP already drives 291 calls/year — every rank position gained multiplies this.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td><strong>Investigate May 2026 call drop</strong> — calls fell 57% year-over-year (20 vs 46)</td><td>A 57% YoY GBP call drop is a serious signal. Could indicate a Maps ranking drop, negative review, or competitor gaining ground. Identify the cause before it compounds further.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td><strong>Identify and replicate the July 2024 spike trigger</strong> — 79 GBP calls in one month</td><td>79 calls from GBP in July 2024 is nearly 2× the typical month. Whatever caused this (promotion, LSA, post campaign) represents the ceiling for GBP call volume and should be repeated.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td><strong>Post to GBP weekly</strong> — photos, offers, service updates</td><td>GBP posts keep the profile fresh, signal active management to Google, and appear in the knowledge panel. Businesses that post weekly rank higher and have higher view-to-call conversion.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td><strong>Add services with pricing</strong> to GBP services section — "$49 Drain Cleaning", "Hydro Jetting from $150"</td><td>Explicit pricing in GBP services increases call-through rate from profile views. Searchers who see the $49 price before calling are pre-qualified — they know the offer and are calling to book.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td><strong>Upload 10+ new photos monthly</strong> — before/after jobs, team, equipment</td><td>GBP profiles with more photos get significantly more views and direction clicks. Photo freshness (recent uploads) also correlates with higher local pack ranking.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td><strong>Enable GBP messaging</strong> and respond within 1 hour</td><td>GBP chat/message feature is underused in the drain cleaning category. A business that responds to messages within 1 hour earns a "Responds quickly" badge — this increases profile conversion rate.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td><strong>Answer all GBP Q&amp;A questions</strong> — add owner-answered FAQs proactively</td><td>Q&amp;A section appears in the GBP profile. Add the most common questions ("Do you service Henderson?", "How much is drain cleaning?", "Are you available 24/7?") with owner answers to pre-handle objections before the call.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
     </table>
   </div>
 </div>
