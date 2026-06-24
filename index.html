@@ -149,18 +149,42 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
     </div>
   </div>
 
-  <div class="card">
-    <h2>✅ Top 8 Actions — Ranked by Impact</h2>
+  <!-- HOTJAR CALLOUT IN EXEC SUMMARY -->
+  <div class="card" style="border-left:4px solid #7c3aed">
+    <h2 style="color:#7c3aed">📹 Hotjar Behavior Data — What Happens AFTER Users Click (299 Sessions)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">GSC shows the site fails to earn clicks. Hotjar shows that users who DO reach the site are engaged but not converting. Both problems are happening simultaneously — fix both tracks in parallel.</p>
+    <div class="metric-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:14px">
+      <div class="metric-card orange"><div class="val">71%</div><div class="lbl">Mobile Users</div><div class="sub">211 of 299 sessions</div></div>
+      <div class="metric-card" style=""><div class="val" style="color:#7c3aed">43%</div><div class="lbl">From Facebook Ads</div><div class="sub">128 of 299 sessions</div></div>
+      <div class="metric-card green"><div class="val">3.4 min</div><div class="lbl">Avg Session</div><div class="sub">Users ARE engaging</div></div>
+      <div class="metric-card red"><div class="val">50%</div><div class="lbl">FB Landing Page Exit Rate</div><div class="sub">CTAs not converting</div></div>
+    </div>
     <table>
-      <tr><th>#</th><th>Action</th><th>Effort</th><th>Est. Gain</th></tr>
-      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Rewrite homepage title tag</strong> — see Meta Tags tab for exact copy</td><td>10 min</td><td>+50–150 clicks/period</td></tr>
-      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Fix sewer camera inspection page title</strong> — ranking pos 2.7, earning 0.26% CTR instead of 12%+</td><td>5 min</td><td>+30–50 clicks/period</td></tr>
-      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Fix special offers page title + meta</strong> — must say "$49" explicitly for pricing queries at pos 6.7</td><td>5 min</td><td>+10–20 clicks/period</td></tr>
-      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add AggregateRating schema to homepage</strong> — star ratings increase CTR 20–35% at any position</td><td>30 min</td><td>+20–35% CTR all pages</td></tr>
-      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add FAQPage schema to 5 core service pages</strong> — expands SERP listing, boosts CTR 15–25%</td><td>2 hrs</td><td>+15–25% CTR schema pages</td></tr>
-      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/drain-cleaning/</strong> — 161K impressions at pos 49, needs 1,500+ words + schema</td><td>4 hrs</td><td>+200–600 clicks/period</td></tr>
-      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/hydro-jetting-services/</strong> — 31K impressions at pos 24, near page 1</td><td>3 hrs</td><td>+100–300 clicks/period</td></tr>
-      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/sewer-camera-inspection/</strong> — 45K impressions at pos 33</td><td>3 hrs</td><td>+80–200 clicks/period</td></tr>
+      <tr><th>Hotjar Finding</th><th>What It Means for Conversions</th><th>Fix</th></tr>
+      <tr><td>🔴 <strong>Both Facebook ad landing pages exit at 40–50%</strong> — /stop-clogs-before-they-get-worse/ and /expert-plumbing-services-you-can-trust/</td><td>Users land, read for 3+ minutes, and leave without calling. Content is engaging but there's no visible CTA at scroll-stop points on mobile.</td><td>Add sticky click-to-call button on mobile. Place a "$49 Book Now" CTA mid-page, not just at the bottom.</td></tr>
+      <tr><td>🔴 <strong>/about-us/special-offers/ is the #1 destination from both homepage and FB landing pages</strong> — but users exit without converting</td><td>This page is the conversion bottleneck. Users are reaching it intentionally (they want the $49 deal) and still leaving.</td><td>Add a 3-field booking form (name, phone, address). Make the phone number the first element below the fold. Add urgency: "Limited same-day slots."</td></tr>
+      <tr><td>⚠️ <strong>71% mobile, 57% Android</strong> — site must be validated on Android Chrome specifically</td><td>If any button, form, or phone number tap-to-call is broken on Android Chrome, it's broken for the majority of visitors.</td><td>Watch Hotjar recordings filtered to: Device = Phone + Browser = Chrome + OS = Android. Fix every friction point found.</td></tr>
+      <tr><td>⚠️ <strong>13 sessions via Facebook in-app browser</strong></td><td>In-app browsers silently break form submissions and GA4 conversion tracking. Calls placed may not register as conversions.</td><td>Add "Open in Chrome" prompt for in-app browser detection. Or redirect ad clicks to force external browser open.</td></tr>
+      <tr><td>⚠️ <strong>90% new visitors, 10% returning</strong></td><td>The site has no retention mechanism. Almost every visitor who doesn't call on the first visit is lost permanently.</td><td>Add SMS/email capture on the $49 page. Enable Facebook Pixel retargeting for visitors who didn't convert.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>✅ Top Actions — SEO + Conversion Combined Priority</h2>
+    <table>
+      <tr><th>#</th><th>Action</th><th>Source</th><th>Effort</th><th>Est. Gain</th></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add sticky mobile CTA + mid-page "$49 Book Now" to both Facebook landing pages</strong></td><td>Hotjar</td><td>1 hr</td><td>Reduce 40–50% exit rate → estimated +20–30% conversion lift on FB ad traffic</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add booking form + prominent phone to /about-us/special-offers/</strong> — highest-intent page, users reach it but don't convert</td><td>Hotjar</td><td>2 hrs</td><td>Converts engaged high-intent visitors already on the $49 page</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Rewrite homepage title tag</strong> — see Meta Tags tab for exact copy</td><td>GSC</td><td>10 min</td><td>+50–150 clicks/period</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Fix sewer camera inspection page title</strong> — ranking pos 2.7, earning 0.26% CTR instead of 12%+</td><td>GSC</td><td>5 min</td><td>+30–50 clicks/period</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Fix special offers page title + meta</strong> — must say "$49" explicitly for pricing queries at pos 6.7</td><td>GSC</td><td>5 min</td><td>+10–20 clicks/period</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add both Facebook landing pages to sitemap + add meta/schema/canonical</strong> — currently invisible to Google SEO</td><td>Hotjar + Audit</td><td>30 min</td><td>Free organic indexing of two high-traffic pages</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add AggregateRating schema to homepage</strong> — star ratings increase CTR 20–35% at any position</td><td>GSC</td><td>30 min</td><td>+20–35% CTR all pages</td></tr>
+      <tr><td><span class="priority-tag p1">P1</span></td><td><strong>Add FAQPage schema to 5 core service pages</strong> — expands SERP listing, boosts CTR 15–25%</td><td>GSC</td><td>2 hrs</td><td>+15–25% CTR schema pages</td></tr>
+      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Watch 10 Hotjar recordings on Android Chrome mobile</strong> — validate forms, CTAs, tap targets</td><td>Hotjar</td><td>1 hr</td><td>Fixes hidden UX friction for 57% of all visitors</td></tr>
+      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/drain-cleaning/</strong> — 161K impressions at pos 49, needs 1,500+ words + schema</td><td>GSC</td><td>4 hrs</td><td>+200–600 clicks/period</td></tr>
+      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/hydro-jetting-services/</strong> — 31K impressions at pos 24, near page 1</td><td>GSC</td><td>3 hrs</td><td>+100–300 clicks/period</td></tr>
+      <tr><td><span class="priority-tag p2">P2</span></td><td><strong>Full rewrite /services/sewer-camera-inspection/</strong> — 45K impressions at pos 33</td><td>GSC</td><td>3 hrs</td><td>+80–200 clicks/period</td></tr>
     </table>
   </div>
 </div>
@@ -304,6 +328,16 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
 
     <h3>Root Cause 3 — No Schema (No Star Ratings, No FAQ Expansions in SERP)</h3>
     <p style="font-size:13px;color:#374151;line-height:1.6">None of the site's pages appear to have AggregateRating schema (star ratings) or FAQPage schema. These cause your listing to be physically larger in the SERP — star ratings appear next to your title, FAQ dropdowns expand below it. Competitors with stars and FAQ rich results earn 2–3× the CTR of plain listings at the same position. This is implemented with JSON-LD in the page head. See Schema tab for exact code.</p>
+
+    <h3 style="color:#7c3aed">Root Cause 4 — On-Site Conversion Failure (Hotjar Data)</h3>
+    <p style="font-size:13px;color:#374151;margin-bottom:10px;line-height:1.6">Hotjar recordings reveal a second, parallel problem: users who <em>do</em> reach the site are engaged (3.4 min avg session, 11.2 actions, only 7% bounce under 30 sec) but are not converting to calls or form submissions. This means the CTR problem and the conversion problem must be solved simultaneously — improving GSC rankings will bring more users into a funnel that currently leaks.</p>
+    <table>
+      <tr><th>Behavior Signal (Hotjar)</th><th>Conversion Impact</th><th>Fix</th></tr>
+      <tr><td><strong>Both Facebook ad landing pages exit at 40–50%</strong> despite 3+ min avg dwell time</td><td>Users read the content but hit no visible CTA at their scroll-stop point on mobile. Engagement without a call-to-action at the right moment = lost lead.</td><td>Add sticky mobile click-to-call button. Insert "$49 Book Now" CTA mid-page, above the fold on mobile — not just at the bottom of the page.</td></tr>
+      <tr><td><strong>/about-us/special-offers/ is the #1 clicked destination</strong> from homepage and both landing pages — but exits without converting</td><td>This is the highest-intent page on the site. Users navigate to it deliberately (they want the $49 deal). Losing them here means losing buyers, not browsers.</td><td>Add a 3-field booking form (name, phone, address). Move phone number to top of page on mobile. Add scarcity copy: "Limited same-day appointments."</td></tr>
+      <tr><td><strong>71% mobile, 57% Android Chrome</strong> — forms and tap targets unvalidated on this device/browser combination</td><td>If a form doesn't submit, a phone number doesn't tap-to-call, or a CTA button is below a keyboard pop-up on Android Chrome, the majority of visitors are hitting a dead end invisibly.</td><td>Watch 10 Hotjar recordings filtered to: Phone + Chrome + Android. Fix every friction point — broken form fields, unclickable elements, layout shifts.</td></tr>
+      <tr><td><strong>13 sessions via Facebook in-app browser</strong></td><td>In-app browsers can silently block cookies, break form submissions, and prevent GA4 from logging conversions. A user who completes a form inside the Facebook app may not register as a conversion at all.</td><td>Detect in-app browser and display: "For best experience, tap ⋮ → Open in Chrome." Or implement a URL scheme that forces Facebook ad clicks to open in external browser.</td></tr>
+    </table>
   </div>
 </div>
 
@@ -801,25 +835,101 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
 ════════════════════════════════════════════════════════════ -->
 <div id="pages" class="tab-content">
   <h2 class="section-title">Page Audit</h2>
+
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>2 High-Traffic Pages Missing from This Audit — Found via Hotjar</strong>
+    <p><code>/stop-clogs-before-they-get-worse/</code> and <code>/expert-plumbing-services-you-can-trust/</code> each receive significant Facebook ad traffic (64 and 52 Hotjar sessions respectively) but are <strong>not in the page sitemap</strong> and have no GSC data. They are invisible to Google organically. Both are included below with Hotjar-only data.</p>
+  </div></div>
+
   <div class="card">
-    <h2>All Pages — Performance &amp; Required Action</h2>
+    <h2>All Pages — GSC Performance + Hotjar Behavior</h2>
     <table>
-      <tr><th>Page</th><th>Clicks</th><th>Impr.</th><th>CTR</th><th>Pos.</th><th>Issue &amp; Action</th></tr>
-      <tr><td><strong>/ (Homepage)</strong></td><td>400</td><td>256,816</td><td><span class="badge red">0.16%</span></td><td>15.8</td><td><span class="priority-tag p1">P1</span> Title mismatch confirmed. Rewrite title tag (see Meta Tags tab). Also: add AggregateRating schema, FAQPage schema, internal link to drain cleaning service page.</td></tr>
-      <tr><td>/services/drain-cleaning/</td><td>8</td><td>161,111</td><td><span class="badge red">0.00%</span></td><td>49.0</td><td><span class="priority-tag p1">P1</span> Page 5 for highest-volume queries. Full 1,500-word rewrite + FAQPage schema + internal links from all area pages. Highest priority content fix.</td></tr>
-      <tr><td>/services/sewer-camera-inspection/</td><td>14</td><td>45,628</td><td><span class="badge red">0.03%</span></td><td>33.6</td><td><span class="priority-tag p1">P1</span> Confirmed title mismatch (pos 2.7, 0.26% CTR). Fix title now. Also rewrite page to 1,200+ words.</td></tr>
-      <tr><td>/service-areas/henderson-nv/hydro-jetting/</td><td>4</td><td>43,166</td><td><span class="badge red">0.01%</span></td><td>32.9</td><td><span class="priority-tag p1">P1</span> 43K impressions, page 3. Thin content likely. Rewrite with Henderson-specific content + FAQ schema.</td></tr>
-      <tr><td>/services/hydro-jetting-services/</td><td>9</td><td>31,636</td><td><span class="badge red">0.03%</span></td><td>24.0</td><td><span class="priority-tag p1">P1</span> 31K impressions on page 3. Fix title (add "Las Vegas"). Rewrite content to 1,200+ words.</td></tr>
-      <tr><td>/service-areas/las-vegas-nv/</td><td>1</td><td>27,510</td><td><span class="badge red">0.00%</span></td><td>43.4</td><td><span class="priority-tag p1">P1</span> Highest-impression city page, near-zero clicks. Full rewrite with LV-specific content + FAQ schema.</td></tr>
-      <tr><td>/services/trenchless-sewer-repair/</td><td>10</td><td>16,972</td><td><span class="badge red">0.06%</span></td><td>41.8</td><td><span class="priority-tag p2">P2</span> High-ticket service. Rewrite page + "No Digging" title fix (see Meta Tags tab).</td></tr>
-      <tr><td>/services/snaking/</td><td>17</td><td>11,345</td><td><span class="badge red">0.15%</span></td><td>39.5</td><td><span class="priority-tag p2">P2</span> Fix title to include "$49 Special." Rewrite to target "drain snake" and "unclog drain" queries.</td></tr>
-      <tr><td>/contact-us/</td><td>13</td><td>10,810</td><td><span class="badge orange">0.12%</span></td><td>15.9</td><td><span class="priority-tag p2">P2</span> Title fix only (see Meta Tags tab). Add phone number + hours to meta description.</td></tr>
-      <tr><td>/services/grease-trap-cleaning/</td><td>5</td><td>10,293</td><td><span class="badge red">0.05%</span></td><td>43.4</td><td><span class="priority-tag p2">P2</span> Commercial service, 10K impressions at pos 43. Fix title + rewrite with restaurant/hotel focus.</td></tr>
-      <tr><td>/about-us/special-offers/</td><td>2</td><td>1,193</td><td><span class="badge red">0.17%</span></td><td>39.3</td><td><span class="priority-tag p1">P1</span> Ranks page 1 for "$49" + "coupons" queries but zero clicks. Title fix = immediate win (see Meta Tags tab).</td></tr>
-      <tr><td>/services/cipp-pipe-lining/</td><td>4</td><td>3,808</td><td><span class="badge orange">0.11%</span></td><td>53.0</td><td><span class="priority-tag p3">P3</span> Specialty service. Add to trenchless page as related service. Low priority standalone.</td></tr>
-      <tr><td>/services/commercial-hydro-jetting/</td><td>3</td><td>4,519</td><td><span class="badge red">0.07%</span></td><td>46.1</td><td><span class="priority-tag p3">P3</span> Merge with grease trap page for commercial focus, or rewrite separately targeting restaurants/hotels.</td></tr>
-      <tr><td>/these-trees-could-be-the-root-of-your-sewer-line-problems/</td><td>9</td><td>1,098</td><td><span class="badge green">0.82%</span></td><td>8.5</td><td><span class="priority-tag p2">P2</span> Best blog post. Add FAQPage schema. Add internal link to /services/trenchless-sewer-repair/ in CTA.</td></tr>
-      <tr><td>/how-much-psi-is-too-much-understanding-hydro-jetting-pressure-levels/</td><td>4</td><td>3,779</td><td><span class="badge green">0.11%</span></td><td>4.4</td><td><span class="priority-tag p3">P3</span> Ranking pos 4.4 — good. Add FAQPage schema and CTA to hydro jetting service page.</td></tr>
+      <tr><th>Page</th><th>Clicks</th><th>Impr.</th><th>CTR</th><th>Pos.</th><th>Hotjar Signal</th><th>Issue &amp; Action</th></tr>
+      <tr>
+        <td><strong>/ (Homepage)</strong></td><td>400</td><td>256,816</td><td><span class="badge red">0.16%</span></td><td>15.8</td>
+        <td>📹 <strong>47 sessions</strong> · #1 next page = /special-offers/ (8 sessions) · #2 = /contact-us/ (5 sessions) · Good mobile flow</td>
+        <td><span class="priority-tag p1">P1</span> Title mismatch (Emergency Plumber vs Drain Cleaning H1). <strong>Hotjar confirms</strong> users immediately look for the $49 offer — move it above the fold on mobile. Rewrite title (Meta Tags tab). Add AggregateRating + FAQPage schema.</td>
+      </tr>
+      <tr style="background:#fff5f5">
+        <td><strong>/stop-clogs-before-they-get-worse/</strong> <span class="badge orange">FB Ad Only</span></td><td>—</td><td>Not in GSC</td><td>—</td><td>—</td>
+        <td>📹 <strong>64 sessions</strong> · ~50% exit same page · Top next = /special-offers/ · Avg dwell 3+ min · Mostly Android mobile</td>
+        <td><span class="priority-tag p1">P1</span> <strong>Not in sitemap — Google cannot index it.</strong> Add to sitemap, add title tag, meta description, canonical, LocalBusiness schema. <strong>Design: Add sticky click-to-call button + mid-page "$49 Book Now" CTA</strong> — users are reading but hitting no CTA before their scroll stops. Critical conversion fix.</td>
+      </tr>
+      <tr style="background:#fff5f5">
+        <td><strong>/expert-plumbing-services-you-can-trust/</strong> <span class="badge orange">FB Ad Only</span></td><td>—</td><td>Not in GSC</td><td>—</td><td>—</td>
+        <td>📹 <strong>52 sessions</strong> · ~40% exit same page · Top next = /special-offers/ (3) · /contact-us/ (1) · Mostly Android mobile</td>
+        <td><span class="priority-tag p1">P1</span> <strong>Not in sitemap — Google cannot index it.</strong> Add to sitemap, SEO meta tags, schema. <strong>Design: Page headline must match the Facebook ad copy</strong> that drove the click — if the ad says "Stop Clogs," the page H1 should echo it. Mismatched ad-to-page message = high exit rate. Add same sticky CTA as above.</td>
+      </tr>
+      <tr>
+        <td>/services/drain-cleaning/</td><td>8</td><td>161,111</td><td><span class="badge red">0.00%</span></td><td>49.0</td>
+        <td>📹 Low direct Hotjar traffic — most users arrive via FB ads, not organic drain cleaning searches yet</td>
+        <td><span class="priority-tag p1">P1</span> Page 5 for highest-volume queries. Full 1,500-word rewrite + FAQPage schema + internal links from all area pages. <strong>When this reaches page 1, the Hotjar conversion fixes (sticky CTA, $49 mid-page) must already be in place.</strong></td>
+      </tr>
+      <tr>
+        <td>/services/sewer-camera-inspection/</td><td>14</td><td>45,628</td><td><span class="badge red">0.03%</span></td><td>33.6</td>
+        <td>📹 Minimal Hotjar sessions — primarily organic path</td>
+        <td><span class="priority-tag p1">P1</span> Confirmed title mismatch (pos 2.7, 0.26% CTR). Fix title now (Meta Tags tab). Rewrite to 1,200+ words. Add FAQPage schema.</td>
+      </tr>
+      <tr>
+        <td>/service-areas/henderson-nv/hydro-jetting/</td><td>4</td><td>43,166</td><td><span class="badge red">0.01%</span></td><td>32.9</td>
+        <td>📹 2 Hotjar sessions — insufficient for behavior analysis</td>
+        <td><span class="priority-tag p1">P1</span> 43K impressions, page 3. Thin content. Rewrite with Henderson-specific content + FAQ schema. Missing meta description.</td>
+      </tr>
+      <tr>
+        <td>/services/hydro-jetting-services/</td><td>9</td><td>31,636</td><td><span class="badge red">0.03%</span></td><td>24.0</td>
+        <td>📹 3 Hotjar sessions</td>
+        <td><span class="priority-tag p1">P1</span> 31K impressions on page 3. Fix title (add "Las Vegas"). Rewrite content to 1,200+ words.</td>
+      </tr>
+      <tr>
+        <td>/service-areas/las-vegas-nv/</td><td>1</td><td>27,510</td><td><span class="badge red">0.00%</span></td><td>43.4</td>
+        <td>📹 Minimal sessions</td>
+        <td><span class="priority-tag p1">P1</span> Highest-impression city page, near-zero clicks. Full rewrite + FAQ schema. Missing meta description.</td>
+      </tr>
+      <tr>
+        <td><strong>/about-us/special-offers/</strong></td><td>2</td><td>1,193</td><td><span class="badge red">0.17%</span></td><td>39.3</td>
+        <td>📹 <strong>13 direct landings + 8+ inbound from homepage + FB landing pages</strong> · 9 exits from this page · Users arrive with high intent and leave without converting</td>
+        <td><span class="priority-tag p1">P1</span> <strong>Hotjar confirms this is the conversion bottleneck.</strong> Users reach this page wanting the $49 deal and still leave. SEO fix: rewrite title to include "$49" (Meta Tags tab). <strong>Design fix: Add 3-field booking form above the fold. Phone number must be the first visible element on mobile. Add "Limited same-day appointments" urgency copy.</strong></td>
+      </tr>
+      <tr>
+        <td>/services/trenchless-sewer-repair/</td><td>10</td><td>16,972</td><td><span class="badge red">0.06%</span></td><td>41.8</td>
+        <td>📹 2 Hotjar sessions — 3 exits recorded here (users landing via blog)</td>
+        <td><span class="priority-tag p2">P2</span> High-ticket service. Rewrite + "No Digging" title fix (Meta Tags tab).</td>
+      </tr>
+      <tr>
+        <td>/services/snaking/</td><td>17</td><td>11,345</td><td><span class="badge red">0.15%</span></td><td>39.5</td>
+        <td>📹 3 Hotjar sessions</td>
+        <td><span class="priority-tag p2">P2</span> Fix title — add "$49 Special." Rewrite to target "drain snake" and "unclog drain" queries.</td>
+      </tr>
+      <tr>
+        <td>/contact-us/</td><td>13</td><td>10,810</td><td><span class="badge orange">0.12%</span></td><td>15.9</td>
+        <td>📹 <strong>3 direct landings + 5 exits recorded here</strong> · Contact page exits likely = called or submitted (positive signal)</td>
+        <td><span class="priority-tag p2">P2</span> Title fix (Meta Tags tab). <strong>Hotjar: watch recordings of sessions that land on contact-us directly — confirm the form submits correctly on Android Chrome.</strong></td>
+      </tr>
+      <tr>
+        <td>/services/grease-trap-cleaning/</td><td>5</td><td>10,293</td><td><span class="badge red">0.05%</span></td><td>43.4</td>
+        <td>📹 Minimal sessions</td>
+        <td><span class="priority-tag p2">P2</span> Commercial service. Fix title + rewrite with restaurant/hotel focus. Add commercial-specific CTA (maintenance plans, health code compliance).</td>
+      </tr>
+      <tr>
+        <td>/services/cipp-pipe-lining/</td><td>4</td><td>3,808</td><td><span class="badge orange">0.11%</span></td><td>53.0</td>
+        <td>📹 Minimal sessions</td>
+        <td><span class="priority-tag p3">P3</span> Specialty service. Expand title to "Trenchless Pipe Lining." Low standalone priority.</td>
+      </tr>
+      <tr>
+        <td>/these-trees-could-be-the-root-of-your-sewer-line-problems/</td><td>9</td><td>1,098</td><td><span class="badge green">0.82%</span></td><td>8.5</td>
+        <td>📹 Minimal sessions — blog traffic typically low in recordings</td>
+        <td><span class="priority-tag p2">P2</span> Best blog post. Add FAQPage schema. Add CTA to /services/trenchless-sewer-repair/.</td>
+      </tr>
+      <tr>
+        <td>/how-much-psi-is-too-much.../</td><td>4</td><td>3,779</td><td><span class="badge green">0.11%</span></td><td>4.4</td>
+        <td>📹 Minimal sessions</td>
+        <td><span class="priority-tag p3">P3</span> Ranking pos 4.4 — good. Add FAQPage schema and hydro jetting CTA.</td>
+      </tr>
+      <tr>
+        <td>/financing/</td><td>—</td><td>—</td><td>—</td><td>—</td>
+        <td>📹 <strong>2 exits recorded here</strong> · Users navigating to /financing/ and leaving — possible dead-end page</td>
+        <td><span class="priority-tag p2">P2</span> <strong>Hotjar only.</strong> Watch recordings of users who visited /financing/. Check if the financing form loads on mobile, if there's a clear next step, and if any form errors occur on Android Chrome.</td>
+      </tr>
     </table>
   </div>
 </div>
@@ -829,6 +939,21 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
 ════════════════════════════════════════════════════════════ -->
 <div id="quickwins" class="tab-content">
   <h2 class="section-title">30/60/90 Day Action Plan</h2>
+
+  <div class="card" style="border-left:4px solid #dc2626">
+    <h2>🔥 Week 0 — Conversion Fixes First (Before Any SEO Work)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:12px">Hotjar shows users are landing and leaving without converting. Fixing SEO rankings without fixing on-site conversion means sending more traffic into a leaking funnel. Do these first — they take less than a day and affect every visitor immediately.</p>
+    <table>
+      <tr><th>Task</th><th>Where</th><th>Time</th><th>Why Now</th></tr>
+      <tr><td><strong>1. Add sticky mobile click-to-call button</strong> to /stop-clogs-before-they-get-worse/ and /expert-plumbing-services-you-can-trust/</td><td>WordPress page editor → add floating phone button widget or custom HTML</td><td>1 hr</td><td>Hotjar: 40–50% of FB ad landing page visitors leave without clicking anything. A visible phone button at scroll-stop fixes this.</td></tr>
+      <tr><td><strong>2. Add "$49 Book Now" CTA mid-page</strong> on both Facebook landing pages — not just at the bottom</td><td>Insert CTA block halfway down each landing page</td><td>30 min</td><td>Hotjar: avg session is 3+ min — users scroll past the top CTA. They need a second prompt mid-content.</td></tr>
+      <tr><td><strong>3. Redesign /about-us/special-offers/ for conversion</strong> — add 3-field form (name, phone, address), move phone number above fold, add "Limited same-day slots" urgency</td><td>WordPress page editor</td><td>2 hrs</td><td>Hotjar: This page receives the most high-intent inbound traffic from all sources but has the worst conversion. It's the #1 bottleneck on the site.</td></tr>
+      <tr><td><strong>4. Add both Facebook landing pages to XML sitemap</strong> — /stop-clogs-before-they-get-worse/ and /expert-plumbing-services-you-can-trust/</td><td>Yoast SEO → Sitemap settings, or manually in sitemap.xml</td><td>15 min</td><td>Hotjar: These 2 pages get the most sessions but Google can't index them. Zero organic equity from 116 recorded sessions.</td></tr>
+      <tr><td><strong>5. Add title tag, meta description, canonical + LocalBusiness schema</strong> to both Facebook landing pages</td><td>Yoast SEO panel on each page</td><td>30 min</td><td>Once in the sitemap, Google will crawl them. They need proper SEO tags to rank.</td></tr>
+      <tr><td><strong>6. Watch 10 Hotjar recordings on Android Chrome mobile</strong> — filter to: Device = Phone + Browser = Chrome + OS = Android</td><td>Hotjar dashboard → Recordings → Filters</td><td>1 hr</td><td>71% of visitors use this combination. Any friction found here affects the majority of all traffic.</td></tr>
+      <tr><td><strong>7. Check Facebook in-app browser sessions</strong> — filter Hotjar to Browser = Facebook. Confirm forms submit correctly.</td><td>Hotjar dashboard → Recordings → Filters</td><td>30 min</td><td>13 sessions may be losing conversions silently due to in-app browser form/tracking breakage.</td></tr>
+    </table>
+  </div>
 
   <div class="card">
     <h2>⚡ Week 1 — Title &amp; Meta Fixes (No New Content, Maximum Speed)</h2>
@@ -910,6 +1035,14 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <!-- CRITICAL -->
   <div class="card">
     <h2>🚨 Critical — Fix This Week</h2>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>0. Two high-traffic pages are completely missing from the sitemap — found via Hotjar</strong>
+      <p><code>/stop-clogs-before-they-get-worse/</code> (64 Hotjar sessions) and <code>/expert-plumbing-services-you-can-trust/</code> (52 Hotjar sessions) are the two most-visited pages on the site based on Hotjar recordings — yet neither appears in the page sitemap. Google cannot index them organically. They have no title tags, no meta descriptions, no schema, and no canonical tags. These pages are receiving paid Facebook ad traffic exclusively, with zero organic benefit.<br><br>
+      <strong>Additionally:</strong> Hotjar shows both pages have a 40–50% same-page exit rate despite 3+ minute average sessions. Users engage with the content but find no CTA at their scroll-stop point on mobile. This is a design conversion problem compounding the SEO invisibility problem.<br><br>
+      <strong>Fix (SEO):</strong> Add both pages to sitemap. Add title tag, meta description, canonical, LocalBusiness schema via Yoast.<br>
+      <strong>Fix (Design/CRO):</strong> Add sticky mobile click-to-call button. Insert "$49 Book Now" CTA mid-page. The CTA must appear before the user's average scroll-stop — on mobile, that means within the first 2 screens of content.</p>
+    </div></div>
 
     <div class="alert critical"><div class="alert-icon">🔴</div><div>
       <strong>1. Meta descriptions missing on all ~35 service-area pages</strong>
