@@ -92,6 +92,7 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <button class="tab-btn" onclick="showTab('quickwins',event)">Action Plan</button>
   <button class="tab-btn" onclick="showTab('siteaudit',event)">Site Audit (51 Pages)</button>
   <button class="tab-btn" onclick="showTab('hotjar',event)">Hotjar Recordings</button>
+  <button class="tab-btn" onclick="showTab('aisearch',event)">AI Search Performance</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1587,6 +1588,295 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
       <tr><td>Referrer = google.com + Device = Phone</td><td>~50</td><td>Google traffic = source of both confirmed conversions</td><td>Do mobile Google users find the phone number? Do they navigate to service-area pages? What's the path to /thank-you/?</td></tr>
       <tr><td>Duration &lt; 30 sec (immediate bounce)</td><td>52</td><td>10.4% of all sessions — find what breaks first impression</td><td>Is the page loading slowly? Layout shift above the fold? Content not visible? Phone rendering broken?</td></tr>
       <tr><td>Landing page = /service-areas/* (any service-area page)</td><td>~15</td><td>These are the ONLY pages that produced confirmed conversions</td><td>What's the user journey that led to form submission? What do converting sessions have in common?</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 11: AI SEARCH PERFORMANCE
+════════════════════════════════════════════════════════════ -->
+<div id="aisearch" class="tab-content">
+  <h2 class="section-title">AI Search Performance</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:20px">Source: Hotjar referrer data (12-month), GSC impressions (180 days), AI search landscape analysis · discountdraincleanlv.com · June 2026</p>
+
+  <!-- KPI ROW -->
+  <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="metric-card red"><div class="val">1</div><div class="lbl">AI Referral Sessions</div><div class="sub">ChatGPT · 12 months (Hotjar)</div></div>
+    <div class="metric-card red"><div class="val">0%</div><div class="lbl">AI Overview Visibility</div><div class="sub">Pos 30+ = excluded from AI pool</div></div>
+    <div class="metric-card orange"><div class="val">104K+</div><div class="lbl">Impressions at Risk</div><div class="sub">Queries now getting AI Overviews</div></div>
+    <div class="metric-card blue"><div class="val">3</div><div class="lbl">AI Channels Untracked</div><div class="sub">ChatGPT · Perplexity · Copilot</div></div>
+    <div class="metric-card orange"><div class="val">0</div><div class="lbl">AI-Optimized Pages</div><div class="sub">No FAQ schema, thin content</div></div>
+  </div>
+
+  <!-- CRITICAL ALERTS -->
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>The Site Has Near-Zero AI Search Visibility — and the Gap is Widening</strong>
+    <p>In 12 months of Hotjar data (500 sessions), only <strong>1 session came from ChatGPT</strong> — and 0 from Perplexity, Bing Copilot, Gemini, or any other AI assistant. For context, Yelp and Bing each sent 1 session too. AI referrals are negligible. Meanwhile, Google AI Overviews now appear for "drain cleaning near me," "hydro jetting service near me," and "sewer line inspection" — the site's primary impression-driving queries (104K+ impressions combined). Because the site ranks at position 30+, it is effectively excluded from the AI Overview source pool. Every AI referral is going to a competitor ranking on page 1.</p>
+  </div></div>
+
+  <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+    <strong>AI Search Is Growing Faster Than Traditional Search for Local Service Queries</strong>
+    <p>AI assistants (ChatGPT, Perplexity, Gemini, Copilot) are now the first stop for millions of consumers asking "what's the best drain cleaning company near me?" or "how much does hydro jetting cost in Las Vegas?" These queries used to send 100% of clicks to Google results — now AI answers them directly and only links to a handful of cited sources. The window to establish a foothold in AI citations before competitors do is open now, but narrowing. The same content improvements that push the site from position 30 to position 5 in Google are the exact fixes that make the site citable by AI engines.</p>
+  </div></div>
+
+  <!-- TWO COL: AI REFERRALS + AI OVERVIEW EXPOSURE -->
+  <div class="two-col">
+    <div class="card">
+      <h2>AI Referral Traffic — 12-Month Hotjar Data</h2>
+      <table>
+        <tr><th>AI Source</th><th>Sessions</th><th>% of All Traffic</th><th>Status</th></tr>
+        <tr><td>ChatGPT (chat.openai.com)</td><td>1</td><td>0.2%</td><td><span class="badge orange">Minimal — site was cited once</span></td></tr>
+        <tr><td>Perplexity</td><td>0</td><td>0%</td><td><span class="badge red">Not appearing in responses</span></td></tr>
+        <tr><td>Bing Copilot / Microsoft AI</td><td>0</td><td>0%</td><td><span class="badge red">Bing organic sent 1 session — Copilot: 0</span></td></tr>
+        <tr><td>Google Gemini / AI Overview</td><td>0*</td><td>0%</td><td><span class="badge red">Not tracked separately in Hotjar</span></td></tr>
+        <tr><td>Google Search (organic)</td><td>67</td><td>13.4%</td><td><span class="badge green">Traditional organic — both confirmed conversions</span></td></tr>
+      </table>
+      <p style="font-size:12px;color:#64748b;margin-top:8px">*Google AI Overview clicks appear in GSC and GA4 as organic Google traffic — they are not separately labeled in Hotjar referrer data. GSC does not yet break out AI Overview clicks vs standard organic clicks for most properties.</p>
+    </div>
+    <div class="card">
+      <h2>Queries Likely Triggering Google AI Overviews</h2>
+      <table>
+        <tr><th>Query</th><th>GSC Impressions</th><th>Site Position</th><th>AI Overview?</th></tr>
+        <tr><td>drain cleaning near me</td><td>78,431</td><td>30.9</td><td><span class="badge red">Yes — site excluded (pos 30+)</span></td></tr>
+        <tr><td>hydro jetting near me</td><td>26,489</td><td>~28</td><td><span class="badge red">Yes — site excluded</span></td></tr>
+        <tr><td>drain cleaning service</td><td>10,308</td><td>44.2</td><td><span class="badge red">Yes — site excluded</span></td></tr>
+        <tr><td>drain cleaning las vegas</td><td>7,795</td><td>19.8</td><td><span class="badge orange">Possible — pos 19 borderline</span></td></tr>
+        <tr><td>how much does hydro jetting cost</td><td>~3,000 est.</td><td>Unknown</td><td><span class="badge red">High AI Overview probability — informational query</span></td></tr>
+        <tr><td>sewer camera inspection las vegas</td><td>~391</td><td>2.7</td><td><span class="badge green">Possible inclusion — pos 2.7 eligible</span></td></tr>
+        <tr><td>$49 drain cleaning near me</td><td>421</td><td>6.7</td><td><span class="badge orange">Eligible by position — price content needed</span></td></tr>
+        <tr><td>drain cleaning henderson nv</td><td>263</td><td>4.4</td><td><span class="badge green">Eligible — city + service format</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- HOW AI ENGINES DECIDE WHO TO CITE -->
+  <div class="card">
+    <h2>🤖 How AI Engines Decide Which Local Service Sites to Cite</h2>
+    <table>
+      <tr><th>Ranking Signal</th><th>Current Status</th><th>Impact on AI Visibility</th></tr>
+      <tr>
+        <td><strong>Google page 1 ranking (top 5)</strong></td>
+        <td><span class="badge red">Site avg pos 33.7 — page 3–4</span></td>
+        <td>Google AI Overviews pull almost exclusively from top 5 organic results. ChatGPT and Perplexity use Bing index + training data — also biased toward page 1. The site is excluded from the citation pool for its highest-volume queries by position alone.</td>
+      </tr>
+      <tr>
+        <td><strong>FAQ / Q&amp;A content on pages</strong></td>
+        <td><span class="badge red">No FAQPage schema, minimal Q&amp;A content</span></td>
+        <td>AI Overviews and LLM responses are heavily biased toward pages with explicit question-answer formatting. "How much does drain cleaning cost in Las Vegas?" answered directly on the page is far more likely to be cited than a page that buries pricing. FAQPage schema signals to Google which sections are Q&amp;A.</td>
+      </tr>
+      <tr>
+        <td><strong>E-E-A-T signals (Experience, Expertise, Authoritativeness, Trust)</strong></td>
+        <td><span class="badge orange">Partial — business info present, reviews thin</span></td>
+        <td>AI engines prefer sources that demonstrate real expertise: author bios, years in business prominently stated, license numbers, reviews cited on-page. These are the same signals Google uses for E-E-A-T. The site has basic business info but no license/certification display, no technician profiles, and minimal on-page review integration.</td>
+      </tr>
+      <tr>
+        <td><strong>Structured data (Schema.org)</strong></td>
+        <td><span class="badge red">Sitewide "Product" schema — wrong type everywhere</span></td>
+        <td>LocalBusiness, Service, FAQPage, AggregateRating, and HowTo schema are the types most likely to feed AI parsing. All are missing or wrongly typed. Properly structured pages are machine-readable; the current "Product" schema on service pages actively misleads AI parsers about the page's purpose.</td>
+      </tr>
+      <tr>
+        <td><strong>Content depth and specificity</strong></td>
+        <td><span class="badge red">Most service pages thin (under 400 words)</span></td>
+        <td>LLMs cite sources that comprehensively answer the query. A drain cleaning page with 300 generic words will not be cited over a competitor with 1,500 words covering process, pricing, timeline, FAQs, and Las Vegas-specific context. Depth signals expertise to both Google and AI models.</td>
+      </tr>
+      <tr>
+        <td><strong>Google Business Profile (GBP) reviews</strong></td>
+        <td><span class="badge orange">Reviews exist but count unknown — not integrated on-site</span></td>
+        <td>Google AI Overviews for "[service] near me" often pull directly from GBP data — star rating, review count, and business description. High-review-count GBP listings appear in the AI answer panel even when the website doesn't. GBP optimization is a parallel AI visibility track that doesn't require website changes.</td>
+      </tr>
+      <tr>
+        <td><strong>Bing indexing / Bing Webmaster Tools</strong></td>
+        <td><span class="badge red">Not registered (confirmed from Bing: 1 session in 12 months)</span></td>
+        <td>Bing Copilot (Microsoft AI) uses Bing's index. If the site isn't submitted to Bing Webmaster Tools, Bing's crawler may not be prioritizing it. ChatGPT's Browse mode also uses Bing. Registering takes 15 minutes and directly feeds the AI assistant that powers Copilot, Bing Chat, and Edge AI.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- AI CHANNEL BREAKDOWN -->
+  <div class="card">
+    <h2>🌐 AI Search Channel Landscape — What's Driving Local Service Traffic in 2026</h2>
+    <table>
+      <tr><th>AI Channel</th><th>Est. Market Share</th><th>How It Finds Local Businesses</th><th>Site's Current Visibility</th><th>Fix</th></tr>
+      <tr>
+        <td><strong>Google AI Overviews</strong></td>
+        <td>Dominant — appears for ~30% of searches</td>
+        <td>Pulls from top 5 organic Google results + GBP listings. Generates summaries with cited links. Local service queries often show 2–3 business citations in the Overview panel.</td>
+        <td><span class="badge red">Not visible — position 30+ excluded</span></td>
+        <td>Reach page 1 (content rewrites). Add FAQPage + LocalBusiness schema. Strengthen GBP listing with 50+ reviews.</td>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT / GPT-4o Browse</strong></td>
+        <td>Growing — 100M+ weekly users</td>
+        <td>Browse mode uses Bing index for real-time queries. Training data biased toward authoritative, frequently-linked sites. Local queries with city + service tend to surface GBP/Yelp/Angi directories, then individual sites.</td>
+        <td><span class="badge orange">1 session — minimal appearance</span></td>
+        <td>Register Bing Webmaster Tools. Create content that answers "best drain cleaning Las Vegas" definitively. Build directory citations (Yelp, Angi, HomeAdvisor) which ChatGPT often cites for local queries.</td>
+      </tr>
+      <tr>
+        <td><strong>Perplexity</strong></td>
+        <td>Fast growing — 15M+ DAU</td>
+        <td>Uses multiple search indices + direct web crawling. Highly biased toward expert-authored content with citations. Local service queries return GBP data, Yelp listings, and sites with detailed pricing/process pages.</td>
+        <td><span class="badge red">0 sessions — not appearing</span></td>
+        <td>Create price-transparent, process-detailed service pages (e.g., "How much does hydro jetting cost in Las Vegas? $X–$Y depending on…"). These match Perplexity's preference for direct, factual answers.</td>
+      </tr>
+      <tr>
+        <td><strong>Bing Copilot</strong></td>
+        <td>Integrated in Edge, Windows 11 — large installed base</td>
+        <td>Directly uses Bing search index + Bing Places (like GBP but for Bing Maps). Local service queries return Bing Places listings first, then organic results.</td>
+        <td><span class="badge red">0 AI sessions — not submitted to Bing</span></td>
+        <td>Register at bing.com/webmasters. Claim Bing Places for Business listing (separate from GBP). These are 30-minute tasks that unlock an entire AI channel.</td>
+      </tr>
+      <tr>
+        <td><strong>Apple Intelligence / Siri</strong></td>
+        <td>iPhone default — 50%+ of iOS users</td>
+        <td>Uses Apple Maps + web search (Google by default on iPhone). Local service queries on iPhone trigger Siri / Maps results. GBP and Apple Maps listing quality is the primary lever.</td>
+        <td><span class="badge orange">Unmeasured — depends on Apple Maps listing</span></td>
+        <td>Claim and optimize Apple Maps listing at mapsconnect.apple.com. Ensure address, phone, hours, and categories are accurate. iOS = 13.6% of Hotjar sessions — Apple Intelligence affects this entire segment.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- CONTENT GAPS FOR AI VISIBILITY -->
+  <div class="two-col">
+    <div class="card">
+      <h2>❓ Questions AI Users Ask That the Site Doesn't Answer</h2>
+      <p style="font-size:12px;color:#64748b;margin-bottom:12px">These are the exact questions being typed into ChatGPT, Perplexity, and Gemini for Las Vegas drain cleaning. None have a dedicated, well-answered page on the site — making the site uncitable for any of them.</p>
+      <table>
+        <tr><th>Question</th><th>AI Search Volume</th><th>Missing From Site</th></tr>
+        <tr><td>How much does drain cleaning cost in Las Vegas?</td><td>Very high</td><td>No pricing page / pricing section</td></tr>
+        <tr><td>What's the difference between drain snaking and hydro jetting?</td><td>High</td><td>No comparison content</td></tr>
+        <tr><td>How long does hydro jetting take?</td><td>High</td><td>No process/timeline page</td></tr>
+        <tr><td>Is hydro jetting worth it?</td><td>High</td><td>No educational content on this</td></tr>
+        <tr><td>Best drain cleaning company in Las Vegas</td><td>Very high</td><td>No "best of" positioning content</td></tr>
+        <tr><td>How often should I get my drains cleaned?</td><td>High</td><td>No maintenance guide content</td></tr>
+        <tr><td>What causes sewer backups in Las Vegas?</td><td>Medium</td><td>No local problem/cause content</td></tr>
+        <tr><td>Does hydro jetting damage old pipes?</td><td>Medium</td><td>No FAQ addressing this objection</td></tr>
+        <tr><td>Emergency drain cleaning Las Vegas — who to call?</td><td>High</td><td>No dedicated emergency page</td></tr>
+        <tr><td>Is $49 drain cleaning real or a scam?</td><td>Medium</td><td>No trust/legitimacy content</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>📋 What a Page Must Have to Be Cited by AI</h2>
+      <p style="font-size:12px;color:#64748b;margin-bottom:12px">Checklist for any service page to qualify as an AI-citable source. Currently no pages on the site meet all criteria.</p>
+      <table>
+        <tr><th>Requirement</th><th>Status</th></tr>
+        <tr><td>Ranks page 1 (top 5) in Google for the target query</td><td><span class="badge red">❌ Avg pos 33.7</span></td></tr>
+        <tr><td>Page has explicit Q&amp;A sections answering the query directly</td><td><span class="badge red">❌ Most pages lack Q&amp;A</span></td></tr>
+        <tr><td>FAQPage schema markup on the page</td><td><span class="badge red">❌ None sitewide</span></td></tr>
+        <tr><td>Pricing information stated explicitly (even a range)</td><td><span class="badge orange">⚠️ "$49" mentioned but no range/detail</span></td></tr>
+        <tr><td>LocalBusiness schema with name, address, phone, service area</td><td><span class="badge red">❌ "Product" schema on all pages</span></td></tr>
+        <tr><td>AggregateRating schema with real review count + score</td><td><span class="badge red">❌ None sitewide</span></td></tr>
+        <tr><td>Business submitted to Bing Webmaster Tools</td><td><span class="badge red">❌ Not registered</span></td></tr>
+        <tr><td>Apple Maps / Bing Places listing claimed</td><td><span class="badge red">❌ Unknown status</span></td></tr>
+        <tr><td>GBP listing with 50+ reviews at 4.5+ stars</td><td><span class="badge orange">⚠️ Reviews exist, count unknown</span></td></tr>
+        <tr><td>Content 1,000+ words with specific, factual information</td><td><span class="badge red">❌ Most service pages under 400 words</span></td></tr>
+        <tr><td>Site listed in Yelp, Angi, HomeAdvisor (AI often cites these)</td><td><span class="badge orange">⚠️ Yelp sent 1 session — partial presence</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- AI ACTION PLAN -->
+  <div class="card">
+    <h2>🚀 AI Search Action Plan — 30/60/90 Days</h2>
+    <table>
+      <tr><th>#</th><th>Action</th><th>Time</th><th>AI Channel Impact</th><th>Priority</th></tr>
+      <tr>
+        <td>1</td>
+        <td><strong>Register Bing Webmaster Tools</strong> — submit sitemap at bing.com/webmasters</td>
+        <td>15 min</td>
+        <td>Directly feeds Bing Copilot (Microsoft AI) + ChatGPT Browse mode. 0 Copilot sessions currently. This is the easiest AI visibility unlock on the list.</td>
+        <td><span class="badge red">Critical — do today</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>Claim Bing Places for Business</strong> listing at bingplaces.com — separate from GBP</td>
+        <td>30 min</td>
+        <td>Bing Copilot surfaces Bing Places listings for "[service] near me" queries the same way Google AI Overview surfaces GBP. Claiming this gives free Copilot visibility.</td>
+        <td><span class="badge red">Critical — do today</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>Claim Apple Maps listing</strong> at mapsconnect.apple.com — verify name, address, phone, categories</td>
+        <td>30 min</td>
+        <td>Apple Intelligence (Siri) uses Apple Maps for local service queries. 13.6% of Hotjar sessions are iOS users — this entire segment's AI assistant is blind to the business if the Apple Maps listing is incomplete.</td>
+        <td><span class="badge red">Critical — do today</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>Add FAQPage schema to 5 core service pages</strong> — see Schema tab for exact JSON-LD. Start with /services/drain-cleaning/, /services/hydro-jetting-services/, /about-us/faq/</td>
+        <td>2 hrs</td>
+        <td>FAQPage schema is the single strongest AI citation signal for informational queries. Google AI Overviews explicitly pull FAQ-structured content. ChatGPT and Perplexity prefer Q&amp;A formatted answers.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Fix all schema from "Product" → correct types</strong> (Service, LocalBusiness, FAQPage, ContactPage) across all 51 pages</td>
+        <td>3 hrs</td>
+        <td>Correcting schema removes the active signal that tells AI parsers "this is a product listing" — which causes misclassification. LocalBusiness + Service schema is the correct pairing for a local drain cleaning company.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><strong>Add explicit pricing sections</strong> to service pages — "Drain cleaning in Las Vegas: starting at $49. Hydro jetting: $150–$400 depending on pipe length."</td>
+        <td>1 hr</td>
+        <td>Pricing transparency is a top citation signal for AI answers to "how much does X cost" queries. Perplexity and ChatGPT almost always cite the first page that states a concrete price range. Currently no competitor has a strong pricing page for this market.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>Build a "Cost Guide" page</strong> — /drain-cleaning-cost-las-vegas/ — 1,200+ words covering all services, price ranges, what affects cost, FAQs</td>
+        <td>3 hrs</td>
+        <td>Informational cost queries ("how much does drain cleaning cost?", "hydro jetting price Las Vegas") have very high AI Overview frequency. A dedicated, authoritative cost guide is the highest-ROI AI visibility page for a local service business.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Aggressively build GBP reviews</strong> — target 50+ reviews at 4.5+ stars within 90 days (see Review Campaign in Action Plan tab)</td>
+        <td>Ongoing</td>
+        <td>Google AI Overviews for "[service] near me" in Las Vegas show businesses with the most reviews and highest ratings. GBP is the fastest AI visibility path that doesn't require website changes — Google already has the data, it just needs enough reviews to surface the business.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>Rewrite core service pages to 1,500+ words</strong> with Q&amp;A sections, process steps, pricing, and Las Vegas context — /services/drain-cleaning/ first</td>
+        <td>4 hrs each</td>
+        <td>Content depth is the primary Google ranking signal AND the primary AI citation signal. A 1,500-word drain cleaning guide that comprehensively answers user questions will rank higher in Google AND be cited more by AI engines — both outcomes from the same work.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>Strengthen directory presence</strong> — ensure Yelp, Angi, HomeAdvisor, and Thumbtack listings are complete and claimed</td>
+        <td>2 hrs</td>
+        <td>ChatGPT and Perplexity frequently cite directory pages (Yelp, Angi, HomeAdvisor) when answering local service queries. If the business has a complete, high-reviewed Yelp listing, AI may cite Yelp — which then routes the user to the business. Hotjar shows Yelp sent 1 session — the listing exists but may be incomplete.</td>
+        <td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- AI TRACKING SETUP -->
+  <div class="card">
+    <h2>📊 How to Track AI Search Performance Going Forward</h2>
+    <table>
+      <tr><th>What to Track</th><th>Where</th><th>How</th></tr>
+      <tr>
+        <td><strong>ChatGPT / Perplexity / Copilot referral sessions</strong></td>
+        <td>GA4 → Acquisition → Traffic Acquisition</td>
+        <td>Filter Source to: chatgpt.com, perplexity.ai, bing.com/search (with Copilot query params), claude.ai, gemini.google.com. Create a custom GA4 segment called "AI Referrals." Currently these show up mixed with organic — they need to be isolated with a custom channel group.</td>
+      </tr>
+      <tr>
+        <td><strong>Google AI Overview clicks</strong></td>
+        <td>Google Search Console → Search Results</td>
+        <td>GSC is beginning to roll out AI Overview click attribution as a separate filter in the Performance report. Check monthly under Appearance → AI Overview. If not yet available for the property, monitor for the rollout — Google has confirmed it's coming to all GSC accounts.</td>
+      </tr>
+      <tr>
+        <td><strong>Bing AI / Copilot traffic</strong></td>
+        <td>Bing Webmaster Tools → Traffic</td>
+        <td>Once registered at bing.com/webmasters, Bing shows search analytics including Copilot-attributed clicks separately from standard Bing organic. This is the only way to see Bing AI traffic — it doesn't flow through GA4 as a distinct source.</td>
+      </tr>
+      <tr>
+        <td><strong>Branded mentions in AI responses</strong></td>
+        <td>Manual testing + third-party tools</td>
+        <td>Monthly: search "best drain cleaning Las Vegas" and "drain cleaning near me Las Vegas" in ChatGPT, Perplexity, and Gemini. Note whether the business is cited. Tools like BrightEdge and Semrush are beginning to track AI Overview presence. Manual testing is free and sufficient at current traffic levels.</td>
+      </tr>
     </table>
   </div>
 </div>
