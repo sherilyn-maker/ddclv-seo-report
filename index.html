@@ -91,6 +91,7 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <button class="tab-btn" onclick="showTab('pages',event)">Page Audit</button>
   <button class="tab-btn" onclick="showTab('quickwins',event)">Action Plan</button>
   <button class="tab-btn" onclick="showTab('siteaudit',event)">Site Audit (51 Pages)</button>
+  <button class="tab-btn" onclick="showTab('hotjar',event)">Hotjar Recordings</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -1163,6 +1164,243 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
       <tr><td>3</td><td>Add FAQPage JSON-LD to /about-us/faq/ (template in Schema tab)</td><td>10 min</td><td>FAQ dropdowns in SERP = +15–25% CTR, zero new content required</td></tr>
       <tr><td>4</td><td>Fix Summerlin sewer pipe cleaning internal links — point to correct Summerlin URL</td><td>10 min</td><td>3 pages passing PageRank to wrong city right now</td></tr>
       <tr><td>5</td><td>Change /services/pipe-descaling/ title — remove "Picote," use "Pipe Descaling"</td><td>5 min</td><td>"Picote" is a brand name nobody searches; URL slug already says "pipe-descaling"</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 10: HOTJAR RECORDINGS
+════════════════════════════════════════════════════════════ -->
+<div id="hotjar" class="tab-content">
+  <h2 class="section-title">Hotjar Session Recordings — June 2026</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:20px">Source: 299 recorded sessions from discountdraincleanlv.com · Exported from Hotjar dashboard · 100% US traffic</p>
+
+  <!-- KPI ROW -->
+  <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="metric-card blue"><div class="val">299</div><div class="lbl">Total Sessions</div><div class="sub">Recorded</div></div>
+    <div class="metric-card orange"><div class="val">71%</div><div class="lbl">Mobile Users</div><div class="sub">211 of 299 sessions</div></div>
+    <div class="metric-card red"><div class="val">90%</div><div class="lbl">New Visitors</div><div class="sub">268 of 299</div></div>
+    <div class="metric-card green"><div class="val">3.4 min</div><div class="lbl">Avg Session</div><div class="sub">203 sec avg duration</div></div>
+    <div class="metric-card blue"><div class="val">2.8</div><div class="lbl">Pages / Session</div><div class="sub">11.2 actions avg</div></div>
+  </div>
+
+  <!-- CRITICAL FINDINGS -->
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>Facebook Ads Are Driving 43% of All Recorded Sessions — But the Ad Landing Pages Aren't in the Sitemap</strong>
+    <p>128 of 299 sessions came from Facebook (l.facebook.com, facebook.com, m.facebook.com). The top two landing pages — <code>/stop-clogs-before-they-get-worse/</code> (64 sessions) and <code>/expert-plumbing-services-you-can-trust/</code> (52 sessions) — account for 38% of all sessions combined. Neither page appears in the page sitemap, meaning they receive zero organic SEO benefit and have no schema, no canonical tags, and likely no meta description. These pages need both conversion optimization AND SEO treatment.</p>
+  </div></div>
+
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>71% of Sessions Are Mobile — Android Dominates at 57% of All OS</strong>
+    <p>211 of 299 sessions were on mobile phones. Android accounts for 57% of all operating systems (169 sessions), iOS accounts for 14% (42 sessions). If any element of the site — forms, CTAs, phone number tap-to-call, navigation — is broken or awkward on Android Chrome, it is broken for the majority of visitors. This is the highest-priority UX validation to run in Hotjar recordings.</p>
+  </div></div>
+
+  <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+    <strong>4% of Sessions Use Facebook In-App Browser — These Can Break Forms and Tracking</strong>
+    <p>13 sessions used the Facebook in-app browser (when users click ads without leaving the Facebook app). In-app browsers commonly block cookies, break form submissions, and misfire conversion tracking. Users completing a form inside the Facebook browser may not be tracked as conversions in GA4 or Hotjar. Check recordings from these sessions specifically for form abandonment.</p>
+  </div></div>
+
+  <div class="alert success"><div class="alert-icon">✅</div><div>
+    <strong>Engagement Is Strong — Only 7% Bounce in Under 30 Seconds</strong>
+    <p>Only 22 of 299 sessions (7%) lasted under 30 seconds. 98 sessions (33%) lasted over 5 minutes. Average session is 3.4 minutes with 2.8 pages viewed and 11.2 actions taken. This is above-average engagement for a local service site, suggesting the content resonates once users land. The problem is converting that engagement into calls or form submissions — not holding attention.</p>
+  </div></div>
+
+  <!-- TWO COL: TRAFFIC + DEVICE -->
+  <div class="two-col">
+    <div class="card">
+      <h2>Traffic Source Breakdown</h2>
+      <table>
+        <tr><th>Source</th><th>Sessions</th><th>%</th><th>Notes</th></tr>
+        <tr><td>Facebook (l.facebook.com)</td><td>118</td><td>39.5%</td><td>Primary ad click source</td></tr>
+        <tr><td>Direct (no referrer)</td><td>89</td><td>29.8%</td><td>Direct navigation or dark social</td></tr>
+        <tr><td>Google</td><td>45</td><td>15.1%</td><td>Organic + possible paid</td></tr>
+        <tr><td>Facebook (facebook.com)</td><td>10</td><td>3.3%</td><td>Desktop Facebook clicks</td></tr>
+        <tr><td>Facebook (m.facebook.com)</td><td>6</td><td>2.0%</td><td>Mobile Facebook app</td></tr>
+        <tr><td>Other</td><td>31</td><td>10.4%</td><td>Mixed referrers</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Device &amp; OS Breakdown</h2>
+      <table>
+        <tr><th>Segment</th><th>Count</th><th>%</th></tr>
+        <tr><td><strong>📱 Mobile Phone</strong></td><td>211</td><td>70.6%</td></tr>
+        <tr><td>🖥️ Desktop</td><td>82</td><td>27.4%</td></tr>
+        <tr><td>📟 Tablet</td><td>6</td><td>2.0%</td></tr>
+        <tr><td colspan="3" style="background:#f8fafc;font-weight:700;font-size:12px">Operating System</td></tr>
+        <tr><td>Android</td><td>169</td><td>56.5%</td></tr>
+        <tr><td>Windows</td><td>79</td><td>26.4%</td></tr>
+        <tr><td>iOS</td><td>42</td><td>14.0%</td></tr>
+        <tr><td>Mac</td><td>8</td><td>2.7%</td></tr>
+        <tr><td>Linux</td><td>1</td><td>0.3%</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TWO COL: BROWSER + NEW/RETURNING -->
+  <div class="two-col">
+    <div class="card">
+      <h2>Browser Breakdown</h2>
+      <table>
+        <tr><th>Browser</th><th>Sessions</th><th>%</th><th>Note</th></tr>
+        <tr><td>Chrome</td><td>243</td><td>81.3%</td><td>Dominant — optimize here first</td></tr>
+        <tr><td>Safari</td><td>28</td><td>9.4%</td><td>iOS users</td></tr>
+        <tr><td>Facebook In-App</td><td>13</td><td>4.3%</td><td>⚠️ May break forms + tracking</td></tr>
+        <tr><td>Instagram In-App</td><td>5</td><td>1.7%</td><td>Same risk as Facebook in-app</td></tr>
+        <tr><td>Edge</td><td>4</td><td>1.3%</td><td>Windows desktop users</td></tr>
+        <tr><td>Samsung Browser</td><td>2</td><td>0.7%</td><td>Android budget phones</td></tr>
+        <tr><td>Firefox</td><td>2</td><td>0.7%</td><td></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>New vs. Returning + Session Depth</h2>
+      <table>
+        <tr><th>Segment</th><th>Sessions</th><th>%</th></tr>
+        <tr><td>🆕 New Visitors</td><td>268</td><td>89.6%</td></tr>
+        <tr><td>🔄 Returning Visitors</td><td>31</td><td>10.4%</td></tr>
+        <tr><td colspan="3" style="background:#f8fafc;font-weight:700;font-size:12px">Session Duration</td></tr>
+        <tr><td>Under 30 sec (bounce)</td><td>22</td><td>7.4%</td></tr>
+        <tr><td>30–120 sec</td><td>45</td><td>15.1%</td></tr>
+        <tr><td>120–300 sec</td><td>35</td><td>11.7%</td></tr>
+        <tr><td><strong>Over 300 sec (5+ min)</strong></td><td><strong>98</strong></td><td><strong>32.8%</strong></td></tr>
+        <tr><td colspan="3" style="background:#f8fafc;font-weight:700;font-size:12px">Engagement</td></tr>
+        <tr><td>Avg actions per session</td><td colspan="2">11.2</td></tr>
+        <tr><td>Avg pages per session</td><td colspan="2">2.8</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- LANDING + EXIT PAGES -->
+  <div class="two-col">
+    <div class="card">
+      <h2>Top Landing Pages</h2>
+      <table>
+        <tr><th>Page</th><th>Sessions</th><th>Source</th></tr>
+        <tr><td><strong>/stop-clogs-before-they-get-worse/</strong> <span class="badge orange">FB Ad</span></td><td>64</td><td>Facebook ads</td></tr>
+        <tr><td><strong>/expert-plumbing-services-you-can-trust/</strong> <span class="badge orange">FB Ad</span></td><td>52</td><td>Facebook ads</td></tr>
+        <tr><td>/ (Homepage)</td><td>47</td><td>Direct + Google</td></tr>
+        <tr><td>/about-us/special-offers/</td><td>13</td><td>Google + Direct</td></tr>
+        <tr><td>/services/hydro-jetting-services/</td><td>3</td><td>Google</td></tr>
+        <tr><td>/services/snaking/</td><td>3</td><td>Google</td></tr>
+        <tr><td>/contact-us/</td><td>3</td><td>Direct</td></tr>
+        <tr><td>/services/trenchless-sewer-repair/</td><td>2</td><td>Google</td></tr>
+        <tr><td>/services/</td><td>2</td><td>Mixed</td></tr>
+        <tr><td>/service-areas/henderson-nv/hydro-jetting/</td><td>2</td><td>Google</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Top Exit Pages</h2>
+      <table>
+        <tr><th>Page</th><th>Exits</th><th>Concern?</th></tr>
+        <tr><td>/stop-clogs-before-they-get-worse/</td><td>32</td><td>⚠️ 50% of landings exit here — CTA not converting</td></tr>
+        <tr><td>/expert-plumbing-services-you-can-trust/</td><td>21</td><td>⚠️ 40% of landings exit here — same issue</td></tr>
+        <tr><td>/ (Homepage)</td><td>20</td><td>Normal for homepage</td></tr>
+        <tr><td>/about-us/special-offers/</td><td>9</td><td>⚠️ High-intent page — should convert, not exit</td></tr>
+        <tr><td>/contact-us/</td><td>5</td><td>✅ Contact page exits = likely called or submitted</td></tr>
+        <tr><td>/services/trenchless-sewer-repair/</td><td>3</td><td>Normal</td></tr>
+        <tr><td>/services/</td><td>3</td><td>Normal</td></tr>
+        <tr><td>/privacy-policy/</td><td>2</td><td>Normal</td></tr>
+        <tr><td>/financing/</td><td>2</td><td>Investigate — why are users leaving from financing?</td></tr>
+        <tr><td>/blog/</td><td>2</td><td>Normal</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- PAGE FLOW ANALYSIS -->
+  <div class="card">
+    <h2>🔁 Page Flow Analysis — Where Users Go After Landing</h2>
+    <table>
+      <tr><th>Landing Page</th><th>Top Next Steps</th><th>Problem / Opportunity</th></tr>
+      <tr>
+        <td><strong>/stop-clogs-before-they-get-worse/</strong><br><small>64 sessions</small></td>
+        <td>→ /about-us/special-offers/ (2 sessions)<br>→ Various service pages<br>→ Exit same page (~32 sessions)</td>
+        <td><span class="badge red">Problem</span> 50% of visitors exit directly from this page. The page content engages them (avg 3+ min dwell time) but doesn't push them to call or claim the $49 offer. Add a sticky click-to-call button and a bold "$49 Special" CTA inline — not just at the bottom.</td>
+      </tr>
+      <tr>
+        <td><strong>/expert-plumbing-services-you-can-trust/</strong><br><small>52 sessions</small></td>
+        <td>→ /about-us/special-offers/ (3 sessions)<br>→ /contact-us/ (1 session)<br>→ Exit same page (~21 sessions)</td>
+        <td><span class="badge red">Problem</span> 40% exit from this landing page. "Expert plumbing services" is a generic title — the page may not be answering the specific intent of the Facebook ad that sent users there. Align the headline on this page with the exact ad copy that drives clicks to it.</td>
+      </tr>
+      <tr>
+        <td><strong>/ (Homepage)</strong><br><small>47 sessions</small></td>
+        <td>→ /about-us/special-offers/ (8 sessions)<br>→ /contact-us/ (5 sessions)<br>→ /services/ (4 sessions)</td>
+        <td><span class="badge green">Good</span> Homepage users are navigating to high-intent pages. The $49 special offer is the #1 next step from homepage — this validates the offer as the primary conversion hook. Make it more prominent above the fold on mobile.</td>
+      </tr>
+      <tr>
+        <td><strong>/about-us/special-offers/</strong><br><small>13 direct landings + inbound from other pages</small></td>
+        <td>→ Stay on page (8 sessions)<br>→ Homepage (3)<br>→ Service pages (4)</td>
+        <td><span class="badge orange">Opportunity</span> This is the highest-intent page on the site. Users specifically navigating here want the $49 deal. 8 sessions stay on the page but don't convert visibly — add a phone number prominently, a booking form, or a "Click to Call" button that fires a GA4 conversion event.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div class="card">
+    <h2>🎯 Hotjar-Driven Recommendations</h2>
+    <table>
+      <tr><th>#</th><th>Finding</th><th>Action</th><th>Priority</th></tr>
+      <tr>
+        <td>1</td>
+        <td>Both Facebook ad landing pages exit at 40–50% — CTAs not converting</td>
+        <td>Add sticky mobile click-to-call button + inline "$49 Special" CTA on both <code>/stop-clogs-before-they-get-worse/</code> and <code>/expert-plumbing-services-you-can-trust/</code>. Watch Hotjar recordings filtered to these pages on mobile to see exactly where users scroll and stop.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>71% mobile + 57% Android — site must be verified on Android Chrome specifically</td>
+        <td>Filter Hotjar recordings to: Device = Phone, Browser = Chrome, OS = Android. Watch 10 sessions. Look for: form submission errors, tap target failures, slow image loads, navigation that requires zoom. Fix anything that creates friction.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Facebook landing pages are not in the sitemap — no SEO equity</td>
+        <td>Add both pages to the XML sitemap. Add canonical tags, title tags, meta descriptions, and LocalBusiness schema. Even if they're primarily paid landing pages, organic discoverability is free additional traffic.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>13 sessions via Facebook in-app browser — forms and tracking may be broken</td>
+        <td>Filter Hotjar recordings to Browser = Facebook. Watch sessions for form failures. Alternatively, add a banner on the site: "For the best experience, open in Chrome." Or implement a redirect to force external browser open on Facebook ad clicks.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>/about-us/special-offers/ has high intent but users leave without converting</td>
+        <td>Add a phone number displayed prominently as the first element below the fold on mobile. Add a simple "Book Your $49 Service" form (name, phone, address, best time to call). Make it 3 fields max — reduce friction.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>90% new visitors — almost no repeat traffic</td>
+        <td>Add email/SMS capture to the $49 special offers page: "Text us your address for same-day availability." Even a basic opt-in builds a retargeting list. Pair with Facebook Custom Audience retargeting for visitors who didn't call.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>/financing/ page appears in exit data — users may be hitting a dead end</td>
+        <td>Watch Hotjar recordings filtered to sessions that visited /financing/. Check if the financing form loads correctly on mobile, if there's a clear CTA, and if users are scrolling past content without acting.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Google traffic (45 sessions) lands mostly on homepage + special offers — organic CTA path is working</td>
+        <td>The homepage → special offers funnel is working for Google traffic. Strengthen it by making the "$49" offer the hero message on the homepage (currently buried below the fold on mobile). Test moving the offer CTA to the top banner.</td>
+        <td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- WHAT TO WATCH IN RECORDINGS -->
+  <div class="card">
+    <h2>🎬 What to Watch in Hotjar Recordings — Priority Filter List</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:12px">Use these filters inside Hotjar to find the most instructive sessions quickly.</p>
+    <table>
+      <tr><th>Filter</th><th>Why</th><th>What to Look For</th></tr>
+      <tr><td>Landing page = /stop-clogs-before-they-get-worse/ + Device = Phone</td><td>Highest-volume Facebook ad page, mostly mobile</td><td>Where do users stop scrolling? Is the phone number visible without scrolling? Is the CTA above the fold?</td></tr>
+      <tr><td>Landing page = /expert-plumbing-services-you-can-trust/ + Device = Phone</td><td>Second-highest Facebook ad page</td><td>Does the page headline match what the ad promised? Where do users drop off?</td></tr>
+      <tr><td>Browser = Facebook In-App + any landing page</td><td>Form/tracking breakage risk</td><td>Do users try to submit a form? Does it complete? Do they rage-click anything?</td></tr>
+      <tr><td>Duration &gt; 300 sec + Exit = /about-us/special-offers/</td><td>High-intent users who spent a lot of time and still didn't convert</td><td>What did they read? What CTA did they interact with? Where did they stop?</td></tr>
+      <tr><td>Referrer = google.com + Landing = /</td><td>Organic Google → Homepage path</td><td>Do mobile users scroll past the hero? Do they find the phone number? Do they click the $49 offer?</td></tr>
+      <tr><td>Duration &lt; 30 sec (bounce sessions)</td><td>Find what's causing immediate exits</td><td>Is the page loading slowly? Is there a layout shift? Is the content immediately visible?</td></tr>
     </table>
   </div>
 </div>
