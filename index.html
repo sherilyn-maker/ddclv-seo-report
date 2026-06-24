@@ -90,6 +90,7 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <button class="tab-btn" onclick="showTab('keywords',event)">All Keywords</button>
   <button class="tab-btn" onclick="showTab('pages',event)">Page Audit</button>
   <button class="tab-btn" onclick="showTab('quickwins',event)">Action Plan</button>
+  <button class="tab-btn" onclick="showTab('siteaudit',event)">Site Audit (51 Pages)</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -887,6 +888,281 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
       <tr><td>Post-service SMS</td><td>Text "Thanks! Leave us a Google review → [direct link]" within 1 hr of job completion</td><td>2–5 reviews/week from SMS responses</td></tr>
       <tr><td>Invoice footer</td><td>Add review request + QR code to every paper and email invoice</td><td>Passive 2–4 reviews/week</td></tr>
       <tr><td>Technician business card</td><td>QR code on card → Google review direct link. Hand to customer at job completion.</td><td>Easiest in-person conversion</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 9: SITE AUDIT (51 PAGES)
+════════════════════════════════════════════════════════════ -->
+<div id="siteaudit" class="tab-content">
+  <h2 class="section-title">Full Site Audit — 51 Pages</h2>
+
+  <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
+    <div class="metric-card red"><div class="val">7</div><div class="lbl">Critical Issues</div><div class="sub">Fix this week</div></div>
+    <div class="metric-card orange"><div class="val">13</div><div class="lbl">High Issues</div><div class="sub">Fix this month</div></div>
+    <div class="metric-card" style="--v:#7c3aed"><div class="val" style="color:#7c3aed">5</div><div class="lbl">Medium Issues</div><div class="sub">Content quality</div></div>
+    <div class="metric-card red"><div class="val">35+</div><div class="lbl">Pages Missing Meta</div><div class="sub">All area pages</div></div>
+    <div class="metric-card orange"><div class="val">0</div><div class="lbl">Pages with LocalBusiness Schema</div><div class="sub">Entire site</div></div>
+  </div>
+
+  <!-- CRITICAL -->
+  <div class="card">
+    <h2>🚨 Critical — Fix This Week</h2>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>1. Meta descriptions missing on all ~35 service-area pages</strong>
+      <p>Every <code>/service-areas/</code> page — Las Vegas, Henderson, North Las Vegas, Paradise, Green Valley, Summerlin and all their sub-service pages — has <strong>no meta description</strong>. Google generates its own snippet, usually pulling poorly chosen text. This is the single most widespread CTR suppressor on the site.<br><br>
+      <strong>Fix:</strong> Write city+service specific meta descriptions. Pattern: <em>"[Service] in [City], NV starting at $49. Same-day service, licensed &amp; insured. Call 24/7."</em> ~2 min per page.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>2. "Product" schema applied sitewide to service, about, FAQ, blog, and contact pages</strong>
+      <p>The entire site uses <code>"@type": "Product"</code> in JSON-LD on pages where it makes no sense — service pages, about, contact, snaking, rooter, sewer, blog. This misrepresents every page to Google, blocks rich result eligibility, and signals poor structured data quality.<br><br>
+      <strong>Fix:</strong> Replace with correct types — <code>Service</code> on service pages, <code>LocalBusiness</code> on homepage, <code>AboutPage</code> on about, <code>FAQPage</code> on FAQ, <code>Blog</code> on blog index, <code>ContactPage</code> on contact.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>3. FAQ page has no FAQPage schema — biggest single missed rich result</strong>
+      <p><code>/about-us/faq/</code> has the "Product" schema but no FAQPage JSON-LD, despite literally being the FAQ page. FAQ dropdowns in SERPs increase CTR 15–25% and can appear even for positions 5–15. This fix takes 10 minutes.<br><br>
+      <strong>Fix:</strong> Add <code>FAQPage</code> JSON-LD to <code>/about-us/faq/</code>. Template is in the Schema tab.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>4. Keyword cannibalization: /services/plumbing/ vs /services/emergency-services/</strong>
+      <p>Both pages target <strong>"24-Hour Emergency Plumbing Las Vegas"</strong> as their primary keyword. Title tags are nearly identical. They compete against each other and split the authority that should concentrate on one page.<br><br>
+      <strong>Fix:</strong> Pick one page as the canonical emergency page (recommend <code>/services/emergency-services/</code>). Rewrite <code>/services/plumbing/</code> to target general plumbing repair, or consolidate both into one page with a 301 redirect.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>5. Broken internal links — Summerlin pages link to Las Vegas sewer URL</strong>
+      <p>At least 3 Summerlin pages (<code>/summerlin-nv/</code>, <code>/summerlin-nv/hydro-jetting/</code>, <code>/summerlin-nv/sewer-pipe-cleaning/</code>) have sewer pipe cleaning internal links pointing to the Las Vegas city URL. This passes PageRank to the wrong page and sends users to the wrong city.<br><br>
+      <strong>Fix:</strong> Find and replace the Las Vegas sewer URL with the correct Summerlin URL in the Summerlin page templates. 15 minutes.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>6. Geo-mismatch: /service-areas/paradise-nv/hydro-jetting/ mentions "Henderson" in body copy</strong>
+      <p>The Paradise hydro jetting page body text refers to "Henderson" — a copy-paste error from the Henderson template. Google parses city mentions in body text for local relevance signals. This actively hurts the page's Paradise rankings.<br><br>
+      <strong>Fix:</strong> Search the Paradise hydro jetting page for "Henderson" and replace all instances with "Paradise." 5 minutes.</p>
+    </div></div>
+
+    <div class="alert critical"><div class="alert-icon">🔴</div><div>
+      <strong>7. Title typo: /service-areas/paradise-nv/trenchless-pipe-lining/</strong>
+      <p>Title reads <code>"Trenchless Pipe Lining in Paradise, NV| Discount Drain Cleaning"</code> — missing space before the pipe character. Displays broken in Google SERPs as <em>"...Paradise, NV| Discount Drain..."</em>. Also inconsistently drops "LV" from the brand name.<br><br>
+      <strong>Fix:</strong> Change to <code>"Trenchless Pipe Lining in Paradise, NV | Discount Drain Cleaning LV"</code>. 2 minutes.</p>
+    </div></div>
+  </div>
+
+  <!-- HIGH -->
+  <div class="card">
+    <h2>🟠 High Priority — Fix This Month</h2>
+    <table>
+      <tr><th>#</th><th>Issue</th><th>Pages Affected</th><th>Effort</th><th>Fix</th></tr>
+      <tr>
+        <td><span class="badge orange">8</span></td>
+        <td><strong>No LocalBusiness schema anywhere on the site</strong></td>
+        <td>Entire site</td><td>30 min</td>
+        <td>Add LocalBusiness + AggregateRating JSON-LD to homepage (see Schema tab). Include <code>areaServed</code> array listing all 6 cities.</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">9</span></td>
+        <td><strong>"Picote" brand name leads the pipe descaling page</strong> — not a search term</td>
+        <td>/services/pipe-descaling/</td><td>5 min</td>
+        <td>Change title to <em>"Pipe Descaling Services Las Vegas, NV | Discount Drain Clean"</em> and H1 to <em>"Pipe Descaling in Las Vegas, NV"</em></td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">10</span></td>
+        <td><strong>CIPP acronym never expanded</strong> — "trenchless pipe lining" searchers won't match</td>
+        <td>/services/cipp-pipe-lining/</td><td>5 min</td>
+        <td>Change title to <em>"Trenchless Pipe Lining Las Vegas, NV | No-Dig | Free Estimate"</em>. Add "CIPP (Cured-In-Place Pipe)" parenthetical in first paragraph.</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">11</span></td>
+        <td><strong>Promo prices hardcoded in 7+ meta descriptions</strong> — maintenance liability + stale risk</td>
+        <td>7+ service pages</td><td>Medium</td>
+        <td>Remove "$92 special" and "$50 off" from meta descriptions. Move pricing to page body. Replace with benefit-driven CTAs: <em>"Same-day service | Free estimate"</em>.</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">12</span></td>
+        <td><strong>All-caps H1 tags across service, about, blog, contact pages</strong></td>
+        <td>8+ pages</td><td>Verify first</td>
+        <td>Check if this is CSS <code>text-transform:uppercase</code> (acceptable) or literal all-caps in HTML (fix to sentence case in WordPress editor).</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">13</span></td>
+        <td><strong>Service Areas hub title is keyword-empty</strong> — "Service Areas | Discount Drain Cleaning LV"</td>
+        <td>/service-areas/</td><td>2 min</td>
+        <td>Change to <em>"Drain Cleaning Service Areas | Las Vegas, Henderson &amp; NLV | Discount Drain Clean"</em></td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">14</span></td>
+        <td><strong>Blog title has zero keyword value</strong> — "Our Blog | Las Vegas, NV | Discount Drain Cleaning LV"</td>
+        <td>/blog/</td><td>2 min</td>
+        <td>Change to <em>"Drain Cleaning Tips &amp; Guides — Las Vegas | Discount Drain Clean LV"</em></td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">15</span></td>
+        <td><strong>Missing image alt text across all area pages</strong></td>
+        <td>~35 area pages</td><td>Medium</td>
+        <td>Add alt text to all images. Pattern: <em>"[Service] in [City], NV — Discount Drain Clean technician"</em></td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">16</span></td>
+        <td><strong>Homepage title targets "Emergency Plumber" while H1 targets "Drain Cleaning"</strong></td>
+        <td>Homepage</td><td>5 min</td>
+        <td>Align title to drain cleaning as primary keyword: <em>"Drain Cleaning Las Vegas, NV | $49 Special | 24/7 Licensed"</em> (see Meta Tags tab)</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">17</span></td>
+        <td><strong>Drain inspection page title appends "24-Hour Emergency Plumber"</strong> — topical mismatch</td>
+        <td>/services/drain-inspection/</td><td>5 min</td>
+        <td>Change title to <em>"Drain Inspection Las Vegas, NV | Sewer Camera Video | Licensed"</em> — includes search variant "sewer camera."</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">18</span></td>
+        <td><strong>Sewer pipe cleaning page title appends "24-Hour Emergency Plumber"</strong> — topical mismatch</td>
+        <td>/services/sewer-pipe-cleaning/</td><td>5 min</td>
+        <td>Remove emergency plumber suffix. New title: <em>"Sewer Pipe Cleaning Las Vegas, NV | Same-Day | Discount Drain Clean"</em></td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">19</span></td>
+        <td><strong>"Product" schema on rooter services page is wrong type — also has an inappropriate "Product" schema</strong></td>
+        <td>/services/rooter-services/</td><td>10 min</td>
+        <td>This page does have FAQPage schema (strongest page) — but also has a "Product" schema that should be removed. Keep FAQPage, replace Product with Service schema.</td>
+      </tr>
+      <tr>
+        <td><span class="badge orange">20</span></td>
+        <td><strong>Duplicate desktop + mobile nav rendered in HTML — inflates internal link count to 70–95 per page</strong></td>
+        <td>Entire site</td><td>Dev task</td>
+        <td>Ensure mobile menu is hidden via CSS/JS only, not rendered as a duplicate DOM tree. Reduces link equity dilution and crawler overhead.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- MEDIUM -->
+  <div class="card">
+    <h2>🟡 Medium — Content Quality</h2>
+
+    <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+      <strong>21. Highly templated service-area pages — duplicate content risk across ~35 pages</strong>
+      <p>Every city+service combination page uses the same content template with only the city name swapped. Google can detect this and may rank only one variant, ignoring the rest. This especially affects North Las Vegas, Paradise, Green Valley, and Summerlin pages which appear to share nearly identical body text.<br><br>
+      <strong>Fix:</strong> Add at minimum 2–3 city-specific paragraphs per page: local neighborhoods, city-specific plumbing problems, response time claim, one unique testimonial. Does not require a full rewrite — just unique sections inserted into the template.</p>
+    </div></div>
+
+    <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+      <strong>22. "We Offer X in Las Vegas" H1 pattern on Las Vegas area pages is awkward and buries the keyword</strong>
+      <p>Las Vegas sub-pages use: <em>"We Offer Hydro Jetting in Las Vegas, NV."</em> Henderson and North Las Vegas pages already use the cleaner pattern: <em>"Hydro Jetting in Henderson, NV."</em><br><br>
+      <strong>Fix:</strong> Standardize all H1s to <em>"[Service] in [City], NV"</em> — consistent sitewide.</p>
+    </div></div>
+
+    <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+      <strong>23. Inconsistent title tag formats across city sets</strong>
+      <p>North Las Vegas: <code>"Drain Cleaning North Las Vegas, NV | Brand"</code><br>
+      Paradise: <code>"Drain Cleaning | Paradise, NV | Brand"</code><br>
+      Summerlin: <code>"Drain Cleaning in Summerlin, NV | Brand"</code><br>
+      Three different structures for equivalent pages weakens Google's topical clustering signals.<br><br>
+      <strong>Fix:</strong> Standardize to <code>"[Service] [City], NV | Discount Drain Clean LV"</code> sitewide.</p>
+    </div></div>
+
+    <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+      <strong>24. Location hub pages are thinner than their own sub-pages</strong>
+      <p><code>/service-areas/paradise-nv/</code> has ~627 words — less than the sub-service pages it anchors (~1,000–1,100 words each). Hub pages should be the most authoritative in a cluster.<br><br>
+      <strong>Fix:</strong> Expand all city hub pages to 800–1,000 words. Include: city overview, services offered, why choose us in that city, neighborhoods served, a city-specific FAQ question.</p>
+    </div></div>
+
+    <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+      <strong>25. Grease trap cleaning page uses residential CTA on a commercial service</strong>
+      <p>Grease trap cleaning is a commercial/B2B service (restaurants, hotels, food service). The title, meta description, and CTAs all use residential-focused language. The "$92 special" call-out is specifically misaligned for a commercial audience.<br><br>
+      <strong>Fix:</strong> Rewrite title to <em>"Grease Trap Cleaning Las Vegas | Commercial Kitchen Service"</em>. Add "health code compliant" and "maintenance plans" as key selling points in the meta description and opening copy.</p>
+    </div></div>
+  </div>
+
+  <!-- FULL PAGE TABLE -->
+  <div class="card">
+    <h2>📋 All 51 Pages — Quick Reference</h2>
+    <p style="font-size:12px;color:#64748b;margin-bottom:12px">Sorted by issue severity. Pages with no issues listed are structurally sound but share sitewide issues (no LocalBusiness schema, templated content).</p>
+    <table>
+      <tr><th>Page</th><th>Title</th><th>Meta Desc</th><th>Schema</th><th>Top Issue</th><th>Priority</th></tr>
+      <tr><td>/</td><td>24-Hour Emergency Plumber with 5-Star Ratings | Discount Drain Cleaning Las Vegas</td><td>✅</td><td>Organization only</td><td>Title = "Emergency Plumber," H1 = "Drain Cleaning" — mismatch. No LocalBusiness schema.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/about-us/faq/</td><td>Clog FAQ - Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>Product (wrong)</td><td>No FAQPage schema on FAQ page. Only 4 Q&amp;A pairs — thin. "Clog FAQ" is a weak title.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/services/plumbing/</td><td>24-Hour Emergency Plumbing Las Vegas | Discount Drain Cleaning</td><td>✅</td><td>Product (wrong)</td><td>Cannibalization with /emergency-services/ — identical keyword target.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/services/emergency-services/</td><td>24-Hour Emergency Plumbing Services Las Vegas | BBB-Accredited</td><td>✅</td><td>Product (wrong)</td><td>Cannibalization with /plumbing/ — identical keyword target. H1 is vague "Emergency Services."</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/service-areas/summerlin-nv/</td><td>Drain and Sewer Pipe Cleaning in Summerlin, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Sewer pipe cleaning internal link points to Las Vegas URL. No meta desc.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/service-areas/summerlin-nv/hydro-jetting/</td><td>Hydro Jetting in Summerlin, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Broken internal link (sewer → Las Vegas). No meta desc.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/service-areas/summerlin-nv/sewer-pipe-cleaning/</td><td>Sewer Pipe Cleaning in Summerlin, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Broken internal link points to Las Vegas. Repeated content on tree root removal.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/hydro-jetting/</td><td>Hydro Jetting Services | Paradise, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Body copy mentions "Henderson" — geo-mismatch error hurts Paradise relevance signals.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/trenchless-pipe-lining/</td><td>Trenchless Pipe Lining in Paradise, NV| Discount Drain Cleaning</td><td>✅</td><td>BreadcrumbList</td><td>Title typo — missing space before pipe char. Drops "LV" from brand inconsistently.</td><td><span class="badge red">Critical</span></td></tr>
+      <tr><td>/services/pipe-descaling/</td><td>Picote Descaling and Brush Coating Las Vegas, NV | 5-Star Ratings</td><td>✅</td><td>WebPage</td><td>"Picote" is a vendor brand name, not a search term. URL slug says "pipe-descaling" but page targets "Picote."</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/cipp-pipe-lining/</td><td>CIPP Pipe Lining Las Vegas, NV | Free Estimate</td><td>✅</td><td>WebPage</td><td>CIPP acronym never spelled out. Misses "trenchless pipe lining" and "no-dig" searchers.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/drain-inspection/</td><td>Drain Inspection in Las Vegas, NV | 24-Hour Emergency Plumber</td><td>✅</td><td>WebPage</td><td>"24-Hour Emergency Plumber" appended to a drain inspection page — topical mismatch.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/sewer-pipe-cleaning/</td><td>Sewer Pipe Cleaning Services in Las Vegas, NV | 24Hour Emergency Plumber</td><td>✅</td><td>Product (wrong)</td><td>"24Hour Emergency Plumber" appended — topical mismatch. Missing space in "24Hour."</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/grease-trap-cleaning/</td><td>Grease Trap Cleaning Services Las Vegas | Discount Drain Cleaning</td><td>✅</td><td>WebPage</td><td>Commercial service with residential CTA. "$92 special" misaligned for restaurant buyers.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/</td><td>Service Areas | Discount Drain Cleaning LV</td><td>✅</td><td>Product (wrong)</td><td>Title has zero keywords — "Service Areas" is generic. No city names, no services.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/blog/</td><td>Our Blog | Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>Product (wrong)</td><td>"Our Blog" title has zero keyword value. No Blog/ItemList schema.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/rooter-services/</td><td>Rooter Services in Las Vegas | 5-Star Ratings, Free Estimate</td><td>✅</td><td>FAQPage + Product</td><td>Strongest service page — has FAQPage schema. But also has wrong "Product" schema alongside it.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/about-us/</td><td>About Us Discount Drain Cleaning LV | BBB-Accredited</td><td>✅</td><td>Product (wrong)</td><td>Should have Organization/AboutPage schema. Title format reads awkwardly.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/contact-us/</td><td>Contact Our Drain Cleaning Company | Discount Drain Cleaning LV</td><td>✅</td><td>Product (wrong)</td><td>No LocalBusiness/ContactPage schema. "$50 off hydro jetting" promo in meta will go stale.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/</td><td>24-Hour Plumbing Services | 5-Star Ratings | BBB-accredited</td><td>✅</td><td>WebPage</td><td>Meta desc near-identical to homepage. Title says "Plumbing Services," meta says "drain cleaning" — inconsistency.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/snaking/</td><td>Drain Snaking Las Vegas, NV | $92 Drain Cleaning Special</td><td>✅</td><td>Product (wrong)</td><td>"$92 special" hardcoded in title — maintenance liability. H1 in all-caps.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/air-snaking/</td><td>Air Snaking Services Las Vegas | Discount Drain Cleaning LV</td><td>✅</td><td>WebPage</td><td>"Air snaking" is a niche low-volume keyword. May underperform if no one searches it. Consider broader title.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/las-vegas-nv/</td><td>Drain and Plumbing Services Las Vegas, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. H1 vague: "We Offer Drain Cleaning… and Other Services." Misrouted internal link.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/las-vegas-nv/hydro-jetting/</td><td>Hydro Jetting Services in Las Vegas, NV | BBB-accredited For Over 8 Years</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Awkward H1: "We Offer Hydro Jetting in Las Vegas, NV."</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/las-vegas-nv/sewer-pipe-cleaning/</td><td>Sewer Pipe Cleaning in Las Vegas, NV | 24Hour Emergency Services</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. H1 front-loads non-keyword phrase "Reduce the Stress With." Misrouted internal link.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/</td><td>Drain and Sewer Pipe Cleaning Services Henderson, NV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Misrouted internal link (sewer link points to Las Vegas). No schema.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/drain-cleaning/</td><td>24/7 Emergency Drain Cleaning Henderson, NV | Free Estimate</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. SVG placeholder images may not be loading.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/hydro-jetting/</td><td>$50 OFF Hydro Jetting Services Henderson, NV | 24/7 Emergency Plumber</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Title opens with "$50 OFF" — promotional title underperforms for informational queries.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/sewer-pipe-cleaning/</td><td>Sewer Pipe Cleaning Henderson, NV | 5-Star Ratings</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. SVG placeholder images visible.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/drain-inspection/</td><td>Drain Inspection Henderson, NV | BBB-Accredited</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Title missing action/intent signal (e.g., "Camera Inspection" or "Services").</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/trenchless-pipe-lining/</td><td>Trenchless Pipe Lining Henderson, NV | Free Estimate</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Content quality is solid — strongest Henderson sub-page.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/henderson-nv/leak-detection/</td><td>Leak Detection Services Henderson, NV | 24/7 Emergency Service</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Hero image missing alt text.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/</td><td>Drain and Sewer Pipe Cleaning in North Las Vegas, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. H1 mirrors Henderson hub — near-duplicate phrasing across location hubs.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/drain-cleaning/</td><td>Drain Cleaning North Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>1 image missing alt text. Highly templated — duplicate content risk vs. other city drain cleaning pages.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/drain-inspection/</td><td>Drain Inspection North Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>1 image missing alt text. Title format inconsistent (NLV omits "in"; H1 includes "in").</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/hydro-jetting/</td><td>Hydro Jetting North Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>1 image missing alt text. Title/H1 "in" inconsistency.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/leak-detection/</td><td>Leak Detection North Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Brand name shortened to "Discount Drain Cleaning" (drops "LV") in meta — inconsistent.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/north-las-vegas-nv/trenchless-pipe-lining/</td><td>Trenchless Pipe Lining in North Las Vegas, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Title is 74 characters — at risk of truncation (Google cuts at ~65 chars). 1 image missing alt text.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/</td><td>Drain and Sewer Pipe Cleaning | Paradise, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Title targets "Drain and Sewer Pipe Cleaning" but H1 targets "Drain Cleaning &amp; Pipe Maintenance" — keyword mismatch. Thin content (~627 words) for a hub page.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/drain-cleaning/</td><td>Drain Cleaning | Paradise, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Title format uses city as second segment (inconsistent vs NLV format). 1 image missing alt text.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/drain-inspection/</td><td>Drain Inspection | Paradise, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Meta desc mentions drain cleaning and hydro jetting specials on a drain inspection page — off-topic dilution.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/paradise-nv/leak-detection/</td><td>Leak Detection Services | Paradise, NV | Discount Drain Cleaning LV</td><td>✅</td><td>BreadcrumbList</td><td>Brand name shortened to "Discount Drain Cleaning" (drops "LV") in meta.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/</td><td>Drain and Sewer Pipe Cleaning in Green Valley, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. No schema. Placeholder images with no alt text.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/drain-cleaning/</td><td>Drain Cleaning | Green Valley, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Duplicate nav renders twice in HTML. Placeholder images, no alt text.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/drain-inspection/</td><td>Drain Inspection | Green Valley, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Medium content (~650–700w) — thinner than other service pages.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/hydro-jetting/</td><td>Hydro Jetting Services in Green Valley, NV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Title tag could not be confirmed — may not match H1.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/leak-detection/</td><td>Leak Detection Services | Green Valley, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Placeholder SVG images with no alt text. Reviews present but no Review schema.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/green-valley-nv/trenchless-pipe-lining/</td><td>Trenchless Pipe Lining in Green Valley, NV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Duplicate nav rendered twice. Placeholder images, empty alt text.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/summerlin-nv/drain-cleaning/</td><td>Drain Cleaning in Summerlin, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Placeholder images, no descriptive alt text. Canonical tags not confirmed.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/service-areas/summerlin-nv/trenchless-pipe-lining/</td><td>Pipe Lining in Summerlin, NV | Discount Drain Cleaning LV</td><td>❌ MISSING</td><td>None</td><td>Missing meta desc. Title uses "Pipe Lining" (drops "Trenchless") — weaker keyword than other location equivalents.</td><td><span class="badge orange">High</span></td></tr>
+      <tr><td>/services/drain-cleaning/clog-removal/</td><td>Clog Removal Services in Las Vegas | 24/7 Emergency Service</td><td>✅</td><td>WebPage</td><td>3 URL levels deep (/services/drain-cleaning/clog-removal/) — dilutes crawl priority. "$92 special" in meta will go stale.</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td></tr>
+      <tr><td>/sitemap/</td><td>—</td><td>—</td><td>—</td><td>HTML sitemap page — low SEO value but should exist. No audit concerns.</td><td><span class="badge gray">Low</span></td></tr>
+    </table>
+  </div>
+
+  <!-- STRENGTHS -->
+  <div class="card">
+    <h2>✅ What's Working — Don't Break These</h2>
+    <table>
+      <tr><th>Strength</th><th>Why It Matters</th></tr>
+      <tr><td><strong>All service pages have meta descriptions</strong></td><td>Core service pages (/services/drain-cleaning/, /services/hydro-jetting-services/, etc.) have meta descriptions. The gap is isolated to the service-area pages.</td></tr>
+      <tr><td><strong>Internal linking is robust sitewide (70–95 links/page)</strong></td><td>Every page links to every other major page through the nav. No orphan pages detected.</td></tr>
+      <tr><td><strong>Content depth on core service pages is solid (800w+)</strong></td><td>Most service pages have 1,000–1,400 words of body content — above the thin content threshold.</td></tr>
+      <tr><td><strong>/services/rooter-services/ has FAQPage schema</strong></td><td>Strongest structured data implementation on the site — this page is the template to follow.</td></tr>
+      <tr><td><strong>BreadcrumbList schema on NLV and Paradise area pages</strong></td><td>These location pages have BreadcrumbList JSON-LD which helps Google understand the site hierarchy.</td></tr>
+      <tr><td><strong>Titles are unique across all pages</strong></td><td>No two pages share an identical title tag — a baseline requirement that's satisfied.</td></tr>
+      <tr><td><strong>All pages are indexable (in sitemap)</strong></td><td>51 pages in sitemap, all returning 200 status codes during audit.</td></tr>
+    </table>
+  </div>
+
+  <!-- 5-MINUTE WINS -->
+  <div class="card">
+    <h2>⚡ 5 Fixes Under 30 Minutes Total — Do These First</h2>
+    <table>
+      <tr><th>#</th><th>Fix</th><th>Time</th><th>Why Now</th></tr>
+      <tr><td>1</td><td>Fix Paradise trenchless title typo — add space before <code>|</code>, add "LV" to brand</td><td>2 min</td><td>Broken display in Google SERPs right now</td></tr>
+      <tr><td>2</td><td>Replace "Henderson" with "Paradise" in Paradise hydro jetting body copy</td><td>5 min</td><td>Geo-mismatch actively hurting Paradise local rankings</td></tr>
+      <tr><td>3</td><td>Add FAQPage JSON-LD to /about-us/faq/ (template in Schema tab)</td><td>10 min</td><td>FAQ dropdowns in SERP = +15–25% CTR, zero new content required</td></tr>
+      <tr><td>4</td><td>Fix Summerlin sewer pipe cleaning internal links — point to correct Summerlin URL</td><td>10 min</td><td>3 pages passing PageRank to wrong city right now</td></tr>
+      <tr><td>5</td><td>Change /services/pipe-descaling/ title — remove "Picote," use "Pipe Descaling"</td><td>5 min</td><td>"Picote" is a brand name nobody searches; URL slug already says "pipe-descaling"</td></tr>
     </table>
   </div>
 </div>
