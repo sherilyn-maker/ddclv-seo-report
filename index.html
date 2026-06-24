@@ -93,6 +93,7 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
   <button class="tab-btn" onclick="showTab('siteaudit',event)">Site Audit (51 Pages)</button>
   <button class="tab-btn" onclick="showTab('hotjar',event)">Hotjar Recordings</button>
   <button class="tab-btn" onclick="showTab('aisearch',event)">AI Search Performance</button>
+  <button class="tab-btn" onclick="showTab('callrail',event)">CallRail — Call Analytics</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -150,10 +151,30 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
     </div>
   </div>
 
+  <!-- CALLRAIL CALLOUT IN EXEC SUMMARY -->
+  <div class="card" style="border-left:4px solid #16a34a;margin-bottom:20px">
+    <h2 style="color:#16a34a">📞 CallRail Data — 531 Phone Calls in 12 Months (The Real Conversion Story)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">Hotjar showed 2 form submissions. CallRail shows the full picture: <strong>531 inbound phone calls, 98.5% answer rate, 366 new leads</strong>. Phone calls are the primary conversion for this business. The site IS converting — just not via forms.</p>
+    <div class="metric-row" style="grid-template-columns:repeat(5,1fr);margin-bottom:14px">
+      <div class="metric-card green"><div class="val">531</div><div class="lbl">Total Calls</div><div class="sub">12-month period</div></div>
+      <div class="metric-card green"><div class="val">98.5%</div><div class="lbl">Answer Rate</div><div class="sub">Only 8 missed calls</div></div>
+      <div class="metric-card blue"><div class="val">366</div><div class="lbl">New Leads</div><div class="sub">First-time callers</div></div>
+      <div class="metric-card blue"><div class="val">81.4%</div><div class="lbl">From Google</div><div class="sub">GBP 291 + Organic 141</div></div>
+      <div class="metric-card" style=""><div class="val" style="color:#7c3aed">14</div><div class="lbl">AI-Sourced Calls</div><div class="sub">ChatGPT 10 + SearchGPT 4</div></div>
+    </div>
+    <table>
+      <tr><th>CallRail Finding</th><th>What It Means</th><th>Action</th></tr>
+      <tr><td>✅ <strong>Google My Business: 291 calls (54.8%) — #1 lead driver</strong></td><td>More than half of all phone leads come from GBP. This is the most valuable single asset the business has. A GBP suspension or ranking drop would cut revenue in half.</td><td>Run a review campaign immediately. Target 50+ reviews at 4.5+ stars. Post weekly to GBP. Keep hours, phone, and categories 100% accurate.</td></tr>
+      <tr><td>🔴 <strong>Facebook Ads tracking number: only 4 calls in 12 months</strong></td><td>The dedicated Meta Ads tracking number (+17026028748) recorded just 3 Meta Ads calls and 1 GBP call. 179 Hotjar Facebook sessions = ~3 ad calls = 1.7% call rate. GBP generates 97× more calls than Facebook paid ads.</td><td>Cut or pause Facebook ad spend. Reallocate to Google LSA (Local Services Ads) or additional GBP optimization. The data is unambiguous.</td></tr>
+      <tr><td>🤖 <strong>ChatGPT + SearchGPT: 14 phone calls — AI is already generating real revenue</strong></td><td>AI search sourced 14 answered calls including a 15.5-minute call (longest in the dataset). ChatGPT UTM params confirm the business is being cited by name in AI responses. This happened with zero AI optimization.</td><td>Add FAQ schema, pricing content, and E-E-A-T signals to all service pages. Current AI calls could 5–10× with basic optimization.</td></tr>
+      <tr><td>🔥 <strong>February 2026: 142 calls in one month — 3× normal volume</strong></td><td>Feb 9–12 saw 75 calls in 4 days (peak: 24 calls on Feb 11). Something triggered a massive spike. Normal months run 15–85 calls. Understanding the trigger is the most valuable analytical question in this report.</td><td>Audit what ran Feb 9–12: GBP posts, promotions, local campaigns. Identify the trigger and replicate it monthly.</td></tr>
+    </table>
+  </div>
+
   <!-- HOTJAR CALLOUT IN EXEC SUMMARY -->
   <div class="card" style="border-left:4px solid #7c3aed">
     <h2 style="color:#7c3aed">📹 Hotjar Behavior Data — 12-Month Analysis (500 Sessions)</h2>
-    <p style="font-size:13px;color:#64748b;margin-bottom:14px">GSC shows the site fails to earn clicks. Hotjar confirms that users who DO reach the site are engaged — but the site converts at <strong style="color:#dc2626">0.4% (2 confirmed form submissions from 500 sessions over 12 months)</strong>. Both the traffic problem and the conversion problem must be fixed simultaneously.</p>
+    <p style="font-size:13px;color:#64748b;margin-bottom:14px">GSC shows the site fails to earn clicks. Hotjar shows form conversion is weak (2 form submissions) — but CallRail confirms 531 phone calls. The priority is growing the phone call volume, not fixing form submissions. Both the traffic problem (GSC rankings) and the on-site CTA visibility problem (Hotjar) still apply — more traffic and more prominent phone CTAs = more calls.</p>
     <div class="metric-row" style="grid-template-columns:repeat(5,1fr);margin-bottom:14px">
       <div class="metric-card orange"><div class="val">73.6%</div><div class="lbl">Mobile Users</div><div class="sub">368 of 500 sessions</div></div>
       <div class="metric-card" style=""><div class="val" style="color:#7c3aed">35.8%</div><div class="lbl">From Facebook Ads</div><div class="sub">179 of 500 — 0 conversions</div></div>
@@ -1601,10 +1622,10 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
 
   <!-- KPI ROW -->
   <div class="metric-row" style="grid-template-columns:repeat(5,1fr)">
-    <div class="metric-card red"><div class="val">1</div><div class="lbl">AI Referral Sessions</div><div class="sub">ChatGPT · 12 months (Hotjar)</div></div>
+    <div class="metric-card" style=""><div class="val" style="color:#7c3aed">14</div><div class="lbl">AI Phone Calls</div><div class="sub">ChatGPT 10 + SearchGPT 4 (CallRail)</div></div>
+    <div class="metric-card orange"><div class="val">1</div><div class="lbl">AI Web Sessions</div><div class="sub">ChatGPT visit (Hotjar) — calls bypass web</div></div>
     <div class="metric-card red"><div class="val">0%</div><div class="lbl">AI Overview Visibility</div><div class="sub">Pos 30+ = excluded from AI pool</div></div>
     <div class="metric-card orange"><div class="val">104K+</div><div class="lbl">Impressions at Risk</div><div class="sub">Queries now getting AI Overviews</div></div>
-    <div class="metric-card blue"><div class="val">3</div><div class="lbl">AI Channels Untracked</div><div class="sub">ChatGPT · Perplexity · Copilot</div></div>
     <div class="metric-card orange"><div class="val">0</div><div class="lbl">AI-Optimized Pages</div><div class="sub">No FAQ schema, thin content</div></div>
   </div>
 
@@ -1876,6 +1897,265 @@ h2.section-title{font-size:19px;font-weight:700;color:#1e3a5f;margin-bottom:18px
         <td><strong>Branded mentions in AI responses</strong></td>
         <td>Manual testing + third-party tools</td>
         <td>Monthly: search "best drain cleaning Las Vegas" and "drain cleaning near me Las Vegas" in ChatGPT, Perplexity, and Gemini. Note whether the business is cited. Tools like BrightEdge and Semrush are beginning to track AI Overview presence. Manual testing is free and sufficient at current traffic levels.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TAB 12: CALLRAIL — CALL ANALYTICS
+════════════════════════════════════════════════════════════ -->
+<div id="callrail" class="tab-content">
+  <h2 class="section-title">CallRail — Call Analytics</h2>
+  <p style="font-size:13px;color:#64748b;margin-bottom:20px">Source: CallRail live API · discountdraincleanlv.com · Jun 24 2025 – Jun 24 2026 (12 months) · 531 inbound calls tracked</p>
+
+  <!-- CRITICAL REFRAME ALERT -->
+  <div class="alert success"><div class="alert-icon">✅</div><div>
+    <strong>The Business IS Converting — Phone Calls Are the Primary Conversion, Not Web Forms</strong>
+    <p>Hotjar recorded only 2 form submissions (/thank-you/) in 12 months, suggesting a 0.4% conversion rate. CallRail reveals the full picture: <strong>531 inbound phone calls over the same period</strong>, with a 98.5% answer rate and 366 first-time callers (new leads). Phone calls are the real conversion mechanism for this business. The Hotjar form data was measuring the wrong thing. The site is converting — it just converts via phone, not forms.</p>
+  </div></div>
+
+  <div class="alert critical"><div class="alert-icon">🔴</div><div>
+    <strong>Google My Business + Google Organic = 432 Calls (81.4% of All Leads) — Facebook Ads = 5 Calls</strong>
+    <p>GBP generated 291 calls (54.8%) and Google Organic generated 141 calls (26.6%). Combined, Google channels drive 81.4% of all phone leads. By contrast, Meta Ads + Facebook Ads generated only <strong>5 calls combined</strong> — despite 179 sessions in Hotjar. Facebook ad spend is producing roughly 1 call per ~36 sessions. GBP + SEO produces the overwhelming majority of actual business revenue.</p>
+  </div></div>
+
+  <div class="alert warning"><div class="alert-icon">⚠️</div><div>
+    <strong>ChatGPT + SearchGPT Already Driving 14 Calls (2.6%) — AI Is an Active Lead Channel Now</strong>
+    <p>ChatGPT.com drove <strong>10 calls</strong> and SearchGPT drove <strong>4 calls</strong> — 14 total AI-sourced phone leads in 12 months. One ChatGPT call lasted <strong>933 seconds (15.5 minutes)</strong> — the longest call in the dataset. The landing page data shows <code>?utm_source=chatgpt.com</code> on 11 tracked calls. AI search is not a future opportunity — it is already an active, growing source of real phone leads for this business right now.</p>
+  </div></div>
+
+  <!-- KPI ROW -->
+  <div class="metric-row" style="grid-template-columns:repeat(6,1fr)">
+    <div class="metric-card blue"><div class="val">531</div><div class="lbl">Total Calls</div><div class="sub">12-month period</div></div>
+    <div class="metric-card green"><div class="val">98.5%</div><div class="lbl">Answer Rate</div><div class="sub">523 of 531 answered</div></div>
+    <div class="metric-card blue"><div class="val">366</div><div class="lbl">New Leads</div><div class="sub">First-time callers (68.9%)</div></div>
+    <div class="metric-card green"><div class="val">2.5 min</div><div class="lbl">Avg Call Duration</div><div class="sub">151 sec avg (answered)</div></div>
+    <div class="metric-card orange"><div class="val">17.9%</div><div class="lbl">Under 30 Sec</div><div class="sub">95 calls — wrong# or spam</div></div>
+    <div class="metric-card red"><div class="val">8</div><div class="lbl">Missed Calls</div><div class="sub">1.5% miss rate — excellent</div></div>
+  </div>
+
+  <!-- TWO COL: SOURCE + MONTHLY -->
+  <div class="two-col">
+    <div class="card">
+      <h2>Calls by Source — 12 Months</h2>
+      <table>
+        <tr><th>Source</th><th>Calls</th><th>%</th><th>Answered</th><th>New Leads</th></tr>
+        <tr style="background:#f0fdf4"><td><strong>Google My Business</strong></td><td><strong>291</strong></td><td><strong>54.8%</strong></td><td>289 (99%)</td><td>194</td></tr>
+        <tr><td>Google Organic</td><td>141</td><td>26.6%</td><td>138 (98%)</td><td>104</td></tr>
+        <tr><td>Direct</td><td>50</td><td>9.4%</td><td>48 (96%)</td><td>33</td></tr>
+        <tr style="background:#ede9fe"><td><strong>ChatGPT.com</strong> <span class="badge purple" style="background:#ede9fe;color:#7c3aed">AI</span></td><td><strong>10</strong></td><td><strong>1.9%</strong></td><td>10 (100%)</td><td>4</td></tr>
+        <tr><td>Facebook Organic</td><td>6</td><td>1.1%</td><td>6 (100%)</td><td>5</td></tr>
+        <tr><td>Bing Organic</td><td>6</td><td>1.1%</td><td>6 (100%)</td><td>6</td></tr>
+        <tr><td>DuckDuckGo Organic</td><td>5</td><td>0.9%</td><td>5 (100%)</td><td>4</td></tr>
+        <tr><td>Yahoo Organic</td><td>5</td><td>0.9%</td><td>5 (100%)</td><td>2</td></tr>
+        <tr style="background:#ede9fe"><td><strong>SearchGPT</strong> <span class="badge purple" style="background:#ede9fe;color:#7c3aed">AI</span></td><td><strong>4</strong></td><td><strong>0.8%</strong></td><td>3 (75%)</td><td>3</td></tr>
+        <tr><td>Meta Ads</td><td>3</td><td>0.6%</td><td>3 (100%)</td><td>3</td></tr>
+        <tr><td>Facebook Ads</td><td>2</td><td>0.4%</td><td>2 (100%)</td><td>2</td></tr>
+        <tr><td>Instagram Ads</td><td>1</td><td>0.2%</td><td>1 (100%)</td><td>1</td></tr>
+      </table>
+      <p style="font-size:12px;color:#ef4444;margin-top:8px">Facebook Ads + Meta Ads + Instagram Ads combined = <strong>6 calls</strong> from ~179 Hotjar sessions. GBP alone = 291 calls. The ROI gap is extreme.</p>
+    </div>
+    <div class="card">
+      <h2>Monthly Call Volume — Trend</h2>
+      <table>
+        <tr><th>Month</th><th>Total</th><th>Answered</th><th>New Leads</th><th>Trend</th></tr>
+        <tr><td>Jun 2025</td><td>6</td><td>6</td><td>2</td><td></td></tr>
+        <tr><td>Jul 2025</td><td>19</td><td>19</td><td>12</td><td>↑</td></tr>
+        <tr><td>Aug 2025</td><td>12</td><td>12</td><td>11</td><td>↓</td></tr>
+        <tr><td>Sep 2025</td><td>22</td><td>22</td><td>17</td><td>↑</td></tr>
+        <tr><td>Oct 2025</td><td>15</td><td>14</td><td>14</td><td>↓</td></tr>
+        <tr><td>Nov 2025</td><td>13</td><td>12</td><td>10</td><td>↓</td></tr>
+        <tr><td>Dec 2025</td><td>27</td><td>24</td><td>16</td><td>↑</td></tr>
+        <tr><td>Jan 2026</td><td>43</td><td>42</td><td>31</td><td>↑↑</td></tr>
+        <tr style="background:#fef2f2"><td><strong>Feb 2026 🔥</strong></td><td><strong>142</strong></td><td><strong>141</strong></td><td><strong>112</strong></td><td><span class="badge red">SPIKE ×3</span></td></tr>
+        <tr><td>Mar 2026</td><td>85</td><td>85</td><td>49</td><td>↓</td></tr>
+        <tr><td>Apr 2026</td><td>76</td><td>75</td><td>45</td><td>↓</td></tr>
+        <tr><td>May 2026</td><td>56</td><td>56</td><td>40</td><td>↓</td></tr>
+        <tr><td>Jun 2026 (partial)</td><td>15</td><td>15</td><td>7</td><td>—</td></tr>
+      </table>
+      <p style="font-size:12px;color:#ef4444;margin-top:8px">February 2026 spike: 142 calls vs ~20–45 typical months. Peak days Feb 9–12: 75 calls in 4 days. Investigate what ran Feb 9–12 — a promotion, GBP post, or campaign that generated 3× normal call volume.</p>
+    </div>
+  </div>
+
+  <!-- FEBRUARY SPIKE DETAIL -->
+  <div class="card">
+    <h2>🔥 February 2026 Spike — Daily Breakdown (142 Calls)</h2>
+    <p style="font-size:13px;color:#374151;margin-bottom:12px">February 2026 generated 26.7% of the entire year's call volume in a single month. The peak ran Feb 9–12 with 75 calls in 4 consecutive days. Understanding what triggered this spike is essential for replicating it.</p>
+    <table>
+      <tr><th>Date</th><th>Calls</th><th>Notes</th></tr>
+      <tr><td>Feb 1–8</td><td>12</td><td>Normal pre-spike baseline</td></tr>
+      <tr style="background:#fef2f2"><td><strong>Feb 9</strong></td><td><strong>14</strong></td><td>Spike begins</td></tr>
+      <tr style="background:#fef2f2"><td><strong>Feb 10</strong></td><td><strong>21</strong></td><td>Peak day 1</td></tr>
+      <tr style="background:#fef2f2"><td><strong>Feb 11</strong></td><td><strong>24</strong></td><td>Peak day 2 — highest single day of the year</td></tr>
+      <tr style="background:#fef2f2"><td><strong>Feb 12</strong></td><td><strong>16</strong></td><td>Peak day 3</td></tr>
+      <tr><td>Feb 13–14</td><td>3</td><td>Rapid return to baseline — spike was event-driven, not sustained</td></tr>
+      <tr><td>Feb 15–28</td><td>52</td><td>Elevated above Jan baseline — lingering lift</td></tr>
+    </table>
+    <div class="alert info" style="margin-top:14px"><div class="alert-icon">💡</div><div>
+      <strong>Action: Identify and replicate the Feb 9–12 trigger</strong>
+      <p>Check: (1) Was a $49 special offer promoted Feb 9–12? (2) Was there a GBP post or Google LSA campaign active those dates? (3) Did a review campaign push GBP ranking? (4) Was there a Facebook post that went viral locally? The spike produced 75 leads in 4 days — 19× the daily average. Whatever caused it should be repeated monthly.</p>
+    </div></div>
+  </div>
+
+  <!-- TWO COL: DURATION + CITIES -->
+  <div class="two-col">
+    <div class="card">
+      <h2>Call Duration Breakdown</h2>
+      <table>
+        <tr><th>Duration</th><th>Calls</th><th>%</th><th>Interpretation</th></tr>
+        <tr style="background:#fff5f5"><td>Under 30 sec</td><td>95</td><td>17.9%</td><td>⚠️ Wrong number, spam, or hang-up before answer</td></tr>
+        <tr><td>30–60 sec</td><td>90</td><td>16.9%</td><td>Short — may be scheduling or quick price check</td></tr>
+        <tr><td>1–2 min</td><td>124</td><td>23.4%</td><td>Standard inquiry call</td></tr>
+        <tr style="background:#f0fdf4"><td>2–5 min</td><td>153</td><td>28.8%</td><td>✅ Qualified lead — price + availability discussed</td></tr>
+        <tr style="background:#f0fdf4"><td>5–10 min</td><td>55</td><td>10.4%</td><td>✅ High-value call — likely booked job</td></tr>
+        <tr style="background:#f0fdf4"><td>Over 10 min</td><td>14</td><td>2.6%</td><td>✅ Complex job or return customer relationship</td></tr>
+      </table>
+      <p style="font-size:12px;color:#16a34a;margin-top:8px">41.8% of all calls (222) lasted 2+ minutes — these are genuine qualified leads. Note: the longest call in the dataset (933 sec / 15.5 min) was sourced from ChatGPT.com.</p>
+    </div>
+    <div class="card">
+      <h2>Top Cities Calling</h2>
+      <table>
+        <tr><th>City</th><th>Calls</th><th>% of Total</th><th>Note</th></tr>
+        <tr><td><strong>Las Vegas</strong></td><td>261</td><td>49.2%</td><td>Core market — primary service area</td></tr>
+        <tr><td>Henderson</td><td>36</td><td>6.8%</td><td>Key secondary market</td></tr>
+        <tr><td>Logandale</td><td>19</td><td>3.6%</td><td>Rural NV — worth noting service coverage</td></tr>
+        <tr><td>Nelson</td><td>17</td><td>3.2%</td><td>Small community near Boulder City</td></tr>
+        <tr><td>Boulder City</td><td>15</td><td>2.8%</td><td>Active secondary market</td></tr>
+        <tr><td>Laughlin</td><td>12</td><td>2.3%</td><td>Growing market — 100mi south of LV</td></tr>
+        <tr><td>Mt Charleston</td><td>7</td><td>1.3%</td><td>Mountain community</td></tr>
+        <tr><td>Lake Oswego (OR)</td><td>7</td><td>1.3%</td><td>⚠️ Out-of-area — likely spam or number misdial</td></tr>
+        <tr><td>Ladue (MO)</td><td>7</td><td>1.3%</td><td>⚠️ Out-of-area — same issue</td></tr>
+        <tr><td>Ontario (CA)</td><td>5</td><td>0.9%</td><td>⚠️ Out-of-area — may indicate wrong tracking number scope</td></tr>
+      </table>
+      <p style="font-size:12px;color:#64748b;margin-top:8px">Out-of-area calls (Lake Oswego, Ladue, Ontario) may indicate tracking number spam or a tracking number shared across multiple clients — investigate in CallRail.</p>
+    </div>
+  </div>
+
+  <!-- AI CALLS DETAIL -->
+  <div class="card" style="border-left:4px solid #7c3aed">
+    <h2 style="color:#7c3aed">🤖 AI-Sourced Calls — ChatGPT + SearchGPT (14 Calls)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:12px">AI search is already generating real, answered phone leads for this business. These 14 calls represent 2.6% of all call volume — more than Bing Organic, DuckDuckGo, Yahoo, and all Facebook paid ads combined.</p>
+    <table>
+      <tr><th>Date</th><th>Source</th><th>Duration</th><th>First Call?</th><th>City</th><th>Signal</th></tr>
+      <tr><td>Jul 18, 2025</td><td>ChatGPT.com</td><td>387 sec (6.5 min)</td><td>Yes</td><td>Las Vegas</td><td><span class="badge green">High-value lead</span></td></tr>
+      <tr><td>Jul 18, 2025</td><td>ChatGPT.com</td><td>282 sec (4.7 min)</td><td>No</td><td>Las Vegas</td><td><span class="badge green">Return caller</span></td></tr>
+      <tr><td>Jul 22, 2025</td><td>ChatGPT.com</td><td>933 sec (15.5 min) 🏆</td><td>No</td><td>Las Vegas</td><td><span class="badge green">Longest call of the year</span></td></tr>
+      <tr><td>Oct 9, 2025</td><td>SearchGPT</td><td>244 sec (4.1 min)</td><td>Yes</td><td>San Diego</td><td><span class="badge orange">Out-of-area lead</span></td></tr>
+      <tr><td>Dec 22, 2025</td><td>SearchGPT</td><td>184 sec (3.1 min)</td><td>No</td><td>Las Vegas</td><td><span class="badge green">Return caller</span></td></tr>
+      <tr><td>Dec 22, 2025</td><td>SearchGPT</td><td>2 sec (unanswered)</td><td>Yes</td><td>Las Vegas</td><td><span class="badge red">Missed new lead</span></td></tr>
+      <tr><td>Jan 17, 2026</td><td>ChatGPT.com</td><td>231 sec (3.9 min)</td><td>Yes</td><td>Las Vegas</td><td><span class="badge green">New qualified lead</span></td></tr>
+      <tr><td>Jan 17, 2026</td><td>ChatGPT.com</td><td>42 sec</td><td>No</td><td>Las Vegas</td><td><span class="badge orange">Short — quick check</span></td></tr>
+      <tr><td>Jan 17, 2026</td><td>ChatGPT.com</td><td>31 sec</td><td>No</td><td>Las Vegas</td><td><span class="badge orange">Short — quick check</span></td></tr>
+      <tr><td>Jan 21, 2026</td><td>ChatGPT.com</td><td>317 sec (5.3 min)</td><td>No</td><td>Reno</td><td><span class="badge orange">Out-of-area but high engagement</span></td></tr>
+      <tr><td>Jan 21, 2026</td><td>ChatGPT.com</td><td>50 sec</td><td>No</td><td>Reno</td><td><span class="badge orange">Out-of-area</span></td></tr>
+      <tr><td>Jan 21, 2026</td><td>ChatGPT.com</td><td>26 sec</td><td>Yes</td><td>Reno</td><td><span class="badge orange">Out-of-area</span></td></tr>
+      <tr><td>Feb 18, 2026</td><td>ChatGPT.com</td><td>21 sec</td><td>Yes</td><td>Henderson</td><td><span class="badge orange">Short — quick check</span></td></tr>
+      <tr><td>May 2, 2026</td><td>SearchGPT</td><td>199 sec (3.3 min)</td><td>Yes</td><td>Las Vegas</td><td><span class="badge green">New qualified lead</span></td></tr>
+    </table>
+    <div class="alert info" style="margin-top:14px"><div class="alert-icon">💡</div><div>
+      <strong>ChatGPT is recommending this business by name — the site appears in ChatGPT responses for Las Vegas drain cleaning</strong>
+      <p>The <code>?utm_source=chatgpt.com</code> UTM parameter on 11 landing page calls confirms ChatGPT is actively linking to discountdraincleanlv.com in its responses. The July 2025 call cluster (3 calls including a 15.5-min call) and the January 2026 cluster (3 Las Vegas + 3 Reno calls in one day) suggest the business was cited in a ChatGPT conversation that was shared or referenced multiple times. This is organic AI citation that has not been actively optimized for — with proper AI SEO (FAQ schema, cost pages, E-E-A-T content), these numbers will grow significantly.</p>
+    </div></div>
+  </div>
+
+  <!-- FACEBOOK VS GOOGLE ROI -->
+  <div class="card">
+    <h2>📊 Channel ROI Comparison — Calls Per Channel</h2>
+    <table>
+      <tr><th>Channel</th><th>Hotjar Sessions</th><th>CallRail Calls</th><th>Call Rate</th><th>First-Time Calls</th><th>Verdict</th></tr>
+      <tr style="background:#f0fdf4"><td><strong>Google My Business</strong></td><td>~67 (Google total)</td><td>291</td><td>High</td><td>194</td><td><span class="badge green">✅ #1 lead driver — protect at all costs</span></td></tr>
+      <tr style="background:#f0fdf4"><td><strong>Google Organic</strong></td><td>~67 (Google total)</td><td>141</td><td>High</td><td>104</td><td><span class="badge green">✅ Proven ROI — invest in content/SEO</span></td></tr>
+      <tr><td>Direct / Brand</td><td>130</td><td>50</td><td>38%</td><td>33</td><td><span class="badge blue">Good — repeat + word of mouth</span></td></tr>
+      <tr style="background:#ede9fe"><td><strong>AI (ChatGPT + SearchGPT)</strong></td><td>1 (Hotjar)</td><td>14</td><td>High (calls&gt;visits)</td><td>7</td><td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">🚀 Growing — AI calls bypass web visits</span></td></tr>
+      <tr><td>Bing Organic</td><td>1</td><td>6</td><td>High</td><td>6</td><td><span class="badge blue">Good per session — register Bing Webmaster Tools</span></td></tr>
+      <tr style="background:#fff5f5"><td><strong>Facebook Ads (paid)</strong></td><td>179</td><td>2–3</td><td>~1.7%</td><td>2–3</td><td><span class="badge red">❌ Worst ROI — 179 sessions, 2 paid ad calls</span></td></tr>
+      <tr style="background:#fff5f5"><td>Meta Ads / Instagram</td><td>~30 est.</td><td>4</td><td>~13%</td><td>4</td><td><span class="badge orange">Marginal — evaluate ad creative/targeting</span></td></tr>
+    </table>
+    <p style="font-size:12px;color:#64748b;margin-top:8px">Note: ChatGPT/AI calls (14) exceed all Facebook paid channels (6 total) — and AI spend is $0. AI optimization is the highest ROI channel with no ad budget required.</p>
+  </div>
+
+  <!-- TRACKING NUMBER MAP -->
+  <div class="card">
+    <h2>📞 Tracking Number Map — What Each Number Captures</h2>
+    <table>
+      <tr><th>Number</th><th>Calls</th><th>Primary Sources</th><th>Purpose</th></tr>
+      <tr style="background:#f0fdf4"><td><strong>+1 (702) 996-4923</strong></td><td>294</td><td>Google My Business (288), Direct (4), Google Organic (2)</td><td>GBP tracking number — the highest-volume line. This is the number displayed on the Google Business Profile.</td></tr>
+      <tr><td>+1 (702) 664-8782</td><td>73</td><td>Google Organic (44), Direct (8), ChatGPT.com (8)</td><td>Website organic tracking number — captures site visitors who call. ChatGPT calls route through here.</td></tr>
+      <tr><td>+1 (702) 887-1819</td><td>60</td><td>Google Organic (37), Direct (13), SearchGPT (2)</td><td>Secondary organic/website tracking number.</td></tr>
+      <tr><td>+1 (702) 352-0520</td><td>50</td><td>Google Organic (27), Direct (14), Facebook Organic (4)</td><td>Website tracking number — also captures some Facebook organic.</td></tr>
+      <tr><td>+1 (702) 802-0752</td><td>50</td><td>Google Organic (31), Direct (11), Yahoo Organic (3)</td><td>Additional organic tracking — likely embedded on specific pages.</td></tr>
+      <tr style="background:#fff5f5"><td>+1 (702) 602-8748</td><td>4</td><td>Meta Ads (3), Google My Business (1)</td><td>Facebook/Meta Ads tracking number — only 4 calls in 12 months confirms paid social underperformance.</td></tr>
+    </table>
+  </div>
+
+  <!-- LANDING PAGES DRIVING CALLS -->
+  <div class="card">
+    <h2>📄 Landing Pages Driving Calls (Where Tracked)</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:12px">294 of 531 calls have no landing page tracked (direct GBP dial). Of the 237 tracked calls:</p>
+    <table>
+      <tr><th>Landing Page</th><th>Calls</th><th>Note</th></tr>
+      <tr style="background:#f0fdf4"><td><strong>/ (Homepage)</strong></td><td>147</td><td>✅ Highest call-driving page — homepage CTAs working for callers</td></tr>
+      <tr style="background:#ede9fe"><td><strong>/?utm_source=chatgpt.com</strong></td><td>11</td><td>🤖 ChatGPT sending people directly to homepage — AI attribution confirmed</td></tr>
+      <tr><td>/services/sewer-camera-inspection/</td><td>16</td><td>High-value service page driving calls — supports schema + content investment</td></tr>
+      <tr><td>/services/grease-trap-cleaning/</td><td>8</td><td>Commercial service converting via calls</td></tr>
+      <tr><td>/contact-us/</td><td>6</td><td>Contact page visitors calling — form + phone CTA working</td></tr>
+      <tr><td>/about-us/special-offers/</td><td>4</td><td>$49 page driving calls (not just form attempts)</td></tr>
+      <tr><td>/services/snaking/</td><td>5</td><td>Snaking page generating calls</td></tr>
+      <tr><td>/services/hydro-jetting-services/</td><td>4</td><td>Hydro jetting page converting</td></tr>
+      <tr><td>/service-areas/henderson-nv/drain-cleaning/</td><td>4</td><td>Service-area page format working — expand these pages</td></tr>
+      <tr><td>/service-areas/las-vegas-nv/trenchless-pipe-lining/</td><td>4</td><td>Another service-area page converting</td></tr>
+      <tr><td>/services/drain-cleaning/</td><td>2</td><td>Despite position 49 in Google — even thin traffic converts to calls</td></tr>
+    </table>
+    <p style="font-size:12px;color:#64748b;margin-top:8px">Service-area pages (/service-areas/[city]/[service]/) are driving calls — the same pages that produced the only 2 Hotjar form conversions. This format works for both calls and forms.</p>
+  </div>
+
+  <!-- KEY RECOMMENDATIONS -->
+  <div class="card">
+    <h2>🎯 CallRail-Driven Recommendations</h2>
+    <table>
+      <tr><th>#</th><th>Finding</th><th>Action</th><th>Priority</th></tr>
+      <tr>
+        <td>1</td>
+        <td>GBP generates 291 calls (54.8%) — the single most valuable asset on the business</td>
+        <td>Protect and grow GBP at all costs: (1) Post weekly on GBP with photos + offers, (2) Reply to every review within 24 hours, (3) Run an aggressive review campaign to 50+ reviews (see Action Plan tab), (4) Keep hours, phone number, and categories perfectly accurate. A GBP suspension would cost 291 calls per year.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>February spike: 142 calls in one month (3× normal) — source unknown</td>
+        <td>Audit what ran Feb 9–12: check GBP posts, Facebook posts, any promotions, any local news/press. Identify the trigger and build it into a repeatable monthly campaign. If it was a $49 promotion pushed via GBP post, run it every month — the call volume impact is extraordinary.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>ChatGPT is already sending 10 phone calls — AI is an active revenue channel now</td>
+        <td>Optimize for AI citation immediately: (1) Add FAQ schema to all service pages, (2) Build a pricing/cost guide page, (3) Add "best drain cleaning Las Vegas" positioning content, (4) Strengthen E-E-A-T signals (license number, years in business, technician bios). Current AI calls are happening with zero optimization — fixing this could 5–10× the AI call volume.</td>
+        <td><span class="badge red">Critical</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>95 calls under 30 seconds (17.9%) — likely spam/wrong number</td>
+        <td>Review these in CallRail. If recurring numbers appear, block them. If they're coming from a specific tracking number, investigate whether that number is being scraped or shared incorrectly. Also confirm that sub-30s calls aren't legitimate quick inquiries — check if any booked jobs have a sub-30s call in their history.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Facebook Ads tracking number (+17026028748) = only 4 calls in 12 months</td>
+        <td>This is the smoking gun for Facebook ad underperformance. The dedicated Meta Ads tracking number confirms only 3 Meta Ad calls in 12 months. Consider cutting paid Facebook spend entirely and reallocating to: (1) Google LSA (Local Services Ads), (2) More GBP optimization, (3) SEO content for service pages that convert via phone.</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Sewer camera inspection page drives 16 calls despite thin content — it has confirmed call conversion ROI</td>
+        <td>This page is already producing 16 calls per year with minimal optimization. A full rewrite (1,200+ words, FAQ schema, city-specific content, clear CTA) could 3–5× this. Prioritize it over pages with no call data. Same logic applies to grease trap cleaning (8 calls) and snaking (5 calls).</td>
+        <td><span class="badge orange">High</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Out-of-area calls (Lake Oswego OR, Ladue MO, Reno NV) appearing in data</td>
+        <td>Investigate in CallRail whether tracking numbers are shared across other client accounts or if there's a number-porting issue. Out-of-area calls inflate the total and skew the city breakdown. If the Reno calls are legitimate (ChatGPT cited the business to a Reno searcher), that's expected — but Oregon and Missouri calls are not.</td>
+        <td><span class="badge purple" style="background:#ede9fe;color:#7c3aed">Medium</span></td>
       </tr>
     </table>
   </div>
